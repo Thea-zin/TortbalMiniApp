@@ -8,6 +8,7 @@ class TBText extends StatelessWidget {
     this.fontWeight = FontWeight.normal,
     this.textAlign = TextAlign.center,
     this.textSize = 14,
+    this.textScale = 1,
     super.key,
   });
 
@@ -17,6 +18,7 @@ class TBText extends StatelessWidget {
   final FontWeight fontWeight;
   final int maxLines;
   final TextAlign textAlign;
+  final double textScale;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,7 @@ class TBText extends StatelessWidget {
       text,
       maxLines: maxLines,
       textAlign: textAlign,
-      textScaler: const TextScaler.linear(0.8),
+      textScaler: TextScaler.linear(textScale),
       style: TextStyle(
         color: textColor,
         fontSize: textSize,
