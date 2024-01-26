@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:thortbal/Constants/tb_color.dart';
@@ -26,7 +27,8 @@ class _TBProfileScreenState extends State<TBProfileScreen> {
             SafeArea(
               child: Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                    // const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                    const EdgeInsets.only(left: 15, right: 15, top: 30),
                 child: SizedBox(
                   height: 80,
                   child: Row(
@@ -135,6 +137,38 @@ class _TBProfileScreenState extends State<TBProfileScreen> {
                       title: "Manager Account",
                       assetName: TBIcons.tbProfile,
                     ),
+
+                    // Log-Out Bottom
+
+                    Padding(
+                      padding: const EdgeInsets.only(top: 24),
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.red,
+                          // fixedSize: const Size(double.infinity, 52),
+                          padding: const EdgeInsets.symmetric(vertical: 12),
+                          surfaceTintColor: Colors.white,
+                          foregroundColor: Colors.white70,
+                        ),
+                        onPressed: () {},
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Icon(
+                              Icons.logout,
+                              color: Colors.white70,
+                            ),
+                            const SizedBox(width: 20),
+                            TBText(
+                              "Log out",
+                              textColor: Colors.white70,
+                              fontWeight: FontWeight.bold,
+                              textSize: TBTextSize.large,
+                            ),
+                          ],
+                        ),
+                      ),
+                    )
                   ],
                 ),
               ),
@@ -146,35 +180,52 @@ class _TBProfileScreenState extends State<TBProfileScreen> {
   }
 
   Widget profileRow({required String title, required String assetName}) {
-    return Container(
-      margin: const EdgeInsets.only(bottom: 24),
-      height: 24,
-      width: double.infinity,
-      child: Row(
-        // mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          SvgPicture.asset(
-            assetName,
-            height: 24,
-            color: TBColor.label,
-            fit: BoxFit.fill,
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 10),
-            child: TBText(
-              title,
-              textSize: TBTextSize.large,
-              // textColor: TBColor.label,
+    return InkWell(
+      onTap: () {
+        showActionSheet();
+      },
+      child: Container(
+        margin: const EdgeInsets.only(bottom: 24),
+        height: 24,
+        width: double.infinity,
+        child: Row(
+          // mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SvgPicture.asset(
+              assetName,
+              height: 24,
+              color: TBColor.label,
+              fit: BoxFit.fill,
             ),
-          ),
-          const Spacer(),
-          const Icon(
-            Icons.arrow_forward_ios_rounded,
-            size: 18,
-          )
-        ],
+            Padding(
+              padding: const EdgeInsets.only(left: 10),
+              child: TBText(
+                title,
+                textSize: TBTextSize.large,
+                // textColor: TBColor.label,
+              ),
+            ),
+            const Spacer(),
+            const Icon(
+              Icons.arrow_forward_ios_rounded,
+              size: 18,
+            )
+          ],
+        ),
       ),
+    );
+  }
+
+  showActionSheet() {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return Container(
+          height: 200,
+          color: Colors.white,
+        );
+      },
     );
   }
 }
