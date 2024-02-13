@@ -1,10 +1,12 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:thortbal/Constants/tb_color.dart';
 import 'package:thortbal/Constants/tb_icon.dart';
 import 'package:thortbal/Constants/tb_textsize.dart';
 import 'package:thortbal/Helpers/Widgets/tb_text.widget.dart';
+import 'package:thortbal/Views/Profile/Edit-Profile/edit_profile.screen.dart';
 
 class TBProfileScreen extends StatefulWidget {
   const TBProfileScreen({Key? key}) : super(key: key);
@@ -35,19 +37,21 @@ class _TBProfileScreenState extends State<TBProfileScreen> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Container(
-                        width: 80,
-                        height: 80,
-                        decoration: BoxDecoration(
-                          color: TBColor.primary,
-                          shape: BoxShape.circle,
-                        ),
-                        alignment: Alignment.bottomRight,
-                        child: const Icon(
-                          Icons.edit,
-                          size: 22,
-                          fill: 0.8,
-                          color: Colors.white,
+                      InkWell(
+                        child: Container(
+                          width: 80,
+                          height: 80,
+                          decoration: BoxDecoration(
+                            color: TBColor.primary,
+                            shape: BoxShape.circle,
+                          ),
+                          alignment: Alignment.bottomRight,
+                          child: const Icon(
+                            Icons.edit,
+                            size: 22,
+                            fill: 0.8,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                       const SizedBox(width: 20),
@@ -179,10 +183,13 @@ class _TBProfileScreenState extends State<TBProfileScreen> {
     );
   }
 
-  Widget profileRow({required String title, required String assetName}) {
+  Widget profileRow({
+    required String title,
+    required String assetName,
+  }) {
     return InkWell(
       onTap: () {
-        showActionSheet();
+        showBottomSheet();
       },
       child: Container(
         margin: const EdgeInsets.only(bottom: 24),
@@ -217,15 +224,15 @@ class _TBProfileScreenState extends State<TBProfileScreen> {
     );
   }
 
-  showActionSheet() {
-    showModalBottomSheet(
-      context: context,
-      builder: (context) {
-        return Container(
-          height: 200,
-          color: Colors.white,
-        );
-      },
-    );
+  showBottomSheet() {
+    showCupertinoModalBottomSheet(
+        overlayStyle: SystemUiOverlayStyle.light,
+        barrierColor: Colors.black45,
+        isDismissible: false,
+        enableDrag: false,
+        context: context,
+        builder: (context) {
+          return const TBEditProfile();
+        });
   }
 }

@@ -16,6 +16,7 @@ class TBIcons {
   static const tbAMK = "assets/icons/ic_logo_amk.svg";
   static const tbFacebook = "assets/icons/ic_logo_facebook.svg";
   static const tbGoogle = "assets/icons/ic_logo_google.svg";
+  static const tbLogo = "assets/icons/ic_logo.svg";
   static const tbMail = "assets/icons/ic_mail.svg";
   static const tbMenu = "assets/icons/ic_menu.svg";
   static const tbPen = "assets/icons/ic_pen.svg";
