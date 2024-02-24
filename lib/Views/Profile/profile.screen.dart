@@ -5,6 +5,7 @@ import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:thortbal/Constants/tb_color.dart';
 import 'package:thortbal/Constants/tb_icon.dart';
 import 'package:thortbal/Constants/tb_textsize.dart';
+import 'package:thortbal/Helpers/Widgets/tb_button.dart';
 import 'package:thortbal/Helpers/Widgets/tb_text.widget.dart';
 import 'package:thortbal/Views/Profile/Edit-Profile/edit_profile.screen.dart';
 
@@ -141,36 +142,26 @@ class _TBProfileScreenState extends State<TBProfileScreen> {
                       title: "Manager Account",
                       assetName: TBIcons.tbProfile,
                     ),
-
                     // Log-Out Bottom
-
-                    Padding(
-                      padding: const EdgeInsets.only(top: 24),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.red,
-                          // fixedSize: const Size(double.infinity, 52),
-                          padding: const EdgeInsets.symmetric(vertical: 12),
-                          surfaceTintColor: Colors.white,
-                          foregroundColor: Colors.white70,
-                        ),
-                        onPressed: () {},
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            const Icon(
-                              Icons.logout,
-                              color: Colors.white70,
-                            ),
-                            const SizedBox(width: 20),
-                            TBText(
-                              "Log out",
-                              textColor: Colors.white70,
-                              fontWeight: FontWeight.bold,
-                              textSize: TBTextSize.large,
-                            ),
-                          ],
-                        ),
+                    TBButton(
+                      // width: 100,
+                      onTap: () {},
+                      backgroundColor: TBColor.warning,
+                      child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.logout,
+                            color: Colors.white,
+                          ),
+                          SizedBox(width: 10),
+                          TBText(
+                            "Logout",
+                            fontWeight: FontWeight.w600,
+                            textSize: 16,
+                            textColor: Colors.white,
+                          )
+                        ],
                       ),
                     )
                   ],
