@@ -85,7 +85,7 @@ class _TBEditProfileState extends State<TBEditProfile> {
                   children: [
                     /// Full name
                     TBTextFeild(
-                      hinText: "Enter your full name",
+                      hinText: "Enter your name",
                     ),
                     const SizedBox(height: 20),
 

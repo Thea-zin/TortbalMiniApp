@@ -50,6 +50,7 @@ class TBBackButton extends StatelessWidget {
 
   final double _padding = 12.0;
   final double _buttonSize = 24.0;
+
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
