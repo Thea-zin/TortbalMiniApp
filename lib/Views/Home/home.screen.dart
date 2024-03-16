@@ -90,7 +90,7 @@ class _TBHomeScreenState extends State<TBHomeScreen> {
           ),
           Expanded(
             child: Image.asset(
-              'assets/home.png',
+              TBImages.tbHome,
               alignment: Alignment.bottomCenter,
             ),
           ),

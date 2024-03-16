@@ -1,7 +1,7 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:thortbal/Constants/tb_image.dart';
-import 'package:thortbal/Views/Schedule/schedule.dart';
+import 'package:thortbal/Views/Schedule/schedule.screen.dart';
 
 
 class Solo extends StatelessWidget {

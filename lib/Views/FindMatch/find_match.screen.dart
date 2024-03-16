@@ -1,6 +1,7 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
-import 'package:thortbal/Views/Solo/solo_option.dart';
+import 'package:thortbal/Constants/tb_image.dart';
+import 'package:thortbal/Views/Solo/solo_option.screen.dart';
 import 'package:thortbal/Views/team/team.dart';
 
 
@@ -65,7 +66,7 @@ class FindMatchScreen extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               OptionCard(
-                imageAsset: 'assets/solo_player.png',
+                imageAsset: TBImages.tbSoloPlayer,
                 onTap: () {
                   Navigator.pushNamed(context, '/solo_option');
                 },
@@ -73,7 +74,7 @@ class FindMatchScreen extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               OptionCard(
-                imageAsset: 'assets/team_players.png',
+                imageAsset: TBImages.tbTeamPlayers,
                 label: '',
                 onTap: () {
                   Navigator.pushNamed(context, '/team');

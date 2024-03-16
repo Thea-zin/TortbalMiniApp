@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:thortbal/Views/FindMatch/findmatch.dart';
-import 'package:thortbal/Views/Solo/create_team.dart';
+import 'package:thortbal/Views/FindMatch/find_match.screen.dart';
+import 'package:thortbal/Views/Solo/create_team.screen.dart';
 
 
 class SoloOption extends StatelessWidget {

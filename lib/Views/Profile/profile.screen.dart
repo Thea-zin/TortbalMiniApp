@@ -7,7 +7,6 @@ import 'package:thortbal/Constants/tb_icon.dart';
 import 'package:thortbal/Constants/tb_textsize.dart';
 import 'package:thortbal/Helpers/Widgets/tb_button.dart';
 import 'package:thortbal/Helpers/Widgets/tb_text.widget.dart';
-import 'package:thortbal/Views/Profile/Book-History/book_history.screen.dart';
 import 'package:thortbal/Views/Profile/Edit-Profile/edit_profile.screen.dart';
 
 class TBProfileScreen extends StatefulWidget {

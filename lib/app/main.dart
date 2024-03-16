@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:thortbal/Constants/tb_color.dart';
-import 'package:thortbal/Views/Profile/profile.screen.dart';
-import 'package:thortbal/Views/authentication/login.dart';
-import 'package:thortbal/Views/authentication/signUp.dart';
-import 'package:thortbal/Views/authentication/SigupWithEmail.dart';
-import 'package:thortbal/Views/authentication/login.dart';
+import 'package:thortbal/Views/Home/home.screen.dart';
+// import 'package:thortbal/Views/authentication/login.dart';
+
 void main() {
   runApp(
     const MyApp(),
@@ -26,7 +24,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: TBColor.primary),
         useMaterial3: true,
       ),
-      home: const Login(),
+      home: const TBHomeScreen(),
     );
   }
 }

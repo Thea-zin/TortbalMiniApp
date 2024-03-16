@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:thortbal/Views/Schedule/schedule.dart';
+import 'package:thortbal/Views/Schedule/schedule.screen.dart';
 
 
 class Team extends StatelessWidget {
