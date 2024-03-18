@@ -5,4 +5,7 @@ class TBImages {
   static const tbLogo = "assets/images/logo.jpg";
   static const tbSoloPlayer = "assets/images/solo_player.png";
   static const tbTeamPlayers = "assets/images/team_players.png";
+  static const tbIntroScreen1 = "assets/images/intro-screen1.png";
+  static const tbIntroScreen2 = "assets/images/intro-screen2.png";
+  static const tbIntroScreen3 = "assets/images/intro-screen3.png";
 }
