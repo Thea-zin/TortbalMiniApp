@@ -43,12 +43,12 @@ class _PayScheduleState extends State<PaySchedule> {
         children: [
           ///Container Stack page number 
           Container(
-            margin: EdgeInsets.fromLTRB(0, 20, 0, 0),
+            margin: const EdgeInsets.fromLTRB(0, 20, 0, 0),
             child: Stack(
             
               alignment: Alignment.center, 
               children: [
-                Divider(),
+                const Divider(),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                  children: [
@@ -60,7 +60,7 @@ class _PayScheduleState extends State<PaySchedule> {
                         color: TBColor.primary,
                         shape: BoxShape.circle,
                       ),
-                    child: Center(
+                    child: const Center(
                       child: TBText(
                         "1",
                         textColor: Colors.white,
@@ -114,7 +114,7 @@ class _PayScheduleState extends State<PaySchedule> {
 
           ///Create button Morning , afternoon .... 
           Container(
-            margin: EdgeInsets.all(20),
+            margin: const EdgeInsets.all(20),
             child: Column(
              
               children: [
@@ -126,16 +126,10 @@ class _PayScheduleState extends State<PaySchedule> {
                     
                     width: 173,
                     height: 61,
-                    decoration: BoxDecoration(
+                    decoration: const  BoxDecoration(
                       shape: BoxShape.circle
                     ),
                     child: ElevatedButton(
-                      child:TBText(
-                        "Morning",
-                        textSize: 16,
-                        fontWeight: FontWeight.bold,
-                        textColor: TBColor.primary,
-                      ),
                      onPressed: (){},
                      style: ButtonStyle(
                       shape:MaterialStateProperty.all(
@@ -145,22 +139,22 @@ class _PayScheduleState extends State<PaySchedule> {
             
                       ),)
                      ),
+                     child:TBText(
+                        "Morning",
+                        textSize: 16,
+                        fontWeight: FontWeight.bold,
+                        textColor: TBColor.primary,
+                      ),
                      ),
                     
                   ),
                   Container(
                     width: 173,
                     height: 61,
-                    decoration: BoxDecoration(
+                    decoration:const  BoxDecoration(
                       shape: BoxShape.circle
                     ),
                     child: ElevatedButton(
-                      child:TBText(
-                        "Afternoon",
-                        textSize: 16,
-                        fontWeight: FontWeight.bold,
-                        textColor: TBColor.primary,
-                      ),
                      onPressed: (){},
                      style: ButtonStyle(
                       shape:MaterialStateProperty.all(
@@ -170,12 +164,18 @@ class _PayScheduleState extends State<PaySchedule> {
                         
                       ),)
                      ),
+                       child:TBText(
+                        "Afternoon",
+                        textSize: 16,
+                        fontWeight: FontWeight.bold,
+                        textColor: TBColor.primary,
+                      ),
                      ),
                     
                   )
                  ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 Row(
@@ -185,16 +185,11 @@ class _PayScheduleState extends State<PaySchedule> {
                     
                     width: 173,
                     height: 61,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       shape: BoxShape.circle
                     ),
                     child: ElevatedButton(
-                      child:TBText(
-                        "Evening",
-                        textSize: 16,
-                        fontWeight: FontWeight.bold,
-                        textColor: TBColor.primary,
-                      ),
+                     
                      onPressed: (){},
                      style: ButtonStyle(
                       shape:MaterialStateProperty.all(
@@ -204,22 +199,24 @@ class _PayScheduleState extends State<PaySchedule> {
             
                       ),)
                      ),
+                     child:TBText(
+                        "Evening",
+                        textSize: 16,
+                        fontWeight: FontWeight.bold,
+                        textColor: TBColor.primary,
+                      ),
+
                      ),
                     
                   ),
                   Container(
                     width: 173,
                     height: 61,
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       shape: BoxShape.circle
                     ),
                     child: ElevatedButton(
-                      child:TBText(
-                        "Night",
-                        textSize: 16,
-                        fontWeight: FontWeight.bold,
-                        textColor: TBColor.primary,
-                      ),
+                      
                      onPressed: (){},
                      style: ButtonStyle(
                       shape:MaterialStateProperty.all(
@@ -229,6 +226,12 @@ class _PayScheduleState extends State<PaySchedule> {
                         
                       ),)
                      ),
+                     child:TBText(
+                        "Night",
+                        textSize: 16,
+                        fontWeight: FontWeight.bold,
+                        textColor: TBColor.primary,
+                      ),
                      ),
                     
                   )
@@ -239,7 +242,8 @@ class _PayScheduleState extends State<PaySchedule> {
           ),
           /// Create select time and Schedule
           Container(
-            margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
+            margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+            padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
               color: TBColor.inputBackground,
               borderRadius: BorderRadius.circular(10), 
@@ -249,106 +253,143 @@ class _PayScheduleState extends State<PaySchedule> {
               children: [
                 //container select time 
                 Container(
-                  margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
+                  margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
-                      Container(  
-                        child: Column(
+                      Column(
+                        children: [
+                         Row(
+                                
                           children: [
-                           Row(
-          
-                            children: [
-                              Icon(Icons.timelapse,
-                                color: TBColor.primary,),
-                              TBText("Start Time",
-                                textColor: TBColor.primary,
-                                ),
-                            ],
-                           ),
-                           Container(
-                             margin: EdgeInsets.fromLTRB(30, 0, 0, 0),
-                             child: DropdownButton(                       
-                              items: const [
-                                DropdownMenuItem(
-                                  value: "8:30",
-                                  child:Text("8:30")),
-                                                     
-                              ],
-                                                     
-                               onChanged: (String? newValue)
-                               {
-                                setState(() {
-                                  dropdownvalue=newValue!;
-                                });
-                               }
-                               ),
-                           ),
+                            Icon(Icons.timelapse,
+                              color: TBColor.primary,),
+                            TBText("Start Time",
+                              textColor: TBColor.primary,
+                              ),
                           ],
-                        ),
-                      ), 
-                      Container(
-                  child: Row(
-                    children: [
-                      Container(
-                        
-                        child: Column(
-                          children: [
-                           Row(
-          
-                            children: [
-                              Icon(Icons.timelapse,
-                                color: TBColor.primary,),
-                              TBText("End Time",
-                                textColor: TBColor.primary,),
+                         ),
+                         Container(
+                           margin: const EdgeInsets.fromLTRB(30, 0, 0, 0),
+                           child: DropdownButton(                       
+                            items: const [
+                              DropdownMenuItem(
+                                value: "8:30",
+                                child:Text("8:30")),
+                                                   
                             ],
-                           ),
-                           Container(
-                             margin: EdgeInsets.fromLTRB(30, 0, 0, 0),
-                             child: DropdownButton(                       
-                              items: const [
-                                DropdownMenuItem(
-                                  value: "8:30",
-                                  child:Text("8:30")),
-                                                     
-                              ],
-                                                     
-                               onChanged: (String? newValue)
-                               {
-                                setState(() {
-                                  dropdownvalue=newValue!;
-                                });
-                               }
-                               ),
-                           ),
-                          ],
-                        ),
+                                                   
+                             onChanged: (String? newValue)
+                             {
+                              setState(() {
+                                dropdownvalue=newValue!;
+                              });
+                             }
+                             ),
+                         ),
+                        ],
                       ), 
-                     
-                    ],
-                  ),
-                ),
+                      Row(
+                        children: [
+                          Column(
+                            children: [
+                             Row(
+                              
+                              children: [
+                                Icon(Icons.timelapse,
+                                  color: TBColor.primary,),
+                                TBText("End Time",
+                                  textColor: TBColor.primary,),
+                              ],
+                             ),
+                             Container(
+                               margin: const EdgeInsets.fromLTRB(30, 0, 0, 0),
+                               child: DropdownButton(                       
+                                items: const [
+                                  DropdownMenuItem(
+                                    value: "8:30",
+                                    child:Text("8:30")),
+                                                       
+                                ],
+                                                       
+                                 onChanged: (String? newValue)
+                                 {
+                                  setState(() {
+                                    dropdownvalue=newValue!;
+                                  });
+                                 }
+                                 ),
+                             ),
+                            ],
+                          ), 
+                         
+                        ],
+                      ),
                     ],
                   ),
                 ),
               //Divider 
-              Divider(),
+              const Divider(),
 
               /// Calendar 
-              Container(
-                child: SfCalendar(
-                  view: CalendarView.month,
-                  showNavigationArrow: true,
-                )
-              ) 
+              
+              SfCalendar(
+                view: CalendarView.month,
+                showNavigationArrow: true,
+                cellBorderColor: TBColor.inputBackground,
+                
+                headerStyle:const CalendarHeaderStyle(
+                  textAlign: TextAlign.center,
+                  
+                ),
+              
+              ),
+             const SizedBox(
+                height: 20,
+
+              )
               ],
+
             ),
+       
           ),
 
 
          ///Select Opponent level
-          
+          const SizedBox(
+            height: 10,
+          ),
+         Container(
+          padding: const EdgeInsets.all(20),
+          width: 368,
+          height: 60,
+          decoration: BoxDecoration(
+            color: TBColor.inputBackground,
+            borderRadius: BorderRadius.circular(20),
+          ),
+           child: DropdownButton( 
+            dropdownColor: TBColor.inputBackground,
+            underline: const SizedBox(),
+            hint:const Text("Selected opponent level") ,          
+                   items: const [
+                      DropdownMenuItem(
+                        value: "Normal",                                  
+                        child:Text("Normal",
+                                  
+                          )),
+                                                     
+                          ],                            
+                        onChanged: (String? newValue)
+                         {
+                          setState(() {
+                            dropdownvalue=newValue!;
+                           }
+                           );
 
+                         }
+                        ),
+
+         ),
         ///Bottom Navigation bar 
         
         ],

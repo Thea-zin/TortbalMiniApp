@@ -7,6 +7,9 @@ import 'package:thortbal/Views/authentication/SigupWithEmail.screen.dart';
 import 'package:thortbal/Views/authentication/login.screeen.dart';
 import 'package:thortbal/Views/payment/pay_schedule.screen.dart';
 import 'package:thortbal/Views/payment/booking_detail.screen.dart';
+import 'package:thortbal/Views/payment/payment_method.screen.dart';
+import 'package:thortbal/Views/payment/booking_successful.screen.dart';
+import 'package:thortbal/Views/authentication/verifyOTP.screen.dart';
 void main() {
   runApp(
     const MyApp(),
@@ -28,7 +31,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: TBColor.primary),
         useMaterial3: true,
       ),
-      home: const PaySchedule (),
+      home: const PaymentMethod(),
     );
   }
 }
