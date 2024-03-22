@@ -11,17 +11,17 @@ import 'package:thortbal/Helpers/Widgets/tb_textfield.widget.dart';
 import 'package:thortbal/Helpers/Widgets/tb_textfield.widget.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
-class PaySchedule extends StatefulWidget {
-  const PaySchedule({super.key});
+class TBPaySchedule extends StatefulWidget {
+  const TBPaySchedule({super.key});
 
   @override
-  State<PaySchedule> createState() => _PayScheduleState();
+  State<TBPaySchedule> createState() => _PayScheduleState();
 }
  final List<String> options = ['Option 1', 'Option 2', 'Option 3'];
 
 
 String dropdownvalue ="8:30";
-class _PayScheduleState extends State<PaySchedule> {
+class _PayScheduleState extends State<TBPaySchedule> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

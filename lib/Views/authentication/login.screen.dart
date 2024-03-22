@@ -11,8 +11,8 @@ import 'package:thortbal/Helpers/Widgets/tb_textfield.widget.dart';
 import 'package:thortbal/Helpers/Widgets/tb_textfield.widget.dart';
 
 
-class Login extends StatelessWidget {
-  const Login({super.key});
+class TBLogin extends StatelessWidget {
+  const TBLogin({super.key});
 
   @override
  Widget build(BuildContext context) {

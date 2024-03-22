@@ -11,8 +11,8 @@ import 'package:thortbal/Helpers/Widgets/tb_textfield.widget.dart';
 import 'package:thortbal/Helpers/Widgets/tb_textfield.widget.dart';
 
 
-class BookingDetail extends StatelessWidget {
-  const BookingDetail({super.key});
+class TBBookingDetail extends StatelessWidget {
+  const TBBookingDetail({super.key});
 
   @override
   Widget build(BuildContext context) {
