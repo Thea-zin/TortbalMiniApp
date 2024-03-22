@@ -12,8 +12,8 @@ import 'package:thortbal/Helpers/Widgets/tb_textfield.widget.dart';
 import 'package:thortbal/Helpers/Widgets/tb_textfield.widget.dart';
 
 
-class PaymentMethod extends StatelessWidget {
-  const PaymentMethod({super.key});
+class TBPaymentMethod extends StatelessWidget {
+  const TBPaymentMethod({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -5,8 +5,8 @@ import 'package:thortbal/Constants/tb_textsize.dart';
 import 'package:thortbal/Helpers/Widgets/tb_text.widget.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 
-class SignupNumberphone extends StatelessWidget {
-  const SignupNumberphone({super.key});
+class TBSignupNumberphone extends StatelessWidget {
+  const TBSignupNumberphone({super.key});
 
   @override
   Widget build(BuildContext context) {

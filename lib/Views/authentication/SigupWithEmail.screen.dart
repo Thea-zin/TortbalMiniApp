@@ -10,8 +10,8 @@ import  'package:thortbal/Constants/tb_icon.dart';
 import 'package:thortbal/Helpers/Widgets/tb_textfield.widget.dart';
 import 'package:thortbal/Helpers/Widgets/tb_textfield.widget.dart';
 
-class SignUpEmail extends StatelessWidget {
-  const SignUpEmail({super.key});
+class TBSignUpEmail extends StatelessWidget {
+  const TBSignUpEmail({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -12,8 +12,8 @@ import 'package:thortbal/Helpers/Widgets/tb_textfield.widget.dart';
 import 'package:thortbal/Helpers/Widgets/tb_textfield.widget.dart';
 
 
-class VerifyOTP extends StatelessWidget {
-  const VerifyOTP({super.key});
+class TBVerifyOTP extends StatelessWidget {
+  const TBVerifyOTP({super.key});
 
   @override
   Widget build(BuildContext context) {
