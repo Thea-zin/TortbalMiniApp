@@ -34,8 +34,8 @@ class SignUpEmail extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              margin: EdgeInsets.fromLTRB(20, 20, 20, 10),
-              padding: EdgeInsets.fromLTRB(15, 5, 5, 10),
+              margin: const EdgeInsets.fromLTRB(20, 20, 20, 10),
+              padding: const EdgeInsets.fromLTRB(15, 5, 5, 10),
               width:358 ,
               height: 60,
               decoration: BoxDecoration(
@@ -45,19 +45,17 @@ class SignUpEmail extends StatelessWidget {
               child: Row(
                children: [
                   Expanded(
-                      child: Container(
+                      child: SizedBox(
                         width: 200,
                         child: Row(
                           children: [
-                            Container(
-                              child: Icon(
-                              Icons.email,
-                              color: TBColor.primary,
-                            )
-                            ),
-                            SizedBox(width: 5,),
-                            Container(
-                              child: TBText(
+                            Icon(
+                            Icons.email,
+                            color: TBColor.primary,
+                                                        ),
+                            const SizedBox(width: 5,),
+                            const SizedBox(
+                              child:  TBText(
                                 "Tortbal : ",
                                 textSize:16,
                                 fontWeight: FontWeight.w500,
@@ -67,7 +65,7 @@ class SignUpEmail extends StatelessWidget {
                         ),
                       )
                       ),
-                  Expanded(
+                  const Expanded(
                     flex:2,
                     child: TextField(
                       decoration: InputDecoration(
@@ -82,8 +80,8 @@ class SignUpEmail extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(20, 20, 20, 10),
-              padding: EdgeInsets.fromLTRB(15, 5, 5, 10),
+              margin: const EdgeInsets.fromLTRB(20, 20, 20, 10),
+              padding: const EdgeInsets.fromLTRB(15, 5, 5, 10),
               width:358 ,
               height: 60,
               decoration: BoxDecoration(
@@ -93,18 +91,18 @@ class SignUpEmail extends StatelessWidget {
               child: Row(
                children: [
                   Expanded(
-                      child: Container(
+                      child: SizedBox(
                         width: 200,
                         child: Row(
                           children: [
-                            Container(
+                            SizedBox(
                               child: Icon(
                               Icons.lock,
                               color: TBColor.primary,
                             )
                             ),
-                            SizedBox(width: 5,),
-                            Container(
+                            const SizedBox(width: 5,),
+                            const SizedBox(
                               child: TBText(
                                 "Password:",
                                 textSize:16,
@@ -115,7 +113,7 @@ class SignUpEmail extends StatelessWidget {
                         ),
                       )
                       ),
-                  Expanded(
+                  const Expanded(
                     flex:1,
                     child: TextField(
                       decoration: InputDecoration(
@@ -130,7 +128,7 @@ class SignUpEmail extends StatelessWidget {
               ),
             ),
             Container(
-              margin: EdgeInsets.fromLTRB(0, 100, 0, 0),
+              margin: const EdgeInsets.fromLTRB(0, 100, 0, 0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -150,13 +148,13 @@ class SignUpEmail extends StatelessWidget {
               ),
             ),
              Container(
-                  padding:EdgeInsets.fromLTRB(0, 20, 0, 0),
+                  padding:const EdgeInsets.fromLTRB(0, 20, 0, 0),
                   width: 358,
                   height: 75,
                   child: TBButton(
                     onTap: () {},
                     backgroundColor: TBColor.primary,
-                    child:Row(
+                    child:const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           TBText(

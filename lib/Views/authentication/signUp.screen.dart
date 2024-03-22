@@ -29,14 +29,14 @@ class SignupNumberphone extends StatelessWidget {
       body:Column(
         children: [
            Container(
-            margin: EdgeInsets.all(20),
+            margin:const EdgeInsets.all(20),
               decoration: BoxDecoration(
                 color: TBColor.inputBackground,
-                borderRadius: BorderRadius.all(Radius.circular(12.0)),
+                borderRadius: const BorderRadius.all(Radius.circular(12.0)),
               ),
               child:Container(
-                padding: EdgeInsets.all(2),
-                child: Row(
+                padding: const EdgeInsets.all(2),
+                child: const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 SizedBox(
@@ -44,7 +44,7 @@ class SignupNumberphone extends StatelessWidget {
                                     height: 68,
                                     // Adjust the width according to your requirement
                                     child: IntlPhoneField(
-                                      decoration: const InputDecoration(
+                                      decoration:  InputDecoration(
                                         border: InputBorder.none,
                                         hintText: "12 345 678",
                                         suffix: SizedBox(width: 50), 
@@ -62,7 +62,7 @@ class SignupNumberphone extends StatelessWidget {
             ),
     
           Container(
-            padding: EdgeInsets.fromLTRB(0, 10, 0, 0),
+            padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
             width: 358,
             child: const Text(
                         "Please note that by signing up your user account, you are accepting our Terms of Use and Privacy Policy.",  
@@ -72,7 +72,7 @@ class SignupNumberphone extends StatelessWidget {
           ),
           ),
           Container(
-             padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+             padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
             child: Divider(
               
               color:TBColor.label,
@@ -92,7 +92,7 @@ class SignupNumberphone extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                       
                     ),
-                    icon: Icon(Icons.message),
+                    icon:const Icon(Icons.message),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: TBColor.inputBackground,
                     ),
@@ -102,7 +102,7 @@ class SignupNumberphone extends StatelessWidget {
             ),
           ),
           Container(
-            padding: EdgeInsets.fromLTRB(0, 20, 0, 0),
+            padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
             child: Column(
               children: [
                 Container(
@@ -115,7 +115,7 @@ class SignupNumberphone extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                       
                     ),
-                    icon:Icon(Icons.message),
+                    icon:const Icon(Icons.message),
                      style: ElevatedButton.styleFrom(
                       backgroundColor: TBColor.inputBackground,
                     ),
@@ -125,7 +125,7 @@ class SignupNumberphone extends StatelessWidget {
             ),
           ),
           Container(
-            padding:EdgeInsets.fromLTRB(0, 100, 0, 0),
+            padding:const EdgeInsets.fromLTRB(0, 100, 0, 0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -143,13 +143,13 @@ class SignupNumberphone extends StatelessWidget {
             ),
           ),
           Container(
-                  padding:EdgeInsets.fromLTRB(0, 20, 0, 0),
+                  padding:const EdgeInsets.fromLTRB(0, 20, 0, 0),
                   width: 358,
                   height: 75,
                   child: TBButton(
                     onTap: () {},
                     backgroundColor: TBColor.primary,
-                    child:Row(
+                    child:const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           TBText(
