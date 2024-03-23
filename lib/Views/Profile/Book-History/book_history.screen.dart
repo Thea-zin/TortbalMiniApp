@@ -22,8 +22,9 @@ class _TBBookHistoryScreenState extends State<TBBookHistoryScreen> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: TBColor.background,
+        surfaceTintColor: TBColor.background,
         leadingWidth: 65,
-        toolbarHeight: 100,
+        toolbarHeight: 80,
         leading: Padding(
           padding: const EdgeInsets.only(left: 15, top: 4.0, bottom: 6),
           child: TBBackButton(
@@ -43,8 +44,126 @@ class _TBBookHistoryScreenState extends State<TBBookHistoryScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            /// Filter Container
             _filterContainer(),
-            // _filterContainers(),
+
+            const SizedBox(height: 20),
+
+            /// History Card
+            Expanded(
+              child: ListView.builder(
+                  itemCount: 5,
+                  itemBuilder: (ctx, index) {
+                    return Container(
+                      width: double.infinity - 32,
+                      height: 100,
+                      margin: const EdgeInsets.only(bottom: 20, right: 4),
+                      padding: const EdgeInsets.symmetric(vertical: 10),
+                      decoration: BoxDecoration(
+                        color: Colors.grey[300],
+                        borderRadius: BorderRadius.circular(12),
+                        boxShadow: [
+                          BoxShadow(
+                            color: TBColor.primary.withOpacity(0.5),
+                            offset: const Offset(4, 4),
+                          ),
+                        ],
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          /// Images
+                          Container(
+                            width: 100,
+                            height: 100,
+                            margin: const EdgeInsets.symmetric(horizontal: 10),
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                          ),
+
+                          /// Information
+                          Expanded(
+                            flex: 1,
+                            child: Padding(
+                              padding: const EdgeInsets.symmetric(vertical: 2),
+                              child: Column(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  TBText(
+                                    "Boeung Ket Club",
+                                    fontWeight: FontWeight.bold,
+                                    textSize: TBTextSize.large,
+                                  ),
+
+                                  /// Location Address
+                                  Row(
+                                    children: [
+                                      const Icon(
+                                        Icons.map,
+                                        size: 16,
+                                      ),
+                                      const SizedBox(width: 4),
+                                      TBText(
+                                        "Terk Tla, Sen Sok",
+                                        textSize: TBTextSize.small,
+                                      )
+                                    ],
+                                  ),
+
+                                  /// Price
+                                  Container(
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 4, horizontal: 16),
+                                    decoration: BoxDecoration(
+                                      color: TBColor.primary,
+                                      borderRadius: BorderRadius.circular(16),
+                                    ),
+                                    child: Text.rich(
+                                      TextSpan(
+                                        text: "\$19.99",
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontWeight: FontWeight.w600,
+                                          fontSize: TBTextSize.small,
+                                        ),
+                                        children: [
+                                          TextSpan(
+                                            text: " /Night",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontWeight: FontWeight.w500,
+                                                fontSize:
+                                                    TBTextSize.small - 2 // 8px
+                                                ),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ),
+
+                          /// More Options
+                          IconButton(
+                            onPressed: () {},
+                            padding: const EdgeInsets.all(-5),
+                            icon: const Icon(
+                              Icons.more_vert,
+                              size: 24,
+                            ),
+                          )
+                        ],
+                      ),
+                    );
+                  }),
+            )
           ],
         ),
       ),

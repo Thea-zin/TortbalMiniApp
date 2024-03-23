@@ -2,6 +2,7 @@ class TBIcons {
   static const tbArrowBack = "assets/icons/ic_arrow_back.svg";
   static const tbBell = "assets/icons/ic_bell.svg";
   static const tbBookmark = "assets/icons/ic_bookmark.svg";
+  static const tbBookmarkFill = "assets/icons/ic_bookmark_fill.svg";
   static const tbCalendar = "assets/icons/ic_calendar.svg";
   static const tbCambodia = "assets/icons/ic_cambodia_flat.svg";
   static const tbCard = "assets/icons/ic_card.svg";
