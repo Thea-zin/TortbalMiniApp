@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:flutter_svg/svg.dart';
+import 'package:thortbal/Constants/tb_image.dart';
 import 'package:thortbal/Helpers/Widgets/tb_button.dart';
 import 'package:thortbal/Constants/tb_color.dart';
 import 'package:thortbal/Constants/tb_textsize.dart';
@@ -121,8 +122,11 @@ class TBPaymentMethod extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    SvgPicture.asset(
-                      TBIcons.tbABA,
+                    Image.asset(
+                      TBImages.tbABA,
+                      width: 36,
+                      height: 36,
+                      fit: BoxFit.cover,
                     ),
                     TextButton(
                       style: const ButtonStyle(),
@@ -147,8 +151,11 @@ class TBPaymentMethod extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    SvgPicture.asset(
-                      TBIcons.tbABA,
+                    Image.asset(
+                      TBImages.tbACleda,
+                      width: 36,
+                      height: 36,
+                      fit: BoxFit.cover,
                     ),
                     TextButton(
                       style: const ButtonStyle(),
@@ -173,8 +180,11 @@ class TBPaymentMethod extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    SvgPicture.asset(
-                      TBIcons.tbABA,
+                    Image.asset(
+                      TBImages.tbAMK,
+                      width: 36,
+                      height: 36,
+                      fit: BoxFit.cover,
                     ),
                     TextButton(
                       style: const ButtonStyle(),
@@ -213,7 +223,7 @@ class TBPaymentMethod extends StatelessWidget {
                 Row(
                   children: [
                     SvgPicture.asset(
-                      TBIcons.tbABA,
+                      TBIcons.tbCard,
                       width: 32,
                       height: 32,
                       fit: BoxFit.contain,
@@ -241,8 +251,11 @@ class TBPaymentMethod extends StatelessWidget {
                 ),
                 Row(
                   children: [
-                    SvgPicture.asset(
-                      TBIcons.tbABA,
+                    Image.asset(
+                      TBImages.tbACleda,
+                      width: 36,
+                      height: 36,
+                      fit: BoxFit.cover,
                     ),
                     TextButton(
                       style: const ButtonStyle(),
