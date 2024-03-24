@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:thortbal/Constants/tb_color.dart';
+import 'package:thortbal/Constants/tb_image.dart';
 import 'package:thortbal/Views/FindMatch/find_match.screen.dart';
 
 class SoloOption extends StatelessWidget {
@@ -49,11 +50,12 @@ class SoloOption extends StatelessWidget {
                 ),
                 const SizedBox(height: 16.0),
                 OptionCard(
-                  imageAsset: 'assets/create-team.png',
+                  imageAsset: TBImages.tbCreateTeam,
                   onTap: () {},
                 ),
+                const SizedBox(height: 16.0),
                 OptionCard(
-                  imageAsset: 'assets/join-team.png',
+                  imageAsset: TBImages.tbJoinTeam,
                   onTap: () {},
                 )
               ],

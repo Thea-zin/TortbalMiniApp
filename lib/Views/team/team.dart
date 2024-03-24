@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:thortbal/Constants/tb_image.dart';
 
 class Team extends StatelessWidget {
   const Team({super.key});
@@ -35,7 +36,7 @@ class Team extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: Image.asset(
-                    'assets/team_players.png'), // Replace with your asset image
+                    TBImages.tbTeamPlayers), // Replace with your asset image
               ),
               const Text('Team Information:',
                   style:
