@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:thortbal/Constants/tb_color.dart';
-import 'package:thortbal/Views/Home/home.screen.dart';
 import 'package:thortbal/Views/Home/main.screen.dart';
 
 void main() {
