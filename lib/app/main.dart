@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:thortbal/Constants/tb_color.dart';
-import 'package:thortbal/Views/payment/payment_method.screen.dart';
+import 'package:thortbal/Views/Home/home.screen.dart';
 
 void main() {
   runApp(
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: TBColor.primary),
         useMaterial3: true,
       ),
-      home: const TBPaymentMethod(),
+      home: const TBHomeScreen(),
     );
   }
 }

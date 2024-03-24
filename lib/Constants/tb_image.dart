@@ -1,4 +1,7 @@
 class TBImages {
+  static const tbABA = "assets/images/aba.png";
+  static const tbACleda = "assets/images/acelida.png";
+  static const tbAMK = "assets/images/amk.png";
   static const tbCreateTeam = "assets/images/create-team.png";
   static const tbHome = "assets/images/home.png";
   static const tbJoinTeam = "assets/images/join-team.png";
