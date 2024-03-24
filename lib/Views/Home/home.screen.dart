@@ -1,5 +1,8 @@
-import "package:flutter/material.dart";
+import "package:flutter/material.dart" hide ModalBottomSheetRoute;
+import "package:flutter/services.dart";
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import "package:thortbal/Constants/tb_image.dart";
+import "package:thortbal/Views/FindMatch/find_match.screen.dart";
 
 class TBHomeScreen extends StatefulWidget {
   const TBHomeScreen({super.key});
@@ -9,30 +12,6 @@ class TBHomeScreen extends StatefulWidget {
 }
 
 class _TBHomeScreenState extends State<TBHomeScreen> {
-  @override
-  void initState() {
-    super.initState();
-  }
-
-  var _selectedIndex = 0;
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-
-    switch (_selectedIndex) {
-      case 0:
-        Navigator.pushNamed(context, '/');
-        break;
-      case 1:
-        Navigator.pushNamed(context, '/schedule');
-        break;
-      case 2:
-        Navigator.pushNamed(context, '/profile');
-        break;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,9 +55,7 @@ class _TBHomeScreenState extends State<TBHomeScreen> {
           const SizedBox(height: 30),
           Center(
             child: ElevatedButton(
-              onPressed: () {
-                Navigator.pushNamed(context, '/findmatch');
-              },
+              onPressed: () => _showModalBottomSheet(context: context),
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.blueAccent,
                 foregroundColor: Colors.white,
@@ -96,34 +73,18 @@ class _TBHomeScreenState extends State<TBHomeScreen> {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        unselectedItemColor: Colors.grey,
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.search),
-            label: 'Search',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.notifications_none),
-            label: 'Notifications',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_today),
-            label: 'Schedule',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline),
-            label: 'Profile',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.blueAccent,
-        onTap: _onItemTapped,
-      ),
     );
+  }
+
+  void _showModalBottomSheet({required BuildContext context}) {
+    showCupertinoModalBottomSheet(
+        overlayStyle: SystemUiOverlayStyle.light,
+        barrierColor: Colors.black45,
+        isDismissible: false,
+        enableDrag: false,
+        context: context,
+        builder: (context) {
+          return const TBFindMatchScreen();
+        });
   }
 }

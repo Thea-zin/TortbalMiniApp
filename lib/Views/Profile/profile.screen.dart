@@ -7,7 +7,10 @@ import 'package:thortbal/Constants/tb_icon.dart';
 import 'package:thortbal/Constants/tb_textsize.dart';
 import 'package:thortbal/Helpers/Widgets/tb_button.dart';
 import 'package:thortbal/Helpers/Widgets/tb_text.widget.dart';
-import 'package:thortbal/Views/Profile/Edit-Profile/edit_profile.screen.dart';
+import 'package:thortbal/Views/Profile/Book-History/book_history.screen.dart';
+import 'package:thortbal/Views/Profile/Bookmarks/bookmark.screen.dart';
+import 'package:thortbal/Views/Profile/Refund/refund.screen.dart';
+import 'package:thortbal/Views/Profile/Review/review.screen.dart';
 
 class TBProfileScreen extends StatefulWidget {
   const TBProfileScreen({Key? key}) : super(key: key);
@@ -99,11 +102,12 @@ class _TBProfileScreenState extends State<TBProfileScreen> {
                 width: double.infinity,
                 height: double.infinity,
                 padding: const EdgeInsets.only(left: 15, right: 16, top: 32),
+                margin: const EdgeInsets.only(top: 20),
                 decoration: BoxDecoration(
                   color: TBColor.background,
-                  borderRadius: const BorderRadius.horizontal(
-                    left: Radius.circular(28),
-                    right: Radius.circular(28),
+                  borderRadius: const BorderRadius.vertical(
+                    top: Radius.circular(28),
+                    // right: Radius.circular(28),
                   ),
                 ),
                 child: Column(
@@ -112,18 +116,22 @@ class _TBProfileScreenState extends State<TBProfileScreen> {
                     profileRow(
                       title: "Booking History",
                       assetName: TBIcons.tbRoundHistory,
+                      child: const TBBookHistoryScreen(),
                     ),
                     profileRow(
                       title: "Refund",
                       assetName: TBIcons.tbRefundDollar,
+                      child: const TBRefundScreen(),
                     ),
                     profileRow(
                       title: "Bookmarks",
                       assetName: TBIcons.tbBookmark,
+                      child: const TBBookmarkScreen(),
                     ),
                     profileRow(
                       title: "Your Reviews",
                       assetName: TBIcons.tbRectangleStar,
+                      child: const TBReviewScreen(),
                     ),
                     Padding(
                       padding:
@@ -137,10 +145,12 @@ class _TBProfileScreenState extends State<TBProfileScreen> {
                     profileRow(
                       title: "Change Password",
                       assetName: TBIcons.tbLock,
+                      child: const TBReviewScreen(),
                     ),
                     profileRow(
                       title: "Manager Account",
                       assetName: TBIcons.tbProfile,
+                      child: const TBReviewScreen(),
                     ),
                     // Log-Out Bottom
                     TBButton(
@@ -176,10 +186,11 @@ class _TBProfileScreenState extends State<TBProfileScreen> {
   Widget profileRow({
     required String title,
     required String assetName,
+    required Widget child,
   }) {
     return InkWell(
       onTap: () {
-        showBottomSheet();
+        showBottomSheet(child: child);
       },
       child: Container(
         margin: const EdgeInsets.only(bottom: 24),
@@ -214,7 +225,7 @@ class _TBProfileScreenState extends State<TBProfileScreen> {
     );
   }
 
-  showBottomSheet() {
+  showBottomSheet({required Widget child}) {
     showCupertinoModalBottomSheet(
         overlayStyle: SystemUiOverlayStyle.light,
         barrierColor: Colors.black45,
@@ -222,7 +233,7 @@ class _TBProfileScreenState extends State<TBProfileScreen> {
         enableDrag: false,
         context: context,
         builder: (context) {
-          return const TBEditProfile();
+          return child;
         });
   }
 }

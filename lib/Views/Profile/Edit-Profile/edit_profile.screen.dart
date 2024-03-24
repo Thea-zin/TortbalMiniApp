@@ -15,6 +15,8 @@ class TBEditProfile extends StatefulWidget {
 }
 
 class _TBEditProfileState extends State<TBEditProfile> {
+  final double _padding = 16;
+
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -42,7 +44,7 @@ class _TBEditProfileState extends State<TBEditProfile> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            // Profile Image
+            /// Profile Image
             Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -78,6 +80,7 @@ class _TBEditProfileState extends State<TBEditProfile> {
             ),
             const SizedBox(height: 20),
 
+            /// Form field
             Form(
               child: Padding(
                 padding: const EdgeInsets.all(15.0),
@@ -128,7 +131,21 @@ class _TBEditProfileState extends State<TBEditProfile> {
                   ],
                 ),
               ),
-            )
+            ),
+
+            const SizedBox(height: 30),
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: _padding),
+              child: TBButton(
+                child: TBText(
+                  "Save",
+                  textColor: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  textSize: TBTextSize.large,
+                ),
+                onTap: () {},
+              ),
+            ),
           ],
         ),
       ),

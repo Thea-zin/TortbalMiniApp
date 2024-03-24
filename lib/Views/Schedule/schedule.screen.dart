@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class Schedule extends StatefulWidget {
-  const Schedule({super.key});
+class TBScheduleScreen extends StatefulWidget {
+  const TBScheduleScreen({super.key});
 
   @override
-  State<Schedule> createState() => _ScheduleState();
+  State<TBScheduleScreen> createState() => _TBScheduleScreenState();
 }
 
-class _ScheduleState extends State<Schedule> {
+class _TBScheduleScreenState extends State<TBScheduleScreen> {
   // create datetime variable
   DateTime _selectedDate = DateTime.now();
   TimeOfDay _selectedStartTime = TimeOfDay.now();
@@ -42,7 +42,7 @@ class _ScheduleState extends State<Schedule> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Schedule'),
+          title: const Text('TBScheduleScreen'),
           titleTextStyle: const TextStyle(
               color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
           backgroundColor: const Color(0xFF524EEE),
@@ -237,7 +237,7 @@ class _ScheduleState extends State<Schedule> {
               //         Navigator.push(
               //             context,
               //             MaterialPageRoute(
-              //                 builder: (context) => const Schedule()));
+              //                 builder: (context) => const TBScheduleScreen()));
               //       },
               //       style: ElevatedButton.styleFrom(
               //         backgroundColor: Colors.blue, // Button color

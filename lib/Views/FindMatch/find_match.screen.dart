@@ -1,51 +1,40 @@
 // ignore: file_names
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
+import 'package:flutter/services.dart';
+import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
+
+import 'package:thortbal/Constants/tb_color.dart';
 import 'package:thortbal/Constants/tb_image.dart';
+import 'package:thortbal/Constants/tb_textsize.dart';
+import 'package:thortbal/Helpers/Widgets/tb_button.dart';
+import 'package:thortbal/Helpers/Widgets/tb_text.widget.dart';
 import 'package:thortbal/Views/Solo/solo_option.screen.dart';
 import 'package:thortbal/Views/team/team.dart';
 
-
-class FindMatch extends StatelessWidget {
-  const FindMatch({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Find Match',
-      routes: {
-        '/solo_option': (context) => const SoloOption(),
-        '/team': (context) => const Team(),
-      },
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Find Match'),
-          centerTitle: true,
-          backgroundColor: const Color(0xFF524EEE),
-          titleTextStyle: const TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
-          leading: IconButton(
-            icon: const Icon(
-              Icons.arrow_back_ios,
-              color: Colors.white,
-            ),
-            onPressed: () => Navigator.pop(context),
-          ),
-        ),
-        body: const FindMatchScreen(),
-      ),
-    );
-  }
-}
-
-class FindMatchScreen extends StatelessWidget {
-  const FindMatchScreen({Key? key}) : super(key: key);
+class TBFindMatchScreen extends StatelessWidget {
+  const TBFindMatchScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: TBColor.background,
+        leadingWidth: 65,
+        toolbarHeight: 100,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 15, top: 4.0, bottom: 6),
+          child: TBBackButton(
+            onTap: () => Navigator.pop(context),
+          ),
+        ),
+        title: TBText(
+          "Find Match",
+          textSize: TBTextSize.xlarge,
+          fontWeight: FontWeight.bold,
+          textColor: TBColor.primary,
+        ),
+      ),
       body: Center(
           child: SingleChildScrollView(
         child: Container(
@@ -53,32 +42,30 @@ class FindMatchScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              const Align(
+              Align(
                 alignment: Alignment.center,
-                child: Text(
-                  'Choose Your Preferences',
-                  style: TextStyle(
-                    color: Colors.black45,
-                    fontSize: 14,
-                    fontWeight: FontWeight.bold,
-                  ),
+                child: TBText(
+                  'Choose your type',
+                  textColor: Colors.black45,
+                  textSize: TBTextSize.large,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
               const SizedBox(height: 16),
               OptionCard(
                 imageAsset: TBImages.tbSoloPlayer,
-                onTap: () {
-                  Navigator.pushNamed(context, '/solo_option');
-                },
-                label: '',
+                onTap: () => _showBottomSheet(
+                  context: context,
+                  child: const SoloOption(),
+                ),
               ),
               const SizedBox(height: 16),
               OptionCard(
                 imageAsset: TBImages.tbTeamPlayers,
-                label: '',
-                onTap: () {
-                  Navigator.pushNamed(context, '/team');
-                },
+                onTap: () => _showBottomSheet(
+                  context: context,
+                  child: const Team(),
+                ),
               ),
             ],
           ),
@@ -86,32 +73,43 @@ class FindMatchScreen extends StatelessWidget {
       )),
     );
   }
+
+  _showBottomSheet({required BuildContext context, required Widget child}) {
+    showCupertinoModalBottomSheet(
+        overlayStyle: SystemUiOverlayStyle.light,
+        barrierColor: Colors.black45,
+        isDismissible: false,
+        enableDrag: false,
+        context: context,
+        builder: (context) {
+          return child;
+        });
+  }
 }
 
 class OptionCard extends StatelessWidget {
   final String imageAsset;
-  final String label;
+
   final VoidCallback onTap;
 
   const OptionCard({
     Key? key,
     required this.imageAsset,
-    required this.label,
     required this.onTap,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: InkWell(
-        onTap: onTap,
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Image.asset(imageAsset),
-            Text(label),
-          ],
+    return InkWell(
+      onTap: onTap,
+      splashColor: TBColor.secondary,
+      child: Container(
+        width: 250,
+        height: 240,
+        decoration: const BoxDecoration(
+          color: Colors.white,
         ),
+        child: Image.asset(imageAsset),
       ),
     );
   }
