@@ -1,5 +1,6 @@
 class TBIcons {
   static const tbArrowBack = "assets/icons/ic_arrow_back.svg";
+  static const tbBall = "assets/icons/ic_ball.svg";
   static const tbBell = "assets/icons/ic_bell.svg";
   static const tbBookmark = "assets/icons/ic_bookmark.svg";
   static const tbBookmarkFill = "assets/icons/ic_bookmark_fill.svg";

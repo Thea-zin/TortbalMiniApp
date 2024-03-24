@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:thortbal/Constants/tb_color.dart';
 import 'package:thortbal/Views/Home/home.screen.dart';
+import 'package:thortbal/Views/Home/main.screen.dart';
 
 void main() {
   runApp(
@@ -15,14 +16,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'TortBall App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: "Inter",
         colorScheme: ColorScheme.fromSeed(seedColor: TBColor.primary),
         useMaterial3: true,
       ),
-      home: const TBHomeScreen(),
+      home: const TBMainScreen(),
     );
   }
 }
