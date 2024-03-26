@@ -7,8 +7,8 @@ import 'package:thortbal/Helpers/Widgets/tb_text.widget.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:thortbal/Constants/tb_icon.dart';
 
-class TBLogin extends StatelessWidget {
-  const TBLogin({super.key});
+class TBLoginScreen extends StatelessWidget {
+  const TBLoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -170,11 +170,14 @@ class TBLogin extends StatelessWidget {
                       textSize: 14,
                       fontWeight: FontWeight.w700,
                     ),
-                    TBText(
-                      "Sign Up ",
-                      textColor: TBColor.primary,
-                      textSize: 14,
-                      fontWeight: FontWeight.w700,
+                    InkWell(
+                      onTap: () => Navigator.pop(context),
+                      child: TBText(
+                        "Sign Up ",
+                        textColor: TBColor.primary,
+                        textSize: 14,
+                        fontWeight: FontWeight.w700,
+                      ),
                     ),
                   ],
                 ),
@@ -184,7 +187,8 @@ class TBLogin extends StatelessWidget {
                   width: 358,
                   height: 75,
                   child: TBButton(
-                    onTap: () {},
+                    onTap: () =>
+                        Navigator.pushReplacementNamed(context, "/main"),
                     backgroundColor: TBColor.primary,
                     child: const Row(
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -295,11 +299,14 @@ class TBLogin extends StatelessWidget {
                             "Already Having Account ?",
                             textSize: 14,
                           ),
-                          TBText(
-                            "Sign Up",
-                            textSize: 14,
-                            textColor: TBColor.primary,
-                            fontWeight: FontWeight.bold,
+                          InkWell(
+                            onTap: () => Navigator.pop(context),
+                            child: TBText(
+                              "Sign Up",
+                              textSize: 14,
+                              textColor: TBColor.primary,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ],
                       ),
@@ -309,7 +316,8 @@ class TBLogin extends StatelessWidget {
                         width: 358,
                         height: 75,
                         child: TBButton(
-                          onTap: () {},
+                          onTap: () =>
+                              Navigator.pushReplacementNamed(context, "/main"),
                           backgroundColor: TBColor.primary,
                           child: const Row(
                             mainAxisAlignment: MainAxisAlignment.center,

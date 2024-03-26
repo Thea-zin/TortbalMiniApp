@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:thortbal/Constants/tb_color.dart';
+import 'package:thortbal/Constants/tb_textsize.dart';
+import 'package:thortbal/Helpers/Widgets/tb_button.dart';
+import 'package:thortbal/Helpers/Widgets/tb_text.widget.dart';
 
 class Team extends StatelessWidget {
   const Team({super.key});
@@ -7,20 +11,22 @@ class Team extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Find Match'),
-        centerTitle: true,
-        backgroundColor: const Color(0xFF524EEE),
-        titleTextStyle: const TextStyle(
-          color: Colors.white,
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-        ),
-        leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back_ios,
-            color: Colors.white,
+        automaticallyImplyLeading: false,
+        backgroundColor: TBColor.background,
+        surfaceTintColor: TBColor.background,
+        leadingWidth: 65,
+        toolbarHeight: 80,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 15, top: 4.0, bottom: 6),
+          child: TBBackButton(
+            onTap: () => Navigator.pop(context),
           ),
-          onPressed: () => Navigator.pop(context),
+        ),
+        title: TBText(
+          "Find Match",
+          textSize: TBTextSize.xlarge,
+          fontWeight: FontWeight.bold,
+          textColor: TBColor.primary,
         ),
       ),
       body: SingleChildScrollView(
@@ -35,7 +41,7 @@ class Team extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8.0),
                 ),
                 child: Image.asset(
-                    'assets/team_players.png'), // Replace with your asset image
+                    'assets/images/team_players.png'), // Replace with your asset image
               ),
               const Text('Team Information:',
                   style:

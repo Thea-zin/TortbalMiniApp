@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:thortbal/Constants/tb_color.dart';
+import 'package:thortbal/Constants/tb_textsize.dart';
+import 'package:thortbal/Helpers/Widgets/tb_button.dart';
+import 'package:thortbal/Helpers/Widgets/tb_text.widget.dart';
 import 'package:thortbal/Views/FindMatch/find_match.screen.dart';
 
 class SoloOption extends StatelessWidget {
@@ -9,23 +12,22 @@ class SoloOption extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('SOLO'),
-        centerTitle: true,
-        backgroundColor: TBColor.primary,
-        titleTextStyle: const TextStyle(
-          color: Colors.white,
-          fontSize: 20,
-          fontWeight: FontWeight.bold,
-        ),
-        elevation: 0,
-        leading: IconButton(
-          icon: const Icon(
-            Icons.arrow_back_ios,
-            color: Colors.white,
+        automaticallyImplyLeading: false,
+        backgroundColor: TBColor.background,
+        surfaceTintColor: TBColor.background,
+        leadingWidth: 65,
+        toolbarHeight: 80,
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 15, top: 4.0, bottom: 6),
+          child: TBBackButton(
+            onTap: () => Navigator.pop(context),
           ),
-          onPressed: () {
-            Navigator.pop(context);
-          },
+        ),
+        title: TBText(
+          "Find Match",
+          textSize: TBTextSize.xlarge,
+          fontWeight: FontWeight.bold,
+          textColor: TBColor.primary,
         ),
       ),
       body: Center(
@@ -49,11 +51,12 @@ class SoloOption extends StatelessWidget {
                 ),
                 const SizedBox(height: 16.0),
                 OptionCard(
-                  imageAsset: 'assets/create-team.png',
+                  imageAsset: 'assets/images/create-team.png',
                   onTap: () {},
                 ),
+                const SizedBox(height: 16.0),
                 OptionCard(
-                  imageAsset: 'assets/join-team.png',
+                  imageAsset: 'assets/images/join-team.png',
                   onTap: () {},
                 )
               ],

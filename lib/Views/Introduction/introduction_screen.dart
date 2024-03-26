@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:thortbal/Constants/tb_image.dart';
 import 'package:thortbal/Constants/tb_textsize.dart';
+import 'package:thortbal/Helpers/Widgets/utils/tb_global_funs.dart';
+import 'package:thortbal/Views/authentication/signUp.screen.dart';
 
 class TBIntroductionScreen extends StatefulWidget {
   const TBIntroductionScreen({Key? key}) : super(key: key);
@@ -124,13 +126,14 @@ class _TBIntroductionScreenState extends State<TBIntroductionScreen> {
               height: 10,
             ),
             Text(
-                'Our system will record each team  match results after the match that allow you to track your team performance and compete with other teams.',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontWeight: FontWeight.w400,
-                  fontSize:
-                      TBTextSize.medium, // Using large from TBTextSize class
-                ))
+              'Our system will record each team  match results after the match that allow you to track your team performance and compete with other teams.',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontWeight: FontWeight.w400,
+                fontSize:
+                    TBTextSize.medium, // Using large from TBTextSize class
+              ),
+            )
           ],
         ),
       )
@@ -152,7 +155,9 @@ class _TBIntroductionScreenState extends State<TBIntroductionScreen> {
         'Skip',
         style: TextStyle(fontWeight: FontWeight.w600),
       ),
-      onDone: () {},
+      onDone: () {
+        showTBBottomSheet(context: context, child: const TBSignupNumberphone());
+      },
     );
   }
 }

@@ -4,6 +4,8 @@ import 'package:thortbal/Constants/tb_color.dart';
 import 'package:thortbal/Constants/tb_textsize.dart';
 import 'package:thortbal/Helpers/Widgets/tb_text.widget.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:thortbal/Helpers/Widgets/utils/tb_global_funs.dart';
+import 'package:thortbal/Views/authentication/login.screen.dart';
 
 class TBSignupNumberphone extends StatelessWidget {
   const TBSignupNumberphone({super.key});
@@ -25,56 +27,49 @@ class TBSignupNumberphone extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ),
       ),
-      body:Column(
+      body: Column(
         children: [
-           Container(
-            margin:const EdgeInsets.all(20),
-              decoration: BoxDecoration(
-                color: TBColor.inputBackground,
-                borderRadius: const BorderRadius.all(Radius.circular(12.0)),
-              ),
-              child:Container(
-                padding: const EdgeInsets.all(2),
-                child: const Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                SizedBox(
-                                    width:300.0 ,
-                                    height: 68,
-                                    // Adjust the width according to your requirement
-                                    child: IntlPhoneField(
-                                      decoration:  InputDecoration(
-                                        border: InputBorder.none,
-                                        hintText: "12 345 678",
-                                        suffix: SizedBox(width: 50), 
-                                      ),
-                                  
-                            
-                                    ),
-                                  ),
-                             
-                              ],
-                            ),
-              ),
-              
-            
+          Container(
+            margin: const EdgeInsets.all(20),
+            decoration: BoxDecoration(
+              color: TBColor.inputBackground,
+              borderRadius: const BorderRadius.all(Radius.circular(12.0)),
             ),
-    
+            child: Container(
+              padding: const EdgeInsets.all(2),
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    width: 300.0,
+                    height: 68,
+                    // Adjust the width according to your requirement
+                    child: IntlPhoneField(
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        hintText: "12 345 678",
+                        suffix: SizedBox(width: 50),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
           Container(
             padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
             width: 358,
             child: const Text(
-                        "Please note that by signing up your user account, you are accepting our Terms of Use and Privacy Policy.",  
-                        style: TextStyle(
-                          fontSize:12,
-                        ),           
-          ),
+              "Please note that by signing up your user account, you are accepting our Terms of Use and Privacy Policy.",
+              style: TextStyle(
+                fontSize: 12,
+              ),
+            ),
           ),
           Container(
-             padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
+            padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
             child: Divider(
-              
-              color:TBColor.label,
+              color: TBColor.label,
               thickness: 1,
             ),
           ),
@@ -85,13 +80,12 @@ class TBSignupNumberphone extends StatelessWidget {
                   width: 358,
                   height: 48,
                   child: ElevatedButton.icon(
-                    onPressed: (){},
+                    onPressed: () {},
                     label: const TBText(
                       "Continue with facebook",
                       fontWeight: FontWeight.w600,
-                      
                     ),
-                    icon:const Icon(Icons.message),
+                    icon: const Icon(Icons.message),
                     style: ElevatedButton.styleFrom(
                       backgroundColor: TBColor.inputBackground,
                     ),
@@ -108,14 +102,13 @@ class TBSignupNumberphone extends StatelessWidget {
                   width: 358,
                   height: 48,
                   child: ElevatedButton.icon(
-                    onPressed: (){},
+                    onPressed: () {},
                     label: const TBText(
                       "Continue with facebook",
                       fontWeight: FontWeight.w600,
-                      
                     ),
-                    icon:const Icon(Icons.message),
-                     style: ElevatedButton.styleFrom(
+                    icon: const Icon(Icons.message),
+                    style: ElevatedButton.styleFrom(
                       backgroundColor: TBColor.inputBackground,
                     ),
                   ),
@@ -124,42 +117,48 @@ class TBSignupNumberphone extends StatelessWidget {
             ),
           ),
           Container(
-            padding:const EdgeInsets.fromLTRB(0, 100, 0, 0),
+            padding: const EdgeInsets.fromLTRB(0, 100, 0, 0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  const TBText(
-                    "Already Having Account ?",
-                    textSize:14,
+              children: [
+                const TBText(
+                  "Already Having Account ?",
+                  textSize: 14,
+                ),
+                InkWell(
+                  onTap: () => showTBBottomSheet(
+                    context: context,
+                    child: const TBLoginScreen(),
                   ),
-                  TBText(
+                  child: TBText(
                     "Login",
-                    textSize:14,
+                    textSize: 14,
                     textColor: TBColor.primary,
                     fontWeight: FontWeight.bold,
                   ),
-                ],
+                ),
+              ],
             ),
           ),
           Container(
-                  padding:const EdgeInsets.fromLTRB(0, 20, 0, 0),
-                  width: 358,
-                  height: 75,
-                  child: TBButton(
-                    onTap: () {},
-                    backgroundColor: TBColor.primary,
-                    child:const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          TBText(
-                            "Sign Up",
-                            fontWeight: FontWeight.w600,
-                            textSize: 16,
-                            textColor: Colors.white,
-                          )
-                        ],
-                    ) ,)
-                )
+              padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+              width: 358,
+              height: 75,
+              child: TBButton(
+                onTap: () => Navigator.popAndPushNamed(context, "/main"),
+                backgroundColor: TBColor.primary,
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    TBText(
+                      "Sign Up",
+                      fontWeight: FontWeight.w600,
+                      textSize: 16,
+                      textColor: Colors.white,
+                    )
+                  ],
+                ),
+              ))
         ],
       ),
     );

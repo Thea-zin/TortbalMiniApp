@@ -1,12 +1,11 @@
-import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
-import 'package:flutter/services.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 import 'package:thortbal/Constants/tb_color.dart';
 import 'package:thortbal/Constants/tb_icon.dart';
 import 'package:thortbal/Constants/tb_textsize.dart';
 import 'package:thortbal/Helpers/Widgets/tb_button.dart';
 import 'package:thortbal/Helpers/Widgets/tb_text.widget.dart';
+import 'package:thortbal/Helpers/Widgets/utils/tb_global_funs.dart';
 import 'package:thortbal/Views/Profile/Book-History/book_history.screen.dart';
 import 'package:thortbal/Views/Profile/Bookmarks/bookmark.screen.dart';
 import 'package:thortbal/Views/Profile/Refund/refund.screen.dart';
@@ -190,7 +189,7 @@ class _TBProfileScreenState extends State<TBProfileScreen> {
   }) {
     return InkWell(
       onTap: () {
-        showBottomSheet(child: child);
+        _showBottomSheet(child: child);
       },
       child: Container(
         margin: const EdgeInsets.only(bottom: 24),
@@ -203,6 +202,7 @@ class _TBProfileScreenState extends State<TBProfileScreen> {
             SvgPicture.asset(
               assetName,
               height: 24,
+              // ignore: deprecated_member_use
               color: TBColor.label,
               fit: BoxFit.fill,
             ),
@@ -225,15 +225,7 @@ class _TBProfileScreenState extends State<TBProfileScreen> {
     );
   }
 
-  showBottomSheet({required Widget child}) {
-    showCupertinoModalBottomSheet(
-        overlayStyle: SystemUiOverlayStyle.light,
-        barrierColor: Colors.black45,
-        isDismissible: false,
-        enableDrag: false,
-        context: context,
-        builder: (context) {
-          return child;
-        });
+  _showBottomSheet({required Widget child}) {
+    showTBBottomSheet(context: context, child: child);
   }
 }
