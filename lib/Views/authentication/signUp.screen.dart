@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
+import 'package:flutter_svg/svg.dart';
+import 'package:thortbal/Constants/tb_icon.dart';
 import 'package:thortbal/Helpers/Widgets/tb_button.dart';
 import 'package:thortbal/Constants/tb_color.dart';
 import 'package:thortbal/Constants/tb_textsize.dart';
@@ -13,7 +15,13 @@ class TBSignupNumberphone extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
+        automaticallyImplyLeading: false,
+        backgroundColor: TBColor.background,
+        surfaceTintColor: TBColor.background,
+        leadingWidth: 65,
+        toolbarHeight: 80,
         leading: Padding(
           padding: const EdgeInsets.only(left: 15, top: 4.0, bottom: 6),
           child: TBBackButton(
@@ -22,9 +30,9 @@ class TBSignupNumberphone extends StatelessWidget {
         ),
         title: TBText(
           "Sign Up",
-          textColor: TBColor.primary,
           textSize: TBTextSize.xlarge,
           fontWeight: FontWeight.bold,
+          textColor: TBColor.primary,
         ),
       ),
       body: Column(
@@ -56,74 +64,41 @@ class TBSignupNumberphone extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-            width: 358,
-            child: const Text(
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: TBText(
               "Please note that by signing up your user account, you are accepting our Terms of Use and Privacy Policy.",
-              style: TextStyle(
-                fontSize: 12,
-              ),
+              maxLines: 2,
+              textSize: TBTextSize.medium,
+              textAlign: TextAlign.left,
+              fontWeight: FontWeight.w500,
             ),
           ),
           Container(
-            padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
-            child: Divider(
-              color: TBColor.label,
-              thickness: 1,
-            ),
+            margin: const EdgeInsets.all(16),
+            child: const Divider(),
           ),
-          Container(
-            child: Column(
-              children: [
-                Container(
-                  width: 358,
-                  height: 48,
-                  child: ElevatedButton.icon(
-                    onPressed: () {},
-                    label: const TBText(
-                      "Continue with facebook",
-                      fontWeight: FontWeight.w600,
-                    ),
-                    icon: const Icon(Icons.message),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: TBColor.inputBackground,
-                    ),
-                  ),
-                )
-              ],
-            ),
+          _signUpWithButton(
+            imagePath: TBIcons.tbFacebook,
+            title: "Continue with Facebook",
+            onTap: () {},
           ),
-          Container(
-            padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-            child: Column(
-              children: [
-                Container(
-                  width: 358,
-                  height: 48,
-                  child: ElevatedButton.icon(
-                    onPressed: () {},
-                    label: const TBText(
-                      "Continue with facebook",
-                      fontWeight: FontWeight.w600,
-                    ),
-                    icon: const Icon(Icons.message),
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: TBColor.inputBackground,
-                    ),
-                  ),
-                )
-              ],
-            ),
+          const SizedBox(height: 20),
+          _signUpWithButton(
+            imagePath: TBIcons.tbGoogle,
+            title: "Continue with Google",
+            onTap: () {},
           ),
+          Spacer(),
           Container(
             padding: const EdgeInsets.fromLTRB(0, 100, 0, 0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const TBText(
-                  "Already Having Account ?",
+                  "Already Having Account? ",
                   textSize: 14,
+                  fontWeight: FontWeight.w500,
                 ),
                 InkWell(
                   onTap: () => showTBBottomSheet(
@@ -140,26 +115,62 @@ class TBSignupNumberphone extends StatelessWidget {
               ],
             ),
           ),
-          Container(
-              padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-              width: 358,
-              height: 75,
-              child: TBButton(
-                onTap: () => Navigator.popAndPushNamed(context, "/main"),
-                backgroundColor: TBColor.primary,
-                child: const Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    TBText(
-                      "Sign Up",
-                      fontWeight: FontWeight.w600,
-                      textSize: 16,
-                      textColor: Colors.white,
-                    )
-                  ],
-                ),
-              ))
+          Padding(
+            padding: EdgeInsets.only(
+              left: 16,
+              right: 16,
+              bottom: MediaQuery.of(context).padding.bottom + 10,
+              top: 16,
+            ),
+            child: TBButton(
+              onTap: () => Navigator.popAndPushNamed(context, "/main"),
+              backgroundColor: TBColor.primary,
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TBText(
+                    "Sign Up",
+                    fontWeight: FontWeight.w600,
+                    textSize: 16,
+                    textColor: Colors.white,
+                  )
+                ],
+              ),
+            ),
+          ),
         ],
+      ),
+    );
+  }
+
+  Widget _signUpWithButton({
+    required String imagePath,
+    required String title,
+    required void Function() onTap,
+  }) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: double.infinity,
+        height: 48,
+        margin: const EdgeInsets.symmetric(horizontal: 16),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          color: Colors.grey[100],
+          border: Border.all(width: 1, color: TBColor.label),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SvgPicture.asset(imagePath),
+            const SizedBox(width: 20),
+            TBText(
+              title,
+              textSize: TBTextSize.medium + 2, // 14
+              fontWeight: FontWeight.w500,
+            )
+          ],
+        ),
       ),
     );
   }

@@ -15,7 +15,13 @@ class TBLoginScreen extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         appBar: AppBar(
+          automaticallyImplyLeading: false,
+          backgroundColor: TBColor.background,
+          surfaceTintColor: TBColor.background,
+          leadingWidth: 65,
+          toolbarHeight: 80,
           leading: Padding(
             padding: const EdgeInsets.only(left: 15, top: 4.0, bottom: 6),
             child: TBBackButton(
@@ -23,10 +29,10 @@ class TBLoginScreen extends StatelessWidget {
             ),
           ),
           title: TBText(
-            "Log in",
-            textColor: TBColor.primary,
+            "Log In",
             textSize: TBTextSize.xlarge,
             fontWeight: FontWeight.bold,
+            textColor: TBColor.primary,
           ),
           bottom: const TabBar(
             tabs: [
@@ -143,6 +149,10 @@ class TBLoginScreen extends StatelessWidget {
               //     ),
               //   ),
               // ),
+
+              //                  2014    2019
+              // Swift -> UIKit && Swiftui
+              // Objective-C -> Appkit
 
               ///Testfild test
               // TBTextFeild(

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:thortbal/Constants/tb_color.dart';
 import 'package:thortbal/Views/Home/main.screen.dart';
-import 'package:thortbal/Views/Introduction/introduction_screen.dart';
 
 void main() {
   runApp(
@@ -23,7 +22,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: TBColor.primary),
         useMaterial3: true,
       ),
-      home: const TBIntroductionScreen(),
+      home: const TBMainScreen(),
       routes: {
         "/main": (ctx) => const TBMainScreen(),
       },
