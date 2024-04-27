@@ -6,8 +6,8 @@ import 'package:thortbal/Helpers/Widgets/tb_button.dart';
 import 'package:thortbal/Helpers/Widgets/tb_text.widget.dart';
 import 'package:thortbal/Helpers/Widgets/tb_textfield.widget.dart';
 
-class Team extends StatelessWidget {
-  const Team({super.key});
+class TBSolo_Screen extends StatelessWidget {
+  const  TBSolo_Screen ({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -72,31 +72,13 @@ class Team extends StatelessWidget {
                     height: 10,
                   ),
                   TBTextFeild(
-                    hinText: "Amount Of player",
+                    hinText: "Role",
                     suffix: const Icon(Icons.keyboard_arrow_down_sharp,),
                   ),
                   const SizedBox(
                     height: 15,
                   ),
-                  const TBText("Matching",
-                    fontWeight: FontWeight.bold,),
-
-                  const SizedBox(
-                    height: 10,
-                  ),
-                  /// Matching 
-                  TBTextFeild(
-                    hinText: "Type Pitch",
-                    suffix: const Icon(Icons.keyboard_arrow_down_sharp,),
-                  ),
-                  const SizedBox(
-                    height: 10,
-                  ),
-
-                  TBTextFeild(
-                    hinText: "Team level",
-                    suffix: const Icon(Icons.keyboard_arrow_down_sharp,),
-                  ),
+                  
                 const SizedBox(
                     height: 10,
                   ),
