@@ -5,6 +5,8 @@ import 'package:thortbal/Constants/tb_icon.dart';
 import 'package:thortbal/Constants/tb_textsize.dart';
 import 'package:thortbal/Helpers/Widgets/tb_button.dart';
 import 'package:thortbal/Helpers/Widgets/tb_text.widget.dart';
+import 'package:thortbal/Helpers/Widgets/utils/tb_global_funs.dart';
+import 'package:thortbal/Views/Profile/Refund/request_refund.screen.dart';
 
 class TBRefundScreen extends StatelessWidget {
   const TBRefundScreen({super.key});
@@ -40,7 +42,12 @@ class TBRefundScreen extends StatelessWidget {
           children: [
             /// Request Refund Button
             TBButton(
-              onTap: () {},
+              onTap: () {
+                showTBBottomSheet(
+                  context: context,
+                  child: TBRequestRefundScreen(),
+                );
+              },
               child: TBText(
                 "Request Refund",
                 fontWeight: FontWeight.bold,

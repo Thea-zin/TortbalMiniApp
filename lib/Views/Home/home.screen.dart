@@ -85,7 +85,7 @@ class _TBHomeScreenState extends State<TBHomeScreen> {
                         const SizedBox(width: 2),
                         Transform.rotate(
                           angle: -pi / 2,
-                          child: Icon(
+                          child: const Icon(
                             Icons.arrow_back_ios_new_rounded,
                             size: 16,
                           ),
@@ -199,7 +199,7 @@ class _TBHomeScreenState extends State<TBHomeScreen> {
       ),
       actions: [
         GestureDetector(
-          onTap: () {},
+          onTap: () => Navigator.of(context).pushNamed("/search"),
           child: CircleAvatar(
             backgroundColor: TBColor.inputBackground,
             child: SvgPicture.asset(
@@ -211,7 +211,7 @@ class _TBHomeScreenState extends State<TBHomeScreen> {
           ),
         ),
         GestureDetector(
-          onTap: () {},
+          onTap: () => Navigator.of(context).pushNamed("/notification"),
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: CircleAvatar(

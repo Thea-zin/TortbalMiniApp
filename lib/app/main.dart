@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:thortbal/Constants/tb_color.dart';
 import 'package:thortbal/Views/Home/main.screen.dart';
 import 'package:thortbal/Views/Introduction/introduction_screen.dart';
+import 'package:thortbal/Views/Notification/notification.screen.dart';
+import 'package:thortbal/Views/Search/search.screen.dart';
 
 void main() {
   runApp(
@@ -26,6 +28,8 @@ class MyApp extends StatelessWidget {
       home: const TBIntroductionScreen(),
       routes: {
         "/main": (ctx) => const TBMainScreen(),
+        "/search": (ctx) => const TBSearchScreen(),
+        "/notification": (ctx) => const TBNotificationScreen(),
       },
     );
   }
