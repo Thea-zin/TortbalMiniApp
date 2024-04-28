@@ -10,7 +10,11 @@ import 'package:thortbal/Views/Profile/Book-History/book_history.screen.dart';
 import 'package:thortbal/Views/Profile/Bookmarks/bookmark.screen.dart';
 import 'package:thortbal/Views/Profile/Refund/refund.screen.dart';
 import 'package:thortbal/Views/Profile/Review/review.screen.dart';
+
+import 'package:thortbal/Views/authentication/changePassword.screen.dart';
+
 import 'package:thortbal/Views/authentication/login.screen.dart';
+
 
 class TBProfileScreen extends StatefulWidget {
   const TBProfileScreen({Key? key}) : super(key: key);
@@ -145,7 +149,7 @@ class _TBProfileScreenState extends State<TBProfileScreen> {
                     profileRow(
                       title: "Change Password",
                       assetName: TBIcons.tbLock,
-                      child: const TBReviewScreen(),
+                      child: const TBChangePassword(),
                     ),
                     profileRow(
                       title: "Manager Account",
