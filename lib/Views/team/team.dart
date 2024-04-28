@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:thortbal/Constants/tb_color.dart';
 import 'package:thortbal/Constants/tb_icon.dart';
 import 'package:thortbal/Constants/tb_textsize.dart';
@@ -32,12 +33,14 @@ class Team extends StatelessWidget {
         ),
       ),
       body: SingleChildScrollView(
+
         child: Column(
           children: <Widget>[
             Container(
               width: 163,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(8.0),
+
               ),
               child: Image.asset(
                   'assets/images/team_players.png'), // Replace with your asset image

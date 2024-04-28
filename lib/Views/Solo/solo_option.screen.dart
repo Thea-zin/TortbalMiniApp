@@ -3,6 +3,7 @@ import 'package:thortbal/Constants/tb_color.dart';
 import 'package:thortbal/Constants/tb_textsize.dart';
 import 'package:thortbal/Helpers/Widgets/tb_button.dart';
 import 'package:thortbal/Helpers/Widgets/tb_text.widget.dart';
+import 'package:thortbal/Constants/tb_image.dart';
 import 'package:thortbal/Views/FindMatch/find_match.screen.dart';
 
 class SoloOption extends StatelessWidget {
@@ -51,12 +52,16 @@ class SoloOption extends StatelessWidget {
                 ),
                 const SizedBox(height: 16.0),
                 OptionCard(
+
                   imageAsset: 'assets/images/create-team.png',
+
                   onTap: () {},
                 ),
                 const SizedBox(height: 16.0),
                 OptionCard(
+
                   imageAsset: 'assets/images/join-team.png',
+
                   onTap: () {},
                 )
               ],
