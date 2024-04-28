@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:thortbal/Constants/tb_color.dart';
 import 'package:thortbal/Constants/tb_icon.dart';
-import 'package:thortbal/Constants/tb_image.dart';
 import 'package:thortbal/Constants/tb_textsize.dart';
 import 'package:thortbal/Helpers/Widgets/tb_button.dart';
 import 'package:thortbal/Helpers/Widgets/tb_text.widget.dart';
