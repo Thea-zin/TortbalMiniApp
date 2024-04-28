@@ -5,6 +5,8 @@ class TBIcons {
   static const tbBookmark = "assets/icons/ic_bookmark.svg";
   static const tbBookmarkFill = "assets/icons/ic_bookmark_fill.svg";
   static const tbCalendar = "assets/icons/ic_calendar.svg";
+  static const tbCalendarCancel = "assets/icons/ic_calendar_cancel.svg";
+  static const tbCalendarStar = "assets/icons/ic_calendar_star.svg";
   static const tbCambodia = "assets/icons/ic_cambodia_flat.svg";
   static const tbCard = "assets/icons/ic_card.svg";
   static const tbClock = "assets/icons/ic_clock.svg";

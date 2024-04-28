@@ -4,14 +4,30 @@ import 'package:thortbal/Helpers/Widgets/tb_button.dart';
 import 'package:thortbal/Constants/tb_color.dart';
 import 'package:thortbal/Constants/tb_textsize.dart';
 import 'package:thortbal/Helpers/Widgets/tb_text.widget.dart';
-import 'package:intl_phone_field/intl_phone_field.dart';
 import 'package:thortbal/Constants/tb_icon.dart';
+import 'package:thortbal/Helpers/Widgets/tb_textfield.widget.dart';
+import 'package:thortbal/Helpers/Widgets/utils/tb_global_funs.dart';
+import 'package:thortbal/Views/authentication/signUp.screen.dart';
 
-class TBLoginScreen extends StatelessWidget {
-  const TBLoginScreen({super.key});
+class TBLoginScreen extends StatefulWidget {
+  const TBLoginScreen({this.isFromLogout = false, super.key});
+  final bool isFromLogout;
+
+  @override
+  State<TBLoginScreen> createState() => _TBLoginScreenState();
+}
+
+class _TBLoginScreenState extends State<TBLoginScreen> {
+  var _isObscureText = false;
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -22,12 +38,14 @@ class TBLoginScreen extends StatelessWidget {
           surfaceTintColor: TBColor.background,
           leadingWidth: 65,
           toolbarHeight: 80,
-          leading: Padding(
-            padding: const EdgeInsets.only(left: 15, top: 4.0, bottom: 6),
-            child: TBBackButton(
-              onTap: () => Navigator.pop(context),
-            ),
-          ),
+          leading: !widget.isFromLogout
+              ? Padding(
+                  padding: const EdgeInsets.only(left: 15, top: 4.0, bottom: 6),
+                  child: TBBackButton(
+                    onTap: () => Navigator.pop(context),
+                  ),
+                )
+              : null,
           title: TBText(
             "Log In",
             textSize: TBTextSize.xlarge,
@@ -43,262 +61,269 @@ class TBLoginScreen extends StatelessWidget {
         ),
         body: TabBarView(
           children: [
-            Column(children: [
-              Container(
-                margin: const EdgeInsets.fromLTRB(20, 20, 20, 10),
-                padding: const EdgeInsets.fromLTRB(15, 5, 5, 10),
-                width: 358,
-                height: 60,
-                decoration: BoxDecoration(
-                  color: TBColor.inputBackground,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Row(
-                  children: [
-                    Expanded(
-                        child: SizedBox(
-                      width: 200,
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.email,
-                            color: TBColor.primary,
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          const TBText(
-                            "Tortbal : ",
-                            textSize: 16,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ],
-                      ),
-                    )),
-                    const Expanded(
-                        flex: 2,
-                        child: TextField(
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hintText: 'Tortbal@gmail.com',
-                          ),
-                        )),
-                  ],
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.fromLTRB(20, 20, 20, 10),
-                padding: const EdgeInsets.fromLTRB(15, 5, 5, 10),
-                width: 358,
-                height: 60,
-                decoration: BoxDecoration(
-                  color: TBColor.inputBackground,
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Row(
-                  children: [
-                    ///email
-                    Expanded(
-                        child: SizedBox(
-                      width: 200,
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.lock,
-                            color: TBColor.primary,
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          const TBText(
-                            "Password:",
-                            textSize: 16,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ],
-                      ),
-                    )),
-                    const Expanded(
-                        flex: 1,
-                        child: TextField(
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hintText: '*******',
-                          ),
-                        )),
-                  ],
-                ),
-              ),
-
-              ///Test button
-              // SizedBox(
-
-              //   child: TBButton(
-              //    backgroundColor: TBColor.warning,
-
-              //     onTap: (){},
-              //     child: Row(
-              //       children: [
-              //         TBText("Hello button"),
-              //         SvgPicture.asset(TBIcons.tbABA,
-              //         width: 48,
-              //         height: 48,
-              //         fit: BoxFit.contain,
-              //         ),
-              //       ],
-              //     ),
-              //   ),
-              // ),
-
-              //                  2014    2019
-              // Swift -> UIKit && Swiftui
-              // Objective-C -> Appkit
-
-              ///Testfild test
-              // TBTextFeild(
-              //   maxWidthPrefix: 100,
-              //   prefix:Center(
-              //     child: Row(
-              //       children: [
-              //         Icon(Icons.home),
-              //         TBText("Home"),
-              //       ],
-              //     ) ,
-              //   ),
-              //   ///Testing suffix
-              //   suffix:Icon(Icons.home) ,
-              // ),
-
-              Container(
-                margin: const EdgeInsets.fromLTRB(0, 100, 0, 0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    TBText(
-                      "Already have an account?",
-                      textColor: TBColor.label,
-                      textSize: 14,
-                      fontWeight: FontWeight.w700,
-                    ),
-                    InkWell(
-                      onTap: () => Navigator.pop(context),
-                      child: TBText(
-                        "Sign Up ",
-                        textColor: TBColor.primary,
-                        textSize: 14,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Container(
-                  padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-                  width: 358,
-                  height: 75,
-                  child: TBButton(
-                    onTap: () =>
-                        Navigator.pushReplacementNamed(context, "/main"),
-                    backgroundColor: TBColor.primary,
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        TBText(
-                          "Log in",
-                          fontWeight: FontWeight.bold,
-                          textSize: 16,
-                          textColor: Colors.white,
-                        )
-                      ],
-                    ),
-                  )),
-            ]),
-
-            //Phone number tab
             Column(
               children: [
                 Container(
-                  margin: const EdgeInsets.all(20),
+                  margin: const EdgeInsets.only(
+                    left: 16,
+                    right: 16,
+                    top: 20,
+                  ),
                   decoration: BoxDecoration(
                     color: TBColor.inputBackground,
-                    borderRadius: const BorderRadius.all(Radius.circular(12.0)),
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(12.0),
+                    ),
                   ),
                   child: Container(
-                    padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-                    child: const Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        SizedBox(
-                          width: 300.0,
-                          height: 58,
-                          // Adjust the width according to your requirement
-                          child: IntlPhoneField(
-                            decoration: InputDecoration(
-                              border: InputBorder.none,
-                              hintText: "12 345 678",
-                              suffix: SizedBox(width: 50),
+                    padding: const EdgeInsets.all(2),
+                    child: TBTextFeild(
+                      keyboardType: TextInputType.emailAddress,
+                      onTapOutside: (_) =>
+                          FocusManager.instance.primaryFocus?.unfocus(),
+                      maxWidthPrefix: 100,
+                      prefix: Center(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SvgPicture.asset(
+                              TBIcons.tbMail,
+                              width: 18,
+                              height: 18,
+                            ),
+                            const SizedBox(width: 6),
+                            TBText(
+                              "Email:",
+                              textSize: TBTextSize.large - 2,
+                              fontWeight: FontWeight.w600,
+                              textColor: Colors.black87,
+                            ),
+                          ],
+                        ),
+                      ),
+                      hinText: "tortball@gmail.com",
+                    ),
+                  ),
+                ),
+                Container(
+                  margin: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    color: TBColor.inputBackground,
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(12.0),
+                    ),
+                  ),
+                  child: Container(
+                    padding: const EdgeInsets.all(2),
+                    child: TBTextFeild(
+                      obscureText: _isObscureText,
+                      hinText: "password",
+                      keyboardType: TextInputType.phone,
+                      onTapOutside: (_) =>
+                          FocusManager.instance.primaryFocus?.unfocus(),
+                      maxWidthPrefix: 100,
+                      prefix: Center(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SvgPicture.asset(
+                              TBIcons.tbLock,
+                              width: 18,
+                              height: 18,
+                            ),
+                            const SizedBox(width: 6),
+                            TBText(
+                              "Password:",
+                              textSize: TBTextSize.medium,
+                              fontWeight: FontWeight.w600,
+                              textColor: Colors.black87,
+                            ),
+                          ],
+                        ),
+                      ),
+                      suffix: InkWell(
+                        onTap: () {
+                          setState(() => _isObscureText = !_isObscureText);
+                        },
+                        child: Padding(
+                          padding: const EdgeInsets.only(right: 16),
+                          child: AnimatedCrossFade(
+                            crossFadeState: _isObscureText
+                                ? CrossFadeState.showSecond
+                                : CrossFadeState.showFirst,
+                            duration: const Duration(milliseconds: 200),
+                            firstChild: Icon(
+                              Icons.visibility,
+                              size: 20,
+                              color: TBColor.primary,
+                            ),
+                            secondChild: Icon(
+                              Icons.visibility_off,
+                              size: 20,
+                              color: TBColor.primary,
                             ),
                           ),
                         ),
-                      ],
+                      ),
                     ),
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.fromLTRB(0, 10, 0, 0),
-                  width: 358,
-                  child: const Text(
+                  margin: const EdgeInsets.fromLTRB(0, 100, 0, 0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      TBText(
+                        "Already have an account?",
+                        textColor: TBColor.label,
+                        textSize: 14,
+                        fontWeight: FontWeight.w700,
+                      ),
+                      InkWell(
+                        onTap: () => _onSignUp(),
+                        child: TBText(
+                          "Sign Up ",
+                          textColor: TBColor.primary,
+                          textSize: 14,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                    padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                    width: 358,
+                    height: 75,
+                    child: TBButton(
+                      onTap: () =>
+                          Navigator.pushReplacementNamed(context, "/main"),
+                      backgroundColor: TBColor.primary,
+                      child: const Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          TBText(
+                            "Log in",
+                            fontWeight: FontWeight.bold,
+                            textSize: 16,
+                            textColor: Colors.white,
+                          )
+                        ],
+                      ),
+                    )),
+              ],
+            ),
+
+            /// Phone number tab
+            Column(
+              children: [
+                Container(
+                  margin: const EdgeInsets.all(16),
+                  decoration: BoxDecoration(
+                    color: TBColor.inputBackground,
+                    borderRadius: const BorderRadius.all(
+                      Radius.circular(12.0),
+                    ),
+                  ),
+                  child: Container(
+                    padding: const EdgeInsets.all(2),
+                    child: TBTextFeild(
+                      keyboardType: TextInputType.phone,
+                      onTapOutside: (_) =>
+                          FocusManager.instance.primaryFocus?.unfocus(),
+                      maxWidthPrefix: 100,
+                      prefix: Center(
+                        child: Container(
+                          margin: const EdgeInsets.only(left: 8, right: 12),
+                          padding: const EdgeInsets.only(left: 4, right: 4),
+                          width: double.infinity,
+                          height: 27,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(4),
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              SvgPicture.asset(
+                                TBIcons.tbCambodia,
+                                width: 18,
+                                height: 18,
+                              ),
+                              const Padding(
+                                padding: EdgeInsets.symmetric(
+                                  horizontal: 2,
+                                  vertical: 4,
+                                ),
+                                child: VerticalDivider(
+                                  width: 1,
+                                  color: Colors.black87,
+                                ),
+                              ),
+                              TBText(
+                                "+855",
+                                textSize: TBTextSize.large - 2,
+                                fontWeight: FontWeight.w600,
+                                textColor: Colors.black87,
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      hinText: "086 000 000",
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: TBText(
                     "Please note that by signing up your user account, you are accepting our Terms of Use and Privacy Policy.",
-                    style: TextStyle(
-                      fontSize: 12,
-                    ),
+                    maxLines: 2,
+                    textAlign: TextAlign.left,
+                    textSize: TBTextSize.medium,
+                    fontWeight: FontWeight.w500,
                   ),
                 ),
-                Container(
-                  padding: const EdgeInsets.fromLTRB(20, 20, 20, 20),
-                  child: Divider(
-                    color: TBColor.label,
-                    thickness: 1,
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 12, vertical: 32),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Container(
+                        height: 1,
+                        width: size.width / 2 - 40,
+                        decoration: BoxDecoration(
+                          border: Border.all(width: 1, color: Colors.grey),
+                        ),
+                      ),
+                      TBText(
+                        "Or",
+                        textSize: TBTextSize.medium,
+                        fontWeight: FontWeight.w500,
+                      ),
+                      Container(
+                        height: 1,
+                        width: size.width / 2 - 40,
+                        decoration: BoxDecoration(
+                          border: Border.all(width: 1, color: Colors.grey),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 Column(
                   children: [
-                    SizedBox(
-                      width: 358,
-                      height: 48,
-                      child: ElevatedButton.icon(
-                        onPressed: () {},
-                        label: const TBText(
-                          "Continue with facebook",
-                          fontWeight: FontWeight.w600,
-                        ),
-                        icon: SvgPicture.asset(TBIcons.tbFacebook),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: TBColor.inputBackground,
-                        ),
-                      ),
-                    ),
-                    Container(
-                      padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-                      child: Column(
-                        children: [
-                          SizedBox(
-                            width: 358,
-                            height: 48,
-                            child: ElevatedButton.icon(
-                              onPressed: () {},
-                              label: const TBText(
-                                "Continue with facebook",
-                                fontWeight: FontWeight.w600,
-                              ),
-                              icon: SvgPicture.asset(TBIcons.tbGoogle),
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: TBColor.inputBackground,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
+                    _signUpWithButton(
+                        imagePath: TBIcons.tbFacebook,
+                        title: "Continue with Facebook",
+                        onTap: () {}),
+                    const SizedBox(height: 20),
+                    _signUpWithButton(
+                      imagePath: TBIcons.tbGoogle,
+                      title: "Continue with Google",
+                      onTap: () {},
                     ),
                     Container(
                       padding: const EdgeInsets.fromLTRB(0, 100, 0, 0),
@@ -310,7 +335,7 @@ class TBLoginScreen extends StatelessWidget {
                             textSize: 14,
                           ),
                           InkWell(
-                            onTap: () => Navigator.pop(context),
+                            onTap: () => _onSignUp(),
                             child: TBText(
                               "Sign Up",
                               textSize: 14,
@@ -345,6 +370,50 @@ class TBLoginScreen extends StatelessWidget {
                 ),
               ],
             ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  /// Sign Up
+  void _onSignUp() {
+    if (widget.isFromLogout) {
+      showTBBottomSheet(
+        context: context,
+        child: const TBSignupNumberphone(),
+      );
+    } else {
+      Navigator.pop(context);
+    }
+  }
+
+  Widget _signUpWithButton({
+    required String imagePath,
+    required String title,
+    required void Function() onTap,
+  }) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: double.infinity,
+        height: 48,
+        margin: const EdgeInsets.symmetric(horizontal: 16),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          color: Colors.grey[100],
+          border: Border.all(width: 1, color: TBColor.label),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SvgPicture.asset(imagePath),
+            const SizedBox(width: 20),
+            TBText(
+              title,
+              textSize: TBTextSize.medium + 2, // 14
+              fontWeight: FontWeight.w500,
+            )
           ],
         ),
       ),

@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -32,6 +33,9 @@ class _TBMainScreenState extends State<TBMainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: _selectedIndex == 0
+          ? const Color.fromRGBO(168, 194, 255, 1)
+          : Colors.white,
       body: [..._bottomNavItems][_selectedIndex],
       bottomNavigationBar: Container(
         height: 100,

@@ -5,7 +5,7 @@ import 'package:thortbal/Helpers/Widgets/tb_button.dart';
 import 'package:thortbal/Constants/tb_color.dart';
 import 'package:thortbal/Constants/tb_textsize.dart';
 import 'package:thortbal/Helpers/Widgets/tb_text.widget.dart';
-import 'package:intl_phone_field/intl_phone_field.dart';
+import 'package:thortbal/Helpers/Widgets/tb_textfield.widget.dart';
 import 'package:thortbal/Helpers/Widgets/utils/tb_global_funs.dart';
 import 'package:thortbal/Views/authentication/login.screen.dart';
 
@@ -38,14 +38,61 @@ class TBSignupNumberphone extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            margin: const EdgeInsets.all(20),
+            margin: const EdgeInsets.all(16),
             decoration: BoxDecoration(
               color: TBColor.inputBackground,
-              borderRadius: const BorderRadius.all(Radius.circular(12.0)),
+              borderRadius: const BorderRadius.all(
+                Radius.circular(12.0),
+              ),
             ),
             child: Container(
               padding: const EdgeInsets.all(2),
-              child: const Row(
+              child: TBTextFeild(
+                keyboardType: TextInputType.phone,
+                onTapOutside: (_) =>
+                    FocusManager.instance.primaryFocus?.unfocus(),
+                maxWidthPrefix: 100,
+                prefix: Center(
+                  child: Container(
+                    margin: const EdgeInsets.only(left: 8, right: 12),
+                    padding: const EdgeInsets.only(left: 4, right: 4),
+                    width: double.infinity,
+                    height: 27,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        SvgPicture.asset(
+                          TBIcons.tbCambodia,
+                          width: 18,
+                          height: 18,
+                        ),
+                        const Padding(
+                          padding: EdgeInsets.symmetric(
+                            horizontal: 2,
+                            vertical: 4,
+                          ),
+                          child: VerticalDivider(
+                            width: 1,
+                            color: Colors.black87,
+                          ),
+                        ),
+                        TBText(
+                          "+855",
+                          textSize: TBTextSize.large - 2,
+                          fontWeight: FontWeight.w600,
+                          textColor: Colors.black87,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+                hinText: "086 000 000",
+              ),
+              /* Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   SizedBox(
@@ -59,9 +106,11 @@ class TBSignupNumberphone extends StatelessWidget {
                         suffix: SizedBox(width: 50),
                       ),
                     ),
+                    
                   ),
                 ],
               ),
+              */
             ),
           ),
           Padding(
@@ -89,7 +138,7 @@ class TBSignupNumberphone extends StatelessWidget {
             title: "Continue with Google",
             onTap: () {},
           ),
-          Spacer(),
+          const Spacer(),
           Container(
             padding: const EdgeInsets.fromLTRB(0, 100, 0, 0),
             child: Row(
