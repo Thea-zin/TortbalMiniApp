@@ -10,6 +10,7 @@ import 'package:thortbal/Views/Profile/Book-History/book_history.screen.dart';
 import 'package:thortbal/Views/Profile/Bookmarks/bookmark.screen.dart';
 import 'package:thortbal/Views/Profile/Refund/refund.screen.dart';
 import 'package:thortbal/Views/Profile/Review/review.screen.dart';
+import 'package:thortbal/Views/authentication/login.screen.dart';
 
 class TBProfileScreen extends StatefulWidget {
   const TBProfileScreen({Key? key}) : super(key: key);
@@ -153,7 +154,7 @@ class _TBProfileScreenState extends State<TBProfileScreen> {
                     ),
                     // Log-Out Bottom
                     TBButton(
-                      onTap: () {},
+                      onTap: () => _onLogout(),
                       backgroundColor: TBColor.warning,
                       child: const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -182,6 +183,27 @@ class _TBProfileScreenState extends State<TBProfileScreen> {
     );
   }
 
+  /// Logout fuction
+  void _onLogout() {
+    // Navigator.of(context).pushReplacement(
+    //   MaterialPageRoute(
+    //     builder: (context) => const TBLoginScreen(
+    //       isFromLogout: true,
+    //     ),
+    //   ),
+    // );
+
+    Navigator.pushAndRemoveUntil(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const TBLoginScreen(
+            isFromLogout: true,
+          ),
+        ),
+        (route) => false);
+  }
+
+  /// Profile Row
   Widget profileRow({
     required String title,
     required String assetName,
@@ -225,6 +247,7 @@ class _TBProfileScreenState extends State<TBProfileScreen> {
     );
   }
 
+  /// Show Bottom Sheet
   _showBottomSheet({required Widget child}) {
     showTBBottomSheet(context: context, child: child);
   }

@@ -4,6 +4,7 @@ import 'package:thortbal/Views/Home/main.screen.dart';
 import 'package:thortbal/Views/Introduction/introduction_screen.dart';
 import 'package:thortbal/Views/Notification/notification.screen.dart';
 import 'package:thortbal/Views/Search/search.screen.dart';
+import 'package:thortbal/Views/authentication/login.screen.dart';
 
 void main() {
   runApp(
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         "/main": (ctx) => const TBMainScreen(),
         "/search": (ctx) => const TBSearchScreen(),
         "/notification": (ctx) => const TBNotificationScreen(),
+        "/login": (ctx) => const TBLoginScreen(),
       },
     );
   }

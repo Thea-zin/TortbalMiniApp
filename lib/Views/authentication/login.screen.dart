@@ -6,9 +6,12 @@ import 'package:thortbal/Constants/tb_textsize.dart';
 import 'package:thortbal/Helpers/Widgets/tb_text.widget.dart';
 import 'package:thortbal/Constants/tb_icon.dart';
 import 'package:thortbal/Helpers/Widgets/tb_textfield.widget.dart';
+import 'package:thortbal/Helpers/Widgets/utils/tb_global_funs.dart';
+import 'package:thortbal/Views/authentication/signUp.screen.dart';
 
 class TBLoginScreen extends StatefulWidget {
-  const TBLoginScreen({super.key});
+  const TBLoginScreen({this.isFromLogout = false, super.key});
+  final bool isFromLogout;
 
   @override
   State<TBLoginScreen> createState() => _TBLoginScreenState();
@@ -16,6 +19,11 @@ class TBLoginScreen extends StatefulWidget {
 
 class _TBLoginScreenState extends State<TBLoginScreen> {
   var _isObscureText = false;
+
+  @override
+  void initState() {
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,12 +38,14 @@ class _TBLoginScreenState extends State<TBLoginScreen> {
           surfaceTintColor: TBColor.background,
           leadingWidth: 65,
           toolbarHeight: 80,
-          leading: Padding(
-            padding: const EdgeInsets.only(left: 15, top: 4.0, bottom: 6),
-            child: TBBackButton(
-              onTap: () => Navigator.pop(context),
-            ),
-          ),
+          leading: !widget.isFromLogout
+              ? Padding(
+                  padding: const EdgeInsets.only(left: 15, top: 4.0, bottom: 6),
+                  child: TBBackButton(
+                    onTap: () => Navigator.pop(context),
+                  ),
+                )
+              : null,
           title: TBText(
             "Log In",
             textSize: TBTextSize.xlarge,
@@ -170,7 +180,7 @@ class _TBLoginScreenState extends State<TBLoginScreen> {
                         fontWeight: FontWeight.w700,
                       ),
                       InkWell(
-                        onTap: () => Navigator.pop(context),
+                        onTap: () => _onSignUp(),
                         child: TBText(
                           "Sign Up ",
                           textColor: TBColor.primary,
@@ -325,7 +335,7 @@ class _TBLoginScreenState extends State<TBLoginScreen> {
                             textSize: 14,
                           ),
                           InkWell(
-                            onTap: () => Navigator.pop(context),
+                            onTap: () => _onSignUp(),
                             child: TBText(
                               "Sign Up",
                               textSize: 14,
@@ -364,6 +374,18 @@ class _TBLoginScreenState extends State<TBLoginScreen> {
         ),
       ),
     );
+  }
+
+  /// Sign Up
+  void _onSignUp() {
+    if (widget.isFromLogout) {
+      showTBBottomSheet(
+        context: context,
+        child: const TBSignupNumberphone(),
+      );
+    } else {
+      Navigator.pop(context);
+    }
   }
 
   Widget _signUpWithButton({
