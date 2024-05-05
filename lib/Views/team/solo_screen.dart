@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:thortbal/Constants/tb_color.dart';
-import 'package:thortbal/Constants/tb_icon.dart';
 import 'package:thortbal/Constants/tb_textsize.dart';
 import 'package:thortbal/Helpers/Widgets/tb_button.dart';
 import 'package:thortbal/Helpers/Widgets/tb_text.widget.dart';
 import 'package:thortbal/Helpers/Widgets/tb_textfield.widget.dart';
 
 class TBSolo_Screen extends StatelessWidget {
-  const  TBSolo_Screen ({super.key});
+  const TBSolo_Screen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -47,14 +46,14 @@ class TBSolo_Screen extends StatelessWidget {
             ),
             Container(
               padding: EdgeInsets.all(15),
-              child: 
-            
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
                   /// Team Infomation
-                  const TBText("Team Information",
-                    fontWeight: FontWeight.bold,),
+                  const TBText(
+                    "Team Information",
+                    fontWeight: FontWeight.bold,
+                  ),
                   const SizedBox(
                     height: 10,
                   ),
@@ -73,25 +72,26 @@ class TBSolo_Screen extends StatelessWidget {
                   ),
                   TBTextFeild(
                     hinText: "Role",
-                    suffix: const Icon(Icons.keyboard_arrow_down_sharp,),
+                    suffix: const Icon(
+                      Icons.keyboard_arrow_down_sharp,
+                    ),
                   ),
                   const SizedBox(
                     height: 15,
                   ),
-                  
-                const SizedBox(
+
+                  const SizedBox(
                     height: 10,
                   ),
-                 TBButton(
-                  backgroundColor: TBColor.primary,
-                  child: const TBText("Find Match",
-                      fontWeight: FontWeight.bold,
-                  ))
-                ],),
-
-                ),
-            
-            
+                  TBButton(
+                      backgroundColor: TBColor.primary,
+                      child: const TBText(
+                        "Find Match",
+                        fontWeight: FontWeight.bold,
+                      ))
+                ],
+              ),
+            ),
           ],
         ),
       ),
