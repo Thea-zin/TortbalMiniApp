@@ -189,14 +189,6 @@ class _TBProfileScreenState extends State<TBProfileScreen> {
 
   /// Logout fuction
   void _onLogout() {
-    // Navigator.of(context).pushReplacement(
-    //   MaterialPageRoute(
-    //     builder: (context) => const TBLoginScreen(
-    //       isFromLogout: true,
-    //     ),
-    //   ),
-    // );
-
     Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(
