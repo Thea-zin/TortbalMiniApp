@@ -12,7 +12,7 @@ class TBScheduleScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: TBColor.background,
+        backgroundColor: TBColor.secondary,
         surfaceTintColor: TBColor.background,
         leadingWidth: 65,
         toolbarHeight: 80,
@@ -25,18 +25,21 @@ class TBScheduleScreen extends StatelessWidget {
       ),
       body: Container(
         padding: const EdgeInsets.all(10),
+        color: TBColor.secondary,
         child: Column(
           children: [
             SfCalendar(
               view: CalendarView.month,
               showNavigationArrow: true,
+              backgroundColor: TBColor.inputBackground,
               cellBorderColor: TBColor.inputBackground,
               headerStyle: const CalendarHeaderStyle(
-                  textAlign: TextAlign.center,
-                  textStyle: TextStyle(fontWeight: FontWeight.bold)),
+                textAlign: TextAlign.center,
+                textStyle: TextStyle(fontWeight: FontWeight.bold),
+              ),
             ),
             Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               child: Column(
                 children: [
                   Row(
