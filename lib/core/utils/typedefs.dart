@@ -1,4 +1,4 @@
-import 'package:thortbal/core/error/failure.dart';
+import 'package:thortbal/Core/error/failure.dart';
 
 typedef ResultFuture<T> = Future<DataState<T>>;
 
