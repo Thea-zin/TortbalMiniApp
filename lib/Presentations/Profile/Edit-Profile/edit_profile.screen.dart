@@ -1,8 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:thortbal/Constants/tb_color.dart';
-import 'package:thortbal/Constants/tb_textsize.dart';
+import 'package:thortbal/Core/resource/tb_colors.dart';
+import 'package:thortbal/Core/resource/tb_textSize.dart';
 import 'package:thortbal/Presentations/Widgets/tb_button.dart';
 import 'package:thortbal/Presentations/Widgets/tb_text.widget.dart';
 import 'package:thortbal/Presentations/Widgets/tb_textfield.widget.dart';
@@ -24,7 +24,7 @@ class _TBEditProfileState extends State<TBEditProfile> {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: TBColor.background,
+        backgroundColor: TBColors.background,
         leadingWidth: 65,
         toolbarHeight: 100,
         leading: Padding(
@@ -37,10 +37,10 @@ class _TBEditProfileState extends State<TBEditProfile> {
           "Profile",
           textSize: TBTextSize.xlarge,
           fontWeight: FontWeight.bold,
-          textColor: TBColor.primary,
+          textColor: TBColors.primary,
         ),
       ),
-      backgroundColor: TBColor.background,
+      backgroundColor: TBColors.background,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -54,7 +54,7 @@ class _TBEditProfileState extends State<TBEditProfile> {
                     width: 100,
                     alignment: Alignment.center,
                     decoration: BoxDecoration(
-                      color: TBColor.primary,
+                      color: TBColors.primary,
                       shape: BoxShape.circle,
                     ),
                     child: Stack(
@@ -104,7 +104,7 @@ class _TBEditProfileState extends State<TBEditProfile> {
                               child: Icon(
                                 Icons.arrow_back_ios,
                                 size: 18,
-                                color: TBColor.primary,
+                                color: TBColors.primary,
                               ),
                             ),
                           ),

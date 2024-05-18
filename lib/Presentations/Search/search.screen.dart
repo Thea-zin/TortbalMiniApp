@@ -2,9 +2,9 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:thortbal/Constants/tb_color.dart';
-import 'package:thortbal/Constants/tb_icon.dart';
-import 'package:thortbal/Constants/tb_textsize.dart';
+import 'package:thortbal/Core/resource/tb_colors.dart';
+import 'package:thortbal/Core/resource/tb_icons.dart';
+import 'package:thortbal/Core/resource/tb_textSize.dart';
 import 'package:thortbal/Presentations/Widgets/tb_button.dart';
 import 'package:thortbal/Presentations/Widgets/tb_text.widget.dart';
 
@@ -73,12 +73,12 @@ class _TBSearchScreenState extends State<TBSearchScreen> {
                     firstChild: Icon(
                       Icons.format_list_bulleted,
                       size: 24,
-                      color: TBColor.primary,
+                      color: TBColors.primary,
                     ),
                     secondChild: Icon(
                       Icons.grid_view_rounded,
                       size: 24,
-                      color: TBColor.primary,
+                      color: TBColors.primary,
                     ),
                     crossFadeState: _isList
                         ? CrossFadeState.showFirst
@@ -103,7 +103,7 @@ class _TBSearchScreenState extends State<TBSearchScreen> {
     return AppBar(
       automaticallyImplyLeading: false,
       backgroundColor: const Color(0xfff5f5f5),
-      surfaceTintColor: TBColor.background,
+      surfaceTintColor: TBColors.background,
       centerTitle: false,
       leadingWidth: 65,
       toolbarHeight: 80,
@@ -131,7 +131,7 @@ class _TBSearchScreenState extends State<TBSearchScreen> {
         textAlign: TextAlign.start,
         textSize: TBTextSize.xlarge,
         fontWeight: FontWeight.bold,
-        textColor: TBColor.primary,
+        textColor: TBColors.primary,
       ),
       actions: [
         GestureDetector(
@@ -205,7 +205,7 @@ class _TBSearchScreenState extends State<TBSearchScreen> {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: TBColor.primary.withOpacity(0.5),
+            color: TBColors.primary.withOpacity(0.5),
             offset: const Offset(4, 4),
           ),
         ],
@@ -244,10 +244,10 @@ class _TBSearchScreenState extends State<TBSearchScreen> {
                   Row(
                     children: [
                       SvgPicture.asset(
-                        TBIcons.tbLocationMark,
+                        TBIcons.locationMark,
                         width: 16,
                         height: 16,
-                        color: TBColor.label,
+                        color: TBColors.label,
                       ),
                       const SizedBox(width: 4),
                       TBText(
@@ -266,16 +266,16 @@ class _TBSearchScreenState extends State<TBSearchScreen> {
                       horizontal: 16,
                     ),
                     decoration: BoxDecoration(
-                      color: isComplete ? TBColor.primary : TBColor.secondary,
+                      color: isComplete ? TBColors.primary : TBColors.secondary,
                       borderRadius: BorderRadius.circular(16),
                     ),
                     child: Row(
                       children: [
                         SvgPicture.asset(
-                          TBIcons.tbGroupPeople,
+                          TBIcons.groupPeople,
                           width: 16,
                           height: 16,
-                          color: isComplete ? Colors.white : TBColor.primary,
+                          color: isComplete ? Colors.white : TBColors.primary,
                         ),
                         const SizedBox(width: 8),
                         TBText(
@@ -283,7 +283,7 @@ class _TBSearchScreenState extends State<TBSearchScreen> {
                           fontWeight: FontWeight.w600,
                           textSize: TBTextSize.medium,
                           textColor:
-                              isComplete ? Colors.white : TBColor.primary,
+                              isComplete ? Colors.white : TBColors.primary,
                         ),
                       ],
                     ),
@@ -301,17 +301,17 @@ class _TBSearchScreenState extends State<TBSearchScreen> {
               children: [
                 Row(
                   children: [
-                    SvgPicture.asset(TBIcons.tbStar, width: 16, height: 16),
+                    SvgPicture.asset(TBIcons.star, width: 16, height: 16),
                     const SizedBox(width: 4),
                     TBText(
                       "4.5",
                       fontWeight: FontWeight.w600,
                       textSize: TBTextSize.medium,
-                      textColor: TBColor.label,
+                      textColor: TBColors.label,
                     ),
                   ],
                 ),
-                SvgPicture.asset(TBIcons.tbBookmarkFill, width: 16, height: 16)
+                SvgPicture.asset(TBIcons.bookmarkFill, width: 16, height: 16)
               ],
             ),
           )

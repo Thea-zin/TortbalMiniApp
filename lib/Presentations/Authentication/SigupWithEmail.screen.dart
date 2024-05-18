@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
+import 'package:thortbal/Core/resource/tb_textSize.dart';
 import 'package:thortbal/Presentations/Widgets/tb_button.dart';
-import 'package:thortbal/Constants/tb_color.dart';
-import 'package:thortbal/Constants/tb_textsize.dart';
+import 'package:thortbal/Core/resource/tb_colors.dart';
 import 'package:thortbal/Presentations/Widgets/tb_text.widget.dart';
 
 class TBSignUpEmail extends StatelessWidget {
@@ -19,7 +19,7 @@ class TBSignUpEmail extends StatelessWidget {
         ),
         title: TBText(
           "Sign Up",
-          textColor: TBColor.primary,
+          textColor: TBColors.primary,
           textSize: TBTextSize.xlarge,
           fontWeight: FontWeight.bold,
         ),
@@ -33,7 +33,7 @@ class TBSignUpEmail extends StatelessWidget {
               width: 358,
               height: 60,
               decoration: BoxDecoration(
-                color: TBColor.inputBackground,
+                color: TBColors.inputBackground,
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Row(
@@ -45,7 +45,7 @@ class TBSignUpEmail extends StatelessWidget {
                       children: [
                         Icon(
                           Icons.email,
-                          color: TBColor.primary,
+                          color: TBColors.primary,
                         ),
                         const SizedBox(
                           width: 5,
@@ -76,7 +76,7 @@ class TBSignUpEmail extends StatelessWidget {
               width: 358,
               height: 60,
               decoration: BoxDecoration(
-                color: TBColor.inputBackground,
+                color: TBColors.inputBackground,
                 borderRadius: BorderRadius.circular(12),
               ),
               child: Row(
@@ -89,7 +89,7 @@ class TBSignUpEmail extends StatelessWidget {
                         SizedBox(
                             child: Icon(
                           Icons.lock,
-                          color: TBColor.primary,
+                          color: TBColors.primary,
                         )),
                         const SizedBox(
                           width: 5,
@@ -121,13 +121,13 @@ class TBSignUpEmail extends StatelessWidget {
                 children: [
                   TBText(
                     "Already have an account?",
-                    textColor: TBColor.label,
+                    textColor: TBColors.label,
                     textSize: 14,
                     fontWeight: FontWeight.w700,
                   ),
                   TBText(
                     "Log in ",
-                    textColor: TBColor.primary,
+                    textColor: TBColors.primary,
                     textSize: 14,
                     fontWeight: FontWeight.w700,
                   ),
@@ -140,7 +140,7 @@ class TBSignUpEmail extends StatelessWidget {
                 height: 75,
                 child: TBButton(
                   onTap: () {},
-                  backgroundColor: TBColor.primary,
+                  backgroundColor: TBColors.primary,
                   child: const Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:thortbal/Constants/tb_color.dart';
-import 'package:thortbal/Constants/tb_icon.dart';
-import 'package:thortbal/Constants/tb_textsize.dart';
+import 'package:thortbal/Core/resource/tb_colors.dart';
+import 'package:thortbal/Core/resource/tb_icons.dart';
+import 'package:thortbal/Core/resource/tb_textSize.dart';
 import 'package:thortbal/Presentations/Widgets/tb_button.dart';
 import 'package:thortbal/Presentations/Widgets/tb_text.widget.dart';
 import 'package:thortbal/Presentations/Widgets/tb_textfield.widget.dart';
@@ -19,8 +19,8 @@ class TBRequestRefundScreen extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: TBColor.background,
-        surfaceTintColor: TBColor.background,
+        backgroundColor: TBColors.background,
+        surfaceTintColor: TBColors.background,
         leadingWidth: 65,
         toolbarHeight: 80,
         leading: Padding(
@@ -33,10 +33,10 @@ class TBRequestRefundScreen extends StatelessWidget {
           "Request Refund",
           textSize: TBTextSize.xlarge,
           fontWeight: FontWeight.bold,
-          textColor: TBColor.primary,
+          textColor: TBColors.primary,
         ),
       ),
-      backgroundColor: TBColor.background,
+      backgroundColor: TBColors.background,
       body: StatefulBuilder(builder: (context, setState) {
         return Padding(
           padding: const EdgeInsets.all(16.0),
@@ -64,12 +64,12 @@ class TBRequestRefundScreen extends StatelessWidget {
                         firstChild: Icon(
                           Icons.visibility,
                           size: 20,
-                          color: TBColor.primary,
+                          color: TBColors.primary,
                         ),
                         secondChild: Icon(
                           Icons.visibility_off,
                           size: 20,
-                          color: TBColor.primary,
+                          color: TBColors.primary,
                         ),
                       ),
                     ),
@@ -82,7 +82,7 @@ class TBRequestRefundScreen extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 child: TBText(
                   "Recent requested refund",
-                  textColor: TBColor.label,
+                  textColor: TBColors.label,
                   fontWeight: FontWeight.w500,
                   textSize: TBTextSize.medium,
                 ),
@@ -123,10 +123,10 @@ class TBRequestRefundScreen extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     SvgPicture.asset(
-                                      TBIcons.tbClock,
+                                      TBIcons.clock,
                                       width: 8,
                                       height: 8,
-                                      color: TBColor.label,
+                                      color: TBColors.label,
                                     ),
                                     const SizedBox(width: 4),
                                     TBText(
@@ -143,7 +143,7 @@ class TBRequestRefundScreen extends StatelessWidget {
                               children: [
                                 CircleAvatar(
                                   radius: 12,
-                                  backgroundColor: TBColor.primary,
+                                  backgroundColor: TBColors.primary,
                                   child: const Icon(
                                     Icons.check_rounded,
                                     color: Colors.white,
@@ -153,7 +153,7 @@ class TBRequestRefundScreen extends StatelessWidget {
                                 const SizedBox(width: 10),
                                 TBText(
                                   "Completed",
-                                  textColor: TBColor.primary,
+                                  textColor: TBColors.primary,
                                   textSize: TBTextSize.medium,
                                   fontWeight: FontWeight.bold,
                                 )
@@ -164,7 +164,7 @@ class TBRequestRefundScreen extends StatelessWidget {
                             TBText(
                               "\$9.51",
                               textSize: TBTextSize.medium,
-                              textColor: TBColor.warning,
+                              textColor: TBColors.warning,
                               fontWeight: FontWeight.bold,
                             )
                           ],

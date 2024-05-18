@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:thortbal/Constants/tb_color.dart';
-import 'package:thortbal/Constants/tb_icon.dart';
-import 'package:thortbal/Constants/tb_textsize.dart';
+import 'package:thortbal/Core/resource/tb_colors.dart';
+import 'package:thortbal/Core/resource/tb_icons.dart';
+import 'package:thortbal/Core/resource/tb_textSize.dart';
 import 'package:thortbal/Presentations/Widgets/tb_button.dart';
 import 'package:thortbal/Presentations/Widgets/tb_text.widget.dart';
 
@@ -15,8 +15,8 @@ class TBBookmarkScreen extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: TBColor.background,
-        surfaceTintColor: TBColor.background,
+        backgroundColor: TBColors.background,
+        surfaceTintColor: TBColors.background,
         leadingWidth: 65,
         toolbarHeight: 80,
         leading: Padding(
@@ -29,10 +29,10 @@ class TBBookmarkScreen extends StatelessWidget {
           "Bookmarks",
           textSize: TBTextSize.xlarge,
           fontWeight: FontWeight.bold,
-          textColor: TBColor.primary,
+          textColor: TBColors.primary,
         ),
       ),
-      backgroundColor: TBColor.background,
+      backgroundColor: TBColors.background,
       body: Padding(
         padding: const EdgeInsets.all(16),
         child: Column(
@@ -56,7 +56,7 @@ class TBBookmarkScreen extends StatelessWidget {
         borderRadius: BorderRadius.circular(12),
         boxShadow: [
           BoxShadow(
-            color: TBColor.primary.withOpacity(0.5),
+            color: TBColors.primary.withOpacity(0.5),
             offset: const Offset(4, 4),
           ),
         ],
@@ -95,10 +95,10 @@ class TBBookmarkScreen extends StatelessWidget {
                   Row(
                     children: [
                       SvgPicture.asset(
-                        TBIcons.tbLocationMark,
+                        TBIcons.locationMark,
                         width: 16,
                         height: 16,
-                        color: TBColor.label,
+                        color: TBColors.label,
                       ),
                       const SizedBox(width: 4),
                       TBText(
@@ -118,17 +118,17 @@ class TBBookmarkScreen extends StatelessWidget {
                     ),
                     decoration: BoxDecoration(
                       color: status == 2
-                          ? TBColor.secondary
-                          : (status == 1 ? TBColor.primary : TBColor.warning),
+                          ? TBColors.secondary
+                          : (status == 1 ? TBColors.primary : TBColors.warning),
                       borderRadius: BorderRadius.circular(16),
                     ),
                     child: Row(
                       children: [
                         SvgPicture.asset(
-                          TBIcons.tbGroupPeople,
+                          TBIcons.groupPeople,
                           width: 16,
                           height: 16,
-                          color: status == 2 ? TBColor.primary : Colors.white,
+                          color: status == 2 ? TBColors.primary : Colors.white,
                         ),
                         const SizedBox(width: 8),
                         if (status == 2)
@@ -136,7 +136,7 @@ class TBBookmarkScreen extends StatelessWidget {
                             "10/11",
                             fontWeight: FontWeight.w600,
                             textSize: TBTextSize.medium,
-                            textColor: TBColor.primary,
+                            textColor: TBColors.primary,
                           ),
                         if (status == 1)
                           TBText(
@@ -168,17 +168,17 @@ class TBBookmarkScreen extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    SvgPicture.asset(TBIcons.tbStar, width: 16, height: 16),
+                    SvgPicture.asset(TBIcons.star, width: 16, height: 16),
                     const SizedBox(width: 4),
                     TBText(
                       "4.5",
                       fontWeight: FontWeight.w600,
                       textSize: TBTextSize.medium,
-                      textColor: TBColor.label,
+                      textColor: TBColors.label,
                     ),
                   ],
                 ),
-                SvgPicture.asset(TBIcons.tbBookmarkFill, width: 16, height: 16)
+                SvgPicture.asset(TBIcons.bookmarkFill, width: 16, height: 16)
               ],
             ),
           )

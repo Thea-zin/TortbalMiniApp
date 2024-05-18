@@ -1,6 +1,7 @@
 // ignore: file_names
 import 'package:flutter/material.dart';
-import 'package:thortbal/Constants/tb_image.dart';
+import 'package:thortbal/Core/resource/tb_colors.dart';
+import 'package:thortbal/Core/resource/tb_images.dart';
 
 class Solo extends StatelessWidget {
   const Solo({super.key});
@@ -11,7 +12,7 @@ class Solo extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Create Team'),
         centerTitle: true,
-        backgroundColor: const Color(0xFF524EEE),
+        backgroundColor: TBColors.primary,
         titleTextStyle: const TextStyle(
           color: Colors.white,
           fontSize: 20,
@@ -35,7 +36,7 @@ class Solo extends StatelessWidget {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8.0),
                 ),
-                child: Image.asset(TBImages.tbCreateTeam),
+                child: Image.asset(TBImages.createTeam),
               ),
               const TextField(
                 decoration: InputDecoration(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:thortbal/Presentations/Widgets/tb_button.dart';
-import 'package:thortbal/Constants/tb_color.dart';
-import 'package:thortbal/Constants/tb_textsize.dart';
+import 'package:thortbal/Core/resource/tb_colors.dart';
+import 'package:thortbal/Core/resource/tb_textSize.dart';
 import 'package:thortbal/Presentations/Widgets/tb_text.widget.dart';
 
 class TBBookingDetail extends StatelessWidget {
@@ -19,7 +19,7 @@ class TBBookingDetail extends StatelessWidget {
         ),
         title: TBText(
           "Booking Details",
-          textColor: TBColor.primary,
+          textColor: TBColors.primary,
           textSize: TBTextSize.xlarge,
           fontWeight: FontWeight.bold,
         ),
@@ -39,7 +39,7 @@ class TBBookingDetail extends StatelessWidget {
                       width: 32,
                       height: 32,
                       decoration: BoxDecoration(
-                        color: TBColor.primary,
+                        color: TBColors.primary,
                         shape: BoxShape.circle,
                       ),
                       child: const Center(
@@ -55,7 +55,7 @@ class TBBookingDetail extends StatelessWidget {
                       width: 32,
                       height: 32,
                       decoration: BoxDecoration(
-                        color: TBColor.primary,
+                        color: TBColors.primary,
                         shape: BoxShape.circle,
                       ),
                       child: const Center(
@@ -71,13 +71,13 @@ class TBBookingDetail extends StatelessWidget {
                       width: 32,
                       height: 32,
                       decoration: BoxDecoration(
-                        color: TBColor.secondary,
+                        color: TBColors.secondary,
                         shape: BoxShape.circle,
                       ),
                       child: Center(
                         child: TBText(
                           "3",
-                          textColor: TBColor.primary,
+                          textColor: TBColors.primary,
                           textSize: 14,
                           fontWeight: FontWeight.bold,
                         ),
@@ -107,7 +107,7 @@ class TBBookingDetail extends StatelessWidget {
                     TBText(
                       "Player Name",
                       textSize: 16,
-                      textColor: TBColor.primary,
+                      textColor: TBColors.primary,
                       fontWeight: FontWeight.bold,
                     ),
                     const SizedBox(
@@ -116,7 +116,7 @@ class TBBookingDetail extends StatelessWidget {
                     TBText(
                       "Booking ID",
                       textSize: 16,
-                      textColor: TBColor.primary,
+                      textColor: TBColors.primary,
                       fontWeight: FontWeight.bold,
                     )
                   ],
@@ -144,7 +144,7 @@ class TBBookingDetail extends StatelessWidget {
                     TBText(
                       "Match Date",
                       textSize: 16,
-                      textColor: TBColor.primary,
+                      textColor: TBColors.primary,
                       fontWeight: FontWeight.bold,
                     ),
                     const SizedBox(
@@ -153,7 +153,7 @@ class TBBookingDetail extends StatelessWidget {
                     TBText(
                       "Time",
                       textSize: 16,
-                      textColor: TBColor.primary,
+                      textColor: TBColors.primary,
                       fontWeight: FontWeight.bold,
                     )
                   ],
@@ -184,7 +184,7 @@ class TBBookingDetail extends StatelessWidget {
                     TBText(
                       "Field",
                       textSize: 16,
-                      textColor: TBColor.primary,
+                      textColor: TBColors.primary,
                       fontWeight: FontWeight.bold,
                     ),
                   ],
@@ -210,7 +210,7 @@ class TBBookingDetail extends StatelessWidget {
                     TBText(
                       "Field",
                       textSize: 16,
-                      textColor: TBColor.primary,
+                      textColor: TBColors.primary,
                       fontWeight: FontWeight.bold,
                     ),
                   ],

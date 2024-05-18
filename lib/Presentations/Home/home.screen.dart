@@ -2,14 +2,14 @@ import "dart:math";
 
 import "package:flutter/material.dart";
 import "package:flutter_svg/svg.dart";
-import "package:thortbal/Constants/tb_color.dart";
-import "package:thortbal/Constants/tb_icon.dart";
-import "package:thortbal/Constants/tb_image.dart";
-import "package:thortbal/Constants/tb_textsize.dart";
+import "package:thortbal/Core/resource/tb_colors.dart";
+import "package:thortbal/Core/resource/tb_icons.dart";
+import "package:thortbal/Core/resource/tb_images.dart";
+import "package:thortbal/Core/resource/tb_textSize.dart";
 
-import "package:thortbal/Presentations/Widgets/tb_text.widget.dart";
+import "package:thortbal/presentations/Widgets/tb_text.widget.dart";
 import "package:thortbal/Core/utils/tb_global_funs.dart";
-import "package:thortbal/Presentations/FindMatch/find_match.screen.dart";
+import "package:thortbal/presentations/FindMatch/find_match.screen.dart";
 
 class TBHomeScreen extends StatefulWidget {
   const TBHomeScreen({super.key});
@@ -69,11 +69,11 @@ class _TBHomeScreenState extends State<TBHomeScreen> {
                     child: Row(
                       children: [
                         SvgPicture.asset(
-                          TBIcons.tbLocationMark,
+                          TBIcons.locationMark,
                           width: 16,
                           height: 16,
                           fit: BoxFit.fill,
-                          color: TBColor.label,
+                          color: TBColors.label,
                         ),
                         const SizedBox(width: 2),
                         TBText(
@@ -105,7 +105,7 @@ class _TBHomeScreenState extends State<TBHomeScreen> {
                   width: size.width,
                   height: size.height / 2,
                   child: Image.asset(
-                    TBImages.tbHome,
+                    TBImages.home,
                     fit: BoxFit.fill,
                   ),
                 ),
@@ -148,19 +148,19 @@ class _TBHomeScreenState extends State<TBHomeScreen> {
         width: 180,
         height: 48,
         decoration: BoxDecoration(
-          color: TBColor.primary,
+          color: TBColors.primary,
           borderRadius: BorderRadius.circular(50),
           boxShadow: [
             BoxShadow(
-              color: TBColor.primary.withOpacity(0.15),
+              color: TBColors.primary.withOpacity(0.15),
               spreadRadius: 15,
             ),
             BoxShadow(
-              color: TBColor.primary.withOpacity(0.25),
+              color: TBColors.primary.withOpacity(0.25),
               spreadRadius: 10,
             ),
             BoxShadow(
-              color: TBColor.primary.withOpacity(0.5),
+              color: TBColors.primary.withOpacity(0.5),
               spreadRadius: 5,
             ),
           ],
@@ -176,7 +176,7 @@ class _TBHomeScreenState extends State<TBHomeScreen> {
             ),
             const SizedBox(width: 10),
             SvgPicture.asset(
-              TBIcons.tbBall,
+              TBIcons.ball,
               width: 22,
               height: 22,
               fit: BoxFit.fill,
@@ -193,7 +193,7 @@ class _TBHomeScreenState extends State<TBHomeScreen> {
       automaticallyImplyLeading: false,
       centerTitle: false,
       title: Image.asset(
-        TBImages.tbLogo,
+        TBImages.logo,
         height: 140,
         width: 140,
       ),
@@ -201,12 +201,12 @@ class _TBHomeScreenState extends State<TBHomeScreen> {
         GestureDetector(
           onTap: () => Navigator.of(context).pushNamed("/search"),
           child: CircleAvatar(
-            backgroundColor: TBColor.inputBackground,
+            backgroundColor: TBColors.inputBackground,
             child: SvgPicture.asset(
-              TBIcons.tbSearch,
+              TBIcons.search,
               width: 22,
               height: 22,
-              color: TBColor.label,
+              color: TBColors.label,
             ),
           ),
         ),
@@ -215,12 +215,12 @@ class _TBHomeScreenState extends State<TBHomeScreen> {
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 16),
             child: CircleAvatar(
-              backgroundColor: TBColor.inputBackground,
+              backgroundColor: TBColors.inputBackground,
               child: SvgPicture.asset(
-                TBIcons.tbBell,
+                TBIcons.bell,
                 width: 22,
                 height: 22,
-                color: TBColor.label,
+                color: TBColors.label,
               ),
             ),
           ),

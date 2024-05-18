@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:thortbal/Presentations/Widgets/tb_button.dart';
-import 'package:thortbal/Constants/tb_color.dart';
-import 'package:thortbal/Constants/tb_textsize.dart';
+import 'package:thortbal/Core/resource/tb_colors.dart';
+import 'package:thortbal/Core/resource/tb_textSize.dart';
 import 'package:thortbal/Presentations/Widgets/tb_text.widget.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
 
@@ -29,7 +29,7 @@ class _PayScheduleState extends State<TBPaySchedule> {
         ),
         title: TBText(
           "Schedule",
-          textColor: TBColor.primary,
+          textColor: TBColors.primary,
           textSize: TBTextSize.xlarge,
           fontWeight: FontWeight.bold,
         ),
@@ -50,7 +50,7 @@ class _PayScheduleState extends State<TBPaySchedule> {
                       width: 32,
                       height: 32,
                       decoration: BoxDecoration(
-                        color: TBColor.primary,
+                        color: TBColors.primary,
                         shape: BoxShape.circle,
                       ),
                       child: const Center(
@@ -66,13 +66,13 @@ class _PayScheduleState extends State<TBPaySchedule> {
                       width: 32,
                       height: 32,
                       decoration: BoxDecoration(
-                        color: TBColor.secondary,
+                        color: TBColors.secondary,
                         shape: BoxShape.circle,
                       ),
                       child: Center(
                         child: TBText(
                           "2",
-                          textColor: TBColor.primary,
+                          textColor: TBColors.primary,
                           textSize: 14,
                           fontWeight: FontWeight.bold,
                         ),
@@ -82,13 +82,13 @@ class _PayScheduleState extends State<TBPaySchedule> {
                       width: 32,
                       height: 32,
                       decoration: BoxDecoration(
-                        color: TBColor.secondary,
+                        color: TBColors.secondary,
                         shape: BoxShape.circle,
                       ),
                       child: Center(
                         child: TBText(
                           "3",
-                          textColor: TBColor.primary,
+                          textColor: TBColors.primary,
                           textSize: 14,
                           fontWeight: FontWeight.bold,
                         ),
@@ -124,7 +124,7 @@ class _PayScheduleState extends State<TBPaySchedule> {
                           "Morning",
                           textSize: 16,
                           fontWeight: FontWeight.bold,
-                          textColor: TBColor.primary,
+                          textColor: TBColors.primary,
                         ),
                       ),
                     ),
@@ -144,7 +144,7 @@ class _PayScheduleState extends State<TBPaySchedule> {
                           "Afternoon",
                           textSize: 16,
                           fontWeight: FontWeight.bold,
-                          textColor: TBColor.primary,
+                          textColor: TBColors.primary,
                         ),
                       ),
                     )
@@ -172,7 +172,7 @@ class _PayScheduleState extends State<TBPaySchedule> {
                           "Evening",
                           textSize: 16,
                           fontWeight: FontWeight.bold,
-                          textColor: TBColor.primary,
+                          textColor: TBColors.primary,
                         ),
                       ),
                     ),
@@ -192,7 +192,7 @@ class _PayScheduleState extends State<TBPaySchedule> {
                           "Night",
                           textSize: 16,
                           fontWeight: FontWeight.bold,
-                          textColor: TBColor.primary,
+                          textColor: TBColors.primary,
                         ),
                       ),
                     )
@@ -207,7 +207,7 @@ class _PayScheduleState extends State<TBPaySchedule> {
             margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
             padding: const EdgeInsets.all(10),
             decoration: BoxDecoration(
-              color: TBColor.inputBackground,
+              color: TBColors.inputBackground,
               borderRadius: BorderRadius.circular(10),
             ),
             child: Column(
@@ -224,11 +224,11 @@ class _PayScheduleState extends State<TBPaySchedule> {
                             children: [
                               Icon(
                                 Icons.timelapse,
-                                color: TBColor.primary,
+                                color: TBColors.primary,
                               ),
                               TBText(
                                 "Start Time",
-                                textColor: TBColor.primary,
+                                textColor: TBColors.primary,
                               ),
                             ],
                           ),
@@ -255,11 +255,11 @@ class _PayScheduleState extends State<TBPaySchedule> {
                                 children: [
                                   Icon(
                                     Icons.timelapse,
-                                    color: TBColor.primary,
+                                    color: TBColors.primary,
                                   ),
                                   TBText(
                                     "End Time",
-                                    textColor: TBColor.primary,
+                                    textColor: TBColors.primary,
                                   ),
                                 ],
                               ),
@@ -291,7 +291,7 @@ class _PayScheduleState extends State<TBPaySchedule> {
                 SfCalendar(
                   view: CalendarView.month,
                   showNavigationArrow: true,
-                  cellBorderColor: TBColor.inputBackground,
+                  cellBorderColor: TBColors.inputBackground,
                   headerStyle: const CalendarHeaderStyle(
                     textAlign: TextAlign.center,
                   ),
@@ -312,11 +312,11 @@ class _PayScheduleState extends State<TBPaySchedule> {
             width: 368,
             height: 60,
             decoration: BoxDecoration(
-              color: TBColor.inputBackground,
+              color: TBColors.inputBackground,
               borderRadius: BorderRadius.circular(20),
             ),
             child: DropdownButton(
-                dropdownColor: TBColor.inputBackground,
+                dropdownColor: TBColors.inputBackground,
                 underline: const SizedBox(),
                 hint: const Text("Selected opponent level"),
                 items: const [

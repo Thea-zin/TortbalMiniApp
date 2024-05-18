@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:thortbal/Constants/tb_color.dart';
+import 'package:thortbal/Core/resource/tb_colors.dart';
 
 class TBButton extends StatelessWidget {
   const TBButton({
@@ -27,7 +27,7 @@ class TBButton extends StatelessWidget {
         fixedSize: Size(width, 48),
         maximumSize: Size(width, 48),
         minimumSize: Size(width, 48),
-        backgroundColor: backgroundColor ?? TBColor.primary,
+        backgroundColor: backgroundColor ?? TBColors.primary,
         elevation: elevation ?? 4,
         alignment: alignment ?? Alignment.center,
       ),
@@ -58,14 +58,14 @@ class TBBackButton extends StatelessWidget {
       style: ElevatedButton.styleFrom(
         shape: const CircleBorder(),
         padding: EdgeInsets.all(_padding),
-        backgroundColor: backgroundColor ?? TBColor.secondary,
+        backgroundColor: backgroundColor ?? TBColors.secondary,
         elevation: 0,
         alignment: Alignment.center,
       ),
       child: Icon(
         Icons.arrow_back_ios_rounded,
         size: _buttonSize,
-        color: iconColor ?? TBColor.primary,
+        color: iconColor ?? TBColors.primary,
       ),
     );
   }

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
-import 'package:thortbal/Constants/tb_color.dart';
+import 'package:thortbal/Core/resource/tb_colors.dart';
 import 'package:thortbal/Presentations/Widgets/tb_text.widget.dart';
 
 class TBBookingSuccessful extends StatelessWidget {
@@ -19,7 +19,7 @@ class TBBookingSuccessful extends StatelessWidget {
               TBText(
                 "Booking Successful! ",
                 textSize: 24,
-                textColor: TBColor.primary,
+                textColor: TBColors.primary,
                 fontWeight: FontWeight.bold,
               ),
               const TBText("You’ve successfully book the match."),
@@ -31,7 +31,7 @@ class TBBookingSuccessful extends StatelessWidget {
 
               ///Summaries field
               Container(
-                color: TBColor.inputBackground,
+                color: TBColors.inputBackground,
                 padding: const EdgeInsets.all(20),
                 child: Row(
                   children: [
@@ -42,7 +42,7 @@ class TBBookingSuccessful extends StatelessWidget {
                           TBText(
                             "Field",
                             textSize: 16,
-                            textColor: TBColor.primary,
+                            textColor: TBColors.primary,
                             fontWeight: FontWeight.bold,
                           ),
                           const TBText(
@@ -66,7 +66,7 @@ class TBBookingSuccessful extends StatelessWidget {
                           TBText(
                             "Field",
                             textSize: 16,
-                            textColor: TBColor.primary,
+                            textColor: TBColors.primary,
                             fontWeight: FontWeight.bold,
                           ),
                           const TBText(

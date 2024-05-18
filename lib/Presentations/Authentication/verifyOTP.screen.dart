@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:flutter/services.dart';
 import 'package:thortbal/Presentations/Widgets/tb_button.dart';
-import 'package:thortbal/Constants/tb_color.dart';
-import 'package:thortbal/Constants/tb_textsize.dart';
+import 'package:thortbal/Core/resource/tb_colors.dart';
+import 'package:thortbal/Core/resource/tb_textSize.dart';
 import 'package:thortbal/Presentations/Widgets/tb_text.widget.dart';
 import 'package:thortbal/Presentations/Widgets/tb_textfield.widget.dart';
 
@@ -21,7 +21,7 @@ class TBVerifyOTP extends StatelessWidget {
         ),
         title: TBText(
           "Verify OTP",
-          textColor: TBColor.primary,
+          textColor: TBColors.primary,
           textSize: TBTextSize.xlarge,
           fontWeight: FontWeight.bold,
         ),
@@ -168,7 +168,7 @@ class TBVerifyOTP extends StatelessWidget {
               ///Button verify
               TBButton(
                 onTap: () {},
-                backgroundColor: TBColor.primary,
+                backgroundColor: TBColors.primary,
                 child: const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

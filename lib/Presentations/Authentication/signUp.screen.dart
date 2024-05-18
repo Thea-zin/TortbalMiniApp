@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:flutter_svg/svg.dart';
-import 'package:thortbal/Constants/tb_icon.dart';
 import 'package:thortbal/Presentations/Widgets/tb_button.dart';
-import 'package:thortbal/Constants/tb_color.dart';
-import 'package:thortbal/Constants/tb_textsize.dart';
+import 'package:thortbal/Core/resource/tb_colors.dart';
+import 'package:thortbal/Core/resource/tb_icons.dart';
+import 'package:thortbal/Core/resource/tb_textSize.dart';
 import 'package:thortbal/Presentations/Widgets/tb_text.widget.dart';
 import 'package:thortbal/Presentations/Widgets/tb_textfield.widget.dart';
 import 'package:thortbal/Core/utils/tb_global_funs.dart';
@@ -18,8 +18,8 @@ class TBSignupNumberphone extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: TBColor.background,
-        surfaceTintColor: TBColor.background,
+        backgroundColor: TBColors.background,
+        surfaceTintColor: TBColors.background,
         leadingWidth: 65,
         toolbarHeight: 80,
         leading: Padding(
@@ -32,7 +32,7 @@ class TBSignupNumberphone extends StatelessWidget {
           "Sign Up",
           textSize: TBTextSize.xlarge,
           fontWeight: FontWeight.bold,
-          textColor: TBColor.primary,
+          textColor: TBColors.primary,
         ),
       ),
       body: Column(
@@ -40,7 +40,7 @@ class TBSignupNumberphone extends StatelessWidget {
           Container(
             margin: const EdgeInsets.all(16),
             decoration: BoxDecoration(
-              color: TBColor.inputBackground,
+              color: TBColors.inputBackground,
               borderRadius: const BorderRadius.all(
                 Radius.circular(12.0),
               ),
@@ -66,7 +66,7 @@ class TBSignupNumberphone extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         SvgPicture.asset(
-                          TBIcons.tbCambodia,
+                          TBIcons.cambodia,
                           width: 18,
                           height: 18,
                         ),
@@ -128,13 +128,13 @@ class TBSignupNumberphone extends StatelessWidget {
             child: const Divider(),
           ),
           _signUpWithButton(
-            imagePath: TBIcons.tbFacebook,
+            imagePath: TBIcons.facebook,
             title: "Continue with Facebook",
             onTap: () {},
           ),
           const SizedBox(height: 20),
           _signUpWithButton(
-            imagePath: TBIcons.tbGoogle,
+            imagePath: TBIcons.google,
             title: "Continue with Google",
             onTap: () {},
           ),
@@ -157,7 +157,7 @@ class TBSignupNumberphone extends StatelessWidget {
                   child: TBText(
                     "Login",
                     textSize: 14,
-                    textColor: TBColor.primary,
+                    textColor: TBColors.primary,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -173,7 +173,7 @@ class TBSignupNumberphone extends StatelessWidget {
             ),
             child: TBButton(
               onTap: () => Navigator.popAndPushNamed(context, "/main"),
-              backgroundColor: TBColor.primary,
+              backgroundColor: TBColors.primary,
               child: const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -206,7 +206,7 @@ class TBSignupNumberphone extends StatelessWidget {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           color: Colors.grey[100],
-          border: Border.all(width: 1, color: TBColor.label),
+          border: Border.all(width: 1, color: TBColors.label),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

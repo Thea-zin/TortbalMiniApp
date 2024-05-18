@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:thortbal/Constants/tb_color.dart';
-import 'package:thortbal/Constants/tb_icon.dart';
-import 'package:thortbal/Constants/tb_textsize.dart';
+import 'package:thortbal/Core/resource/tb_colors.dart';
+import 'package:thortbal/Core/resource/tb_icons.dart';
+import 'package:thortbal/Core/resource/tb_textSize.dart';
 import 'package:thortbal/Presentations/Widgets/tb_button.dart';
 import 'package:thortbal/Presentations/Widgets/tb_text.widget.dart';
 import 'package:thortbal/Presentations/Widgets/tb_textfield.widget.dart';
@@ -23,8 +23,8 @@ class _TBReviewScreenState extends State<TBReviewScreen> {
       resizeToAvoidBottomInset: true,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: TBColor.background,
-        surfaceTintColor: TBColor.background,
+        backgroundColor: TBColors.background,
+        surfaceTintColor: TBColors.background,
         leadingWidth: 65,
         toolbarHeight: 80,
         leading: Padding(
@@ -37,10 +37,10 @@ class _TBReviewScreenState extends State<TBReviewScreen> {
           "Review",
           textSize: TBTextSize.xlarge,
           fontWeight: FontWeight.bold,
-          textColor: TBColor.primary,
+          textColor: TBColors.primary,
         ),
       ),
-      backgroundColor: TBColor.background,
+      backgroundColor: TBColors.background,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       floatingActionButton: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -83,10 +83,10 @@ class _TBReviewScreenState extends State<TBReviewScreen> {
                     Row(
                       children: [
                         SvgPicture.asset(
-                          TBIcons.tbLocationMark,
+                          TBIcons.locationMark,
                           width: 8,
                           height: 8,
-                          color: TBColor.label,
+                          color: TBColors.label,
                         ),
                         const SizedBox(width: 4),
                         TBText(
@@ -147,7 +147,7 @@ class _TBReviewScreenState extends State<TBReviewScreen> {
                       const Spacer(),
                       TBText(
                         "Good",
-                        textColor: TBColor.primary,
+                        textColor: TBColors.primary,
                         fontWeight: FontWeight.bold,
                         textSize: TBTextSize.large,
                       ),

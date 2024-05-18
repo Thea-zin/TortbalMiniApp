@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:thortbal/Constants/tb_textsize.dart';
+import 'package:thortbal/Core/resource/tb_textSize.dart';
 
 // ignore: must_be_immutable
 class TBTextFeild extends StatelessWidget {

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-import 'package:thortbal/Constants/tb_image.dart';
-import 'package:thortbal/Constants/tb_textsize.dart';
-import 'package:thortbal/Core/utils/tb_global_funs.dart';
-import 'package:thortbal/Presentations/Authentication/signUp.screen.dart';
+import 'package:thortbal/Core/resource/tb_textSize.dart';
+import 'package:thortbal/core/resource/tb_images.dart';
+import 'package:thortbal/core/utils/tb_global_funs.dart';
+import 'package:thortbal/presentations/Authentication/signUp.screen.dart';
 
 class TBIntroductionScreen extends StatefulWidget {
   const TBIntroductionScreen({Key? key}) : super(key: key);
@@ -24,14 +24,14 @@ class _TBIntroductionScreenState extends State<TBIntroductionScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              TBImages.tbLogo,
+              TBImages.logo,
               fit: BoxFit.cover,
             ),
             const SizedBox(
               height: 30,
             ),
             Image.asset(
-              TBImages.tbIntroScreen1,
+              TBImages.introScreen1,
               fit: BoxFit.cover,
             ),
             const SizedBox(
@@ -67,14 +67,14 @@ class _TBIntroductionScreenState extends State<TBIntroductionScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              TBImages.tbLogo,
+              TBImages.logo,
               fit: BoxFit.cover,
             ),
             const SizedBox(
               height: 30,
             ),
             Image.asset(
-              TBImages.tbIntroScreen2,
+              TBImages.introScreen2,
               fit: BoxFit.cover,
             ),
             const SizedBox(
@@ -106,14 +106,14 @@ class _TBIntroductionScreenState extends State<TBIntroductionScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              TBImages.tbLogo,
+              TBImages.logo,
               fit: BoxFit.cover,
             ),
             const SizedBox(
               height: 30,
             ),
             Image.asset(
-              TBImages.tbIntroScreen3,
+              TBImages.introScreen3,
               fit: BoxFit.cover,
             ),
             const SizedBox(

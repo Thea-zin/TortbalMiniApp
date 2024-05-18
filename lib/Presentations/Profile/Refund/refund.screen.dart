@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:thortbal/Constants/tb_color.dart';
-import 'package:thortbal/Constants/tb_icon.dart';
-import 'package:thortbal/Constants/tb_textsize.dart';
-import 'package:thortbal/Presentations/Widgets/tb_button.dart';
-import 'package:thortbal/Presentations/Widgets/tb_text.widget.dart';
+import 'package:thortbal/Core/resource/tb_colors.dart';
+import 'package:thortbal/Core/resource/tb_icons.dart';
+import 'package:thortbal/Core/resource/tb_textSize.dart';
+import 'package:thortbal/presentations/Widgets/tb_button.dart';
+import 'package:thortbal/presentations/Widgets/tb_text.widget.dart';
 import 'package:thortbal/Core/utils/tb_global_funs.dart';
-import 'package:thortbal/Presentations/Profile/Refund/request_refund.screen.dart';
+import 'package:thortbal/presentations/Profile/Refund/request_refund.screen.dart';
 
 class TBRefundScreen extends StatelessWidget {
   const TBRefundScreen({super.key});
@@ -17,8 +17,8 @@ class TBRefundScreen extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: TBColor.background,
-        surfaceTintColor: TBColor.background,
+        backgroundColor: TBColors.background,
+        surfaceTintColor: TBColors.background,
         leadingWidth: 65,
         toolbarHeight: 80,
         leading: Padding(
@@ -31,10 +31,10 @@ class TBRefundScreen extends StatelessWidget {
           "Refund",
           textSize: TBTextSize.xlarge,
           fontWeight: FontWeight.bold,
-          textColor: TBColor.primary,
+          textColor: TBColors.primary,
         ),
       ),
-      backgroundColor: TBColor.background,
+      backgroundColor: TBColors.background,
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -63,7 +63,7 @@ class TBRefundScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 10),
               child: TBText(
                 "Recent requested refund",
-                textColor: TBColor.label,
+                textColor: TBColors.label,
                 fontWeight: FontWeight.w500,
                 textSize: TBTextSize.medium,
               ),
@@ -105,10 +105,10 @@ class TBRefundScreen extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   SvgPicture.asset(
-                                    TBIcons.tbClock,
+                                    TBIcons.clock,
                                     width: 8,
                                     height: 8,
-                                    color: TBColor.label,
+                                    color: TBColors.label,
                                   ),
                                   const SizedBox(width: 4),
                                   TBText(
@@ -125,7 +125,7 @@ class TBRefundScreen extends StatelessWidget {
                             children: [
                               CircleAvatar(
                                 radius: 12,
-                                backgroundColor: TBColor.primary,
+                                backgroundColor: TBColors.primary,
                                 child: const Icon(
                                   Icons.check_rounded,
                                   color: Colors.white,
@@ -135,7 +135,7 @@ class TBRefundScreen extends StatelessWidget {
                               const SizedBox(width: 10),
                               TBText(
                                 "Completed",
-                                textColor: TBColor.primary,
+                                textColor: TBColors.primary,
                                 textSize: TBTextSize.medium,
                                 fontWeight: FontWeight.bold,
                               )
@@ -146,7 +146,7 @@ class TBRefundScreen extends StatelessWidget {
                           TBText(
                             "\$9.51",
                             textSize: TBTextSize.medium,
-                            textColor: TBColor.warning,
+                            textColor: TBColors.warning,
                             fontWeight: FontWeight.bold,
                           )
                         ],

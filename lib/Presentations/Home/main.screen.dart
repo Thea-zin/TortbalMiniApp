@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import 'package:thortbal/Constants/tb_color.dart';
-import 'package:thortbal/Constants/tb_icon.dart';
-import 'package:thortbal/Constants/tb_textsize.dart';
-import 'package:thortbal/Presentations/Widgets/tb_text.widget.dart';
-import 'package:thortbal/Presentations/Home/home.screen.dart';
-import 'package:thortbal/Presentations/Profile/profile.screen.dart';
-import 'package:thortbal/Presentations/Schedule/schedule.screen.dart';
+import 'package:thortbal/Core/resource/tb_colors.dart';
+import 'package:thortbal/Core/resource/tb_icons.dart';
+import 'package:thortbal/Core/resource/tb_textSize.dart';
+import 'package:thortbal/presentations/Widgets/tb_text.widget.dart';
+import 'package:thortbal/presentations/Home/home.screen.dart';
+import 'package:thortbal/presentations/Profile/profile.screen.dart';
+import 'package:thortbal/presentations/Schedule/schedule.screen.dart';
 
 class TBMainScreen extends StatefulWidget {
   const TBMainScreen({super.key});
@@ -24,7 +24,7 @@ class _TBMainScreenState extends State<TBMainScreen> {
   ];
 
   final Color _unSelectedTabColor = Colors.grey;
-  final Color _selectedTabColor = TBColor.primary;
+  final Color _selectedTabColor = TBColors.primary;
 
   var _selectedIndex = 0;
 
@@ -115,12 +115,12 @@ class _TBMainScreenState extends State<TBMainScreen> {
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             color: Colors.white,
-            border: Border.all(color: TBColor.secondary, width: 10),
+            border: Border.all(color: TBColors.secondary, width: 10),
           ),
           child: AnimatedRotation(
             turns: _selectedIndex == 0 ? 0.5 : 0,
             duration: const Duration(milliseconds: 500),
-            child: SvgPicture.asset(TBIcons.tbBall, width: 60, height: 60),
+            child: SvgPicture.asset(TBIcons.ball, width: 60, height: 60),
           ),
         ),
       ),

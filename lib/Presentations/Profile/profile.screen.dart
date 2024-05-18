@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:thortbal/Constants/tb_color.dart';
-import 'package:thortbal/Constants/tb_icon.dart';
-import 'package:thortbal/Constants/tb_textsize.dart';
-import 'package:thortbal/Presentations/Widgets/tb_button.dart';
-import 'package:thortbal/Presentations/Widgets/tb_text.widget.dart';
+import 'package:thortbal/Core/resource/tb_colors.dart';
+import 'package:thortbal/Core/resource/tb_icons.dart';
+import 'package:thortbal/Core/resource/tb_textSize.dart';
+import 'package:thortbal/presentations/Widgets/tb_button.dart';
+import 'package:thortbal/presentations/Widgets/tb_text.widget.dart';
 import 'package:thortbal/Core/utils/tb_global_funs.dart';
-import 'package:thortbal/Presentations/Profile/Book-History/book_history.screen.dart';
-import 'package:thortbal/Presentations/Profile/Bookmarks/bookmark.screen.dart';
-import 'package:thortbal/Presentations/Profile/Refund/refund.screen.dart';
-import 'package:thortbal/Presentations/Profile/Review/review.screen.dart';
+import 'package:thortbal/presentations/Profile/Book-History/book_history.screen.dart';
+import 'package:thortbal/presentations/Profile/Bookmarks/bookmark.screen.dart';
+import 'package:thortbal/presentations/Profile/Refund/refund.screen.dart';
+import 'package:thortbal/presentations/Profile/Review/review.screen.dart';
 
-import 'package:thortbal/Presentations/Authentication/changePassword.screen.dart';
+import 'package:thortbal/presentations/Authentication/changePassword.screen.dart';
 
-import 'package:thortbal/Presentations/Authentication/login.screen.dart';
+import 'package:thortbal/presentations/Authentication/login.screen.dart';
 
 class TBProfileScreen extends StatefulWidget {
   const TBProfileScreen({Key? key}) : super(key: key);
@@ -30,7 +30,7 @@ class _TBProfileScreenState extends State<TBProfileScreen> {
       body: Container(
         width: double.infinity,
         height: double.infinity,
-        color: TBColor.secondary,
+        color: TBColors.secondary,
         child: Column(
           children: [
             SafeArea(
@@ -49,7 +49,7 @@ class _TBProfileScreenState extends State<TBProfileScreen> {
                           width: 80,
                           height: 80,
                           decoration: BoxDecoration(
-                            color: TBColor.primary,
+                            color: TBColors.primary,
                             shape: BoxShape.circle,
                           ),
                           alignment: Alignment.bottomRight,
@@ -68,7 +68,7 @@ class _TBProfileScreenState extends State<TBProfileScreen> {
                         children: [
                           TBText(
                             "Hey, Sothea Ban",
-                            textColor: TBColor.primary,
+                            textColor: TBColors.primary,
                             textSize: TBTextSize.xlarge - 4,
                             fontWeight: FontWeight.bold,
                           ),
@@ -79,12 +79,12 @@ class _TBProfileScreenState extends State<TBProfileScreen> {
                               horizontal: 12,
                             ),
                             decoration: BoxDecoration(
-                              color: TBColor.primary.withOpacity(0.2),
+                              color: TBColors.primary.withOpacity(0.2),
                               borderRadius: BorderRadius.circular(16),
                             ),
                             child: TBText(
                               "ID: 238sf2X2",
-                              textColor: TBColor.primary,
+                              textColor: TBColors.primary,
                               textSize: TBTextSize.medium,
                               fontWeight: FontWeight.w600,
                             ),
@@ -107,7 +107,7 @@ class _TBProfileScreenState extends State<TBProfileScreen> {
                 padding: const EdgeInsets.only(left: 15, right: 16, top: 32),
                 margin: const EdgeInsets.only(top: 20),
                 decoration: BoxDecoration(
-                  color: TBColor.background,
+                  color: TBColors.background,
                   borderRadius: const BorderRadius.vertical(
                     top: Radius.circular(28),
                     // right: Radius.circular(28),
@@ -118,22 +118,22 @@ class _TBProfileScreenState extends State<TBProfileScreen> {
                   children: [
                     profileRow(
                       title: "Booking History",
-                      assetName: TBIcons.tbRoundHistory,
+                      assetName: TBIcons.roundHistory,
                       child: const TBBookHistoryScreen(),
                     ),
                     profileRow(
                       title: "Refund",
-                      assetName: TBIcons.tbRefundDollar,
+                      assetName: TBIcons.refundDollar,
                       child: const TBRefundScreen(),
                     ),
                     profileRow(
                       title: "Bookmarks",
-                      assetName: TBIcons.tbBookmark,
+                      assetName: TBIcons.bookmark,
                       child: const TBBookmarkScreen(),
                     ),
                     profileRow(
                       title: "Your Reviews",
-                      assetName: TBIcons.tbRectangleStar,
+                      assetName: TBIcons.rectangleStar,
                       child: const TBReviewScreen(),
                     ),
                     Padding(
@@ -142,23 +142,23 @@ class _TBProfileScreenState extends State<TBProfileScreen> {
                       child: TBText(
                         "Settings",
                         textSize: TBTextSize.medium,
-                        textColor: TBColor.label,
+                        textColor: TBColors.label,
                       ),
                     ),
                     profileRow(
                       title: "Change Password",
-                      assetName: TBIcons.tbLock,
+                      assetName: TBIcons.lock,
                       child: const TBChangePassword(),
                     ),
                     profileRow(
                       title: "Manager Account",
-                      assetName: TBIcons.tbProfile,
+                      assetName: TBIcons.profile,
                       child: const TBReviewScreen(),
                     ),
                     // Log-Out Bottom
                     TBButton(
                       onTap: () => _onLogout(),
-                      backgroundColor: TBColor.warning,
+                      backgroundColor: TBColors.warning,
                       child: const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -221,7 +221,7 @@ class _TBProfileScreenState extends State<TBProfileScreen> {
               assetName,
               height: 24,
               // ignore: deprecated_member_use
-              color: TBColor.label,
+              color: TBColors.label,
               fit: BoxFit.fill,
             ),
             Padding(
@@ -229,7 +229,7 @@ class _TBProfileScreenState extends State<TBProfileScreen> {
               child: TBText(
                 title,
                 textSize: TBTextSize.large,
-                // textColor: TBColor.label,
+                // textColor: TBColors.label,
               ),
             ),
             const Spacer(),

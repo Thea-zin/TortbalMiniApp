@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_calendar/calendar.dart';
-import 'package:thortbal/Constants/tb_color.dart';
-import 'package:thortbal/Constants/tb_textsize.dart';
+import 'package:thortbal/Core/resource/tb_colors.dart';
+import 'package:thortbal/Core/resource/tb_textSize.dart';
 import 'package:thortbal/Presentations/Widgets/tb_text.widget.dart';
 
 class TBScheduleScreen extends StatelessWidget {
@@ -12,27 +12,27 @@ class TBScheduleScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: TBColor.secondary,
-        surfaceTintColor: TBColor.background,
+        backgroundColor: TBColors.secondary,
+        surfaceTintColor: TBColors.background,
         leadingWidth: 65,
         toolbarHeight: 80,
         title: TBText(
           "Schedule",
           textSize: TBTextSize.xlarge,
           fontWeight: FontWeight.bold,
-          textColor: TBColor.primary,
+          textColor: TBColors.primary,
         ),
       ),
       body: Container(
         padding: const EdgeInsets.all(10),
-        color: TBColor.secondary,
+        color: TBColors.secondary,
         child: Column(
           children: [
             SfCalendar(
               view: CalendarView.month,
               showNavigationArrow: true,
-              backgroundColor: TBColor.inputBackground,
-              cellBorderColor: TBColor.inputBackground,
+              backgroundColor: TBColors.inputBackground,
+              cellBorderColor: TBColors.inputBackground,
               headerStyle: const CalendarHeaderStyle(
                 textAlign: TextAlign.center,
                 textStyle: TextStyle(fontWeight: FontWeight.bold),
@@ -53,14 +53,14 @@ class TBScheduleScreen extends StatelessWidget {
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 fontSize: 16,
-                                color: TBColor.primary),
+                                color: TBColors.primary),
                           ),
                           Text(
                             "12 Dec 2023",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 24,
-                              color: TBColor.primary,
+                              color: TBColors.primary,
                             ),
                           ),
                         ],

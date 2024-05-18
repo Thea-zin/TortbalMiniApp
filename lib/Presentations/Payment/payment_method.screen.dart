@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:flutter_svg/svg.dart';
-import 'package:thortbal/Constants/tb_image.dart';
 import 'package:thortbal/Presentations/Widgets/tb_button.dart';
-import 'package:thortbal/Constants/tb_color.dart';
-import 'package:thortbal/Constants/tb_textsize.dart';
+import 'package:thortbal/Core/resource/tb_colors.dart';
+import 'package:thortbal/Core/resource/tb_icons.dart';
+import 'package:thortbal/Core/resource/tb_images.dart';
+import 'package:thortbal/Core/resource/tb_textSize.dart';
 import 'package:thortbal/Presentations/Widgets/tb_text.widget.dart';
-import 'package:thortbal/Constants/tb_icon.dart';
 
 class TBPaymentMethod extends StatelessWidget {
   const TBPaymentMethod({super.key});
@@ -22,7 +22,7 @@ class TBPaymentMethod extends StatelessWidget {
         ),
         title: TBText(
           "Booking Details",
-          textColor: TBColor.primary,
+          textColor: TBColors.primary,
           textSize: TBTextSize.xlarge,
           fontWeight: FontWeight.bold,
         ),
@@ -42,7 +42,7 @@ class TBPaymentMethod extends StatelessWidget {
                       width: 32,
                       height: 32,
                       decoration: BoxDecoration(
-                        color: TBColor.primary,
+                        color: TBColors.primary,
                         shape: BoxShape.circle,
                       ),
                       child: const Center(
@@ -58,7 +58,7 @@ class TBPaymentMethod extends StatelessWidget {
                       width: 32,
                       height: 32,
                       decoration: BoxDecoration(
-                        color: TBColor.primary,
+                        color: TBColors.primary,
                         shape: BoxShape.circle,
                       ),
                       child: const Center(
@@ -74,7 +74,7 @@ class TBPaymentMethod extends StatelessWidget {
                       width: 32,
                       height: 32,
                       decoration: BoxDecoration(
-                        color: TBColor.primary,
+                        color: TBColors.primary,
                         shape: BoxShape.circle,
                       ),
                       child: const Center(
@@ -105,7 +105,7 @@ class TBPaymentMethod extends StatelessWidget {
                     TBText(
                       "Bank Or Mobile Wallet",
                       textSize: 16,
-                      textColor: TBColor.primary,
+                      textColor: TBColors.primary,
                       fontWeight: FontWeight.bold,
                     ),
                     const SizedBox(
@@ -123,7 +123,7 @@ class TBPaymentMethod extends StatelessWidget {
                 Row(
                   children: [
                     Image.asset(
-                      TBImages.tbABA,
+                      TBImages.aBA,
                       width: 36,
                       height: 36,
                       fit: BoxFit.cover,
@@ -142,7 +142,7 @@ class TBPaymentMethod extends StatelessWidget {
                           ),
                           TBText(
                             "Tap to pay with ABA pay",
-                            textColor: TBColor.label,
+                            textColor: TBColors.label,
                           )
                         ],
                       ),
@@ -152,7 +152,7 @@ class TBPaymentMethod extends StatelessWidget {
                 Row(
                   children: [
                     Image.asset(
-                      TBImages.tbACleda,
+                      TBImages.aCleda,
                       width: 36,
                       height: 36,
                       fit: BoxFit.cover,
@@ -171,7 +171,7 @@ class TBPaymentMethod extends StatelessWidget {
                           ),
                           TBText(
                             "Tap to pay with ACLEDA",
-                            textColor: TBColor.label,
+                            textColor: TBColors.label,
                           )
                         ],
                       ),
@@ -181,7 +181,7 @@ class TBPaymentMethod extends StatelessWidget {
                 Row(
                   children: [
                     Image.asset(
-                      TBImages.tbAMK,
+                      TBImages.aMK,
                       width: 36,
                       height: 36,
                       fit: BoxFit.cover,
@@ -200,7 +200,7 @@ class TBPaymentMethod extends StatelessWidget {
                           ),
                           TBText(
                             "Tap to pay with AMK",
-                            textColor: TBColor.label,
+                            textColor: TBColors.label,
                           )
                         ],
                       ),
@@ -212,7 +212,7 @@ class TBPaymentMethod extends StatelessWidget {
                   children: [
                     TBText(
                       "Credit Card",
-                      textColor: TBColor.primary,
+                      textColor: TBColors.primary,
                       fontWeight: FontWeight.bold,
                       textSize: 16,
                     ),
@@ -223,7 +223,7 @@ class TBPaymentMethod extends StatelessWidget {
                 Row(
                   children: [
                     SvgPicture.asset(
-                      TBIcons.tbCard,
+                      TBIcons.card,
                       width: 32,
                       height: 32,
                       fit: BoxFit.contain,
@@ -242,7 +242,7 @@ class TBPaymentMethod extends StatelessWidget {
                           ),
                           TBText(
                             "Tap to pay with AMK",
-                            textColor: TBColor.label,
+                            textColor: TBColors.label,
                           )
                         ],
                       ),
@@ -252,7 +252,7 @@ class TBPaymentMethod extends StatelessWidget {
                 Row(
                   children: [
                     Image.asset(
-                      TBImages.tbACleda,
+                      TBImages.aCleda,
                       width: 36,
                       height: 36,
                       fit: BoxFit.cover,
@@ -271,7 +271,7 @@ class TBPaymentMethod extends StatelessWidget {
                           ),
                           TBText(
                             "Tap to pay with AMK",
-                            textColor: TBColor.label,
+                            textColor: TBColors.label,
                           )
                         ],
                       ),

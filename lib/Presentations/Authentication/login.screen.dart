@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:flutter_svg/svg.dart';
 import 'package:thortbal/Presentations/Widgets/tb_button.dart';
-import 'package:thortbal/Constants/tb_color.dart';
-import 'package:thortbal/Constants/tb_textsize.dart';
+import 'package:thortbal/Core/resource/tb_colors.dart';
+import 'package:thortbal/Core/resource/tb_textSize.dart';
 import 'package:thortbal/Presentations/Widgets/tb_text.widget.dart';
-import 'package:thortbal/Constants/tb_icon.dart';
+import 'package:thortbal/Core/resource/tb_icons.dart';
 import 'package:thortbal/Presentations/Widgets/tb_textfield.widget.dart';
 import 'package:thortbal/Core/utils/tb_global_funs.dart';
 import 'package:thortbal/Presentations/Authentication/signUp.screen.dart';
@@ -34,8 +34,8 @@ class _TBLoginScreenState extends State<TBLoginScreen> {
         resizeToAvoidBottomInset: false,
         appBar: AppBar(
           automaticallyImplyLeading: false,
-          backgroundColor: TBColor.background,
-          surfaceTintColor: TBColor.background,
+          backgroundColor: TBColors.background,
+          surfaceTintColor: TBColors.background,
           leadingWidth: 65,
           toolbarHeight: 80,
           leading: !widget.isFromLogout
@@ -50,7 +50,7 @@ class _TBLoginScreenState extends State<TBLoginScreen> {
             "Log In",
             textSize: TBTextSize.xlarge,
             fontWeight: FontWeight.bold,
-            textColor: TBColor.primary,
+            textColor: TBColors.primary,
           ),
           bottom: const TabBar(
             tabs: [
@@ -70,7 +70,7 @@ class _TBLoginScreenState extends State<TBLoginScreen> {
                     top: 20,
                   ),
                   decoration: BoxDecoration(
-                    color: TBColor.inputBackground,
+                    color: TBColors.inputBackground,
                     borderRadius: const BorderRadius.all(
                       Radius.circular(12.0),
                     ),
@@ -87,7 +87,7 @@ class _TBLoginScreenState extends State<TBLoginScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             SvgPicture.asset(
-                              TBIcons.tbMail,
+                              TBIcons.mail,
                               width: 18,
                               height: 18,
                             ),
@@ -108,7 +108,7 @@ class _TBLoginScreenState extends State<TBLoginScreen> {
                 Container(
                   margin: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: TBColor.inputBackground,
+                    color: TBColors.inputBackground,
                     borderRadius: const BorderRadius.all(
                       Radius.circular(12.0),
                     ),
@@ -127,7 +127,7 @@ class _TBLoginScreenState extends State<TBLoginScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             SvgPicture.asset(
-                              TBIcons.tbLock,
+                              TBIcons.lock,
                               width: 18,
                               height: 18,
                             ),
@@ -155,12 +155,12 @@ class _TBLoginScreenState extends State<TBLoginScreen> {
                             firstChild: Icon(
                               Icons.visibility,
                               size: 20,
-                              color: TBColor.primary,
+                              color: TBColors.primary,
                             ),
                             secondChild: Icon(
                               Icons.visibility_off,
                               size: 20,
-                              color: TBColor.primary,
+                              color: TBColors.primary,
                             ),
                           ),
                         ),
@@ -175,7 +175,7 @@ class _TBLoginScreenState extends State<TBLoginScreen> {
                     children: [
                       TBText(
                         "Already have an account?",
-                        textColor: TBColor.label,
+                        textColor: TBColors.label,
                         textSize: 14,
                         fontWeight: FontWeight.w700,
                       ),
@@ -183,7 +183,7 @@ class _TBLoginScreenState extends State<TBLoginScreen> {
                         onTap: () => _onSignUp(),
                         child: TBText(
                           "Sign Up ",
-                          textColor: TBColor.primary,
+                          textColor: TBColors.primary,
                           textSize: 14,
                           fontWeight: FontWeight.w700,
                         ),
@@ -198,7 +198,7 @@ class _TBLoginScreenState extends State<TBLoginScreen> {
                     child: TBButton(
                       onTap: () =>
                           Navigator.pushReplacementNamed(context, "/main"),
-                      backgroundColor: TBColor.primary,
+                      backgroundColor: TBColors.primary,
                       child: const Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
@@ -220,7 +220,7 @@ class _TBLoginScreenState extends State<TBLoginScreen> {
                 Container(
                   margin: const EdgeInsets.all(16),
                   decoration: BoxDecoration(
-                    color: TBColor.inputBackground,
+                    color: TBColors.inputBackground,
                     borderRadius: const BorderRadius.all(
                       Radius.circular(12.0),
                     ),
@@ -246,7 +246,7 @@ class _TBLoginScreenState extends State<TBLoginScreen> {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               SvgPicture.asset(
-                                TBIcons.tbCambodia,
+                                TBIcons.cambodia,
                                 width: 18,
                                 height: 18,
                               ),
@@ -316,12 +316,12 @@ class _TBLoginScreenState extends State<TBLoginScreen> {
                 Column(
                   children: [
                     _signUpWithButton(
-                        imagePath: TBIcons.tbFacebook,
+                        imagePath: TBIcons.facebook,
                         title: "Continue with Facebook",
                         onTap: () {}),
                     const SizedBox(height: 20),
                     _signUpWithButton(
-                      imagePath: TBIcons.tbGoogle,
+                      imagePath: TBIcons.google,
                       title: "Continue with Google",
                       onTap: () {},
                     ),
@@ -339,7 +339,7 @@ class _TBLoginScreenState extends State<TBLoginScreen> {
                             child: TBText(
                               "Sign Up",
                               textSize: 14,
-                              textColor: TBColor.primary,
+                              textColor: TBColors.primary,
                               fontWeight: FontWeight.bold,
                             ),
                           ),
@@ -353,7 +353,7 @@ class _TBLoginScreenState extends State<TBLoginScreen> {
                         child: TBButton(
                           onTap: () =>
                               Navigator.pushReplacementNamed(context, "/main"),
-                          backgroundColor: TBColor.primary,
+                          backgroundColor: TBColors.primary,
                           child: const Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
@@ -402,7 +402,7 @@ class _TBLoginScreenState extends State<TBLoginScreen> {
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
           color: Colors.grey[100],
-          border: Border.all(width: 1, color: TBColor.label),
+          border: Border.all(width: 1, color: TBColors.label),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,

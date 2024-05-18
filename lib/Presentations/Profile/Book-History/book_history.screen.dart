@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:thortbal/Constants/tb_color.dart';
-import 'package:thortbal/Constants/tb_textsize.dart';
+import 'package:thortbal/Core/resource/tb_colors.dart';
+import 'package:thortbal/Core/resource/tb_textSize.dart';
 import 'package:thortbal/Presentations/Widgets/tb_button.dart';
 import 'package:thortbal/Presentations/Widgets/tb_text.widget.dart';
 
@@ -21,8 +21,8 @@ class _TBBookHistoryScreenState extends State<TBBookHistoryScreen> {
       resizeToAvoidBottomInset: false,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: TBColor.background,
-        surfaceTintColor: TBColor.background,
+        backgroundColor: TBColors.background,
+        surfaceTintColor: TBColors.background,
         leadingWidth: 65,
         toolbarHeight: 80,
         leading: Padding(
@@ -35,10 +35,10 @@ class _TBBookHistoryScreenState extends State<TBBookHistoryScreen> {
           "Booking History",
           textSize: TBTextSize.xlarge,
           fontWeight: FontWeight.bold,
-          textColor: TBColor.primary,
+          textColor: TBColors.primary,
         ),
       ),
-      backgroundColor: TBColor.background,
+      backgroundColor: TBColors.background,
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
@@ -64,7 +64,7 @@ class _TBBookHistoryScreenState extends State<TBBookHistoryScreen> {
                         borderRadius: BorderRadius.circular(12),
                         boxShadow: [
                           BoxShadow(
-                            color: TBColor.primary.withOpacity(0.5),
+                            color: TBColors.primary.withOpacity(0.5),
                             offset: const Offset(4, 4),
                           ),
                         ],
@@ -120,7 +120,7 @@ class _TBBookHistoryScreenState extends State<TBBookHistoryScreen> {
                                     padding: const EdgeInsets.symmetric(
                                         vertical: 4, horizontal: 16),
                                     decoration: BoxDecoration(
-                                      color: TBColor.primary,
+                                      color: TBColors.primary,
                                       borderRadius: BorderRadius.circular(16),
                                     ),
                                     child: Text.rich(

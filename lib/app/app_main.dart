@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
-import 'package:thortbal/Constants/tb_color.dart';
-import 'package:thortbal/Presentations/Home/main.screen.dart';
-import 'package:thortbal/Presentations/Introduction/introduction_screen.dart';
-import 'package:thortbal/Presentations/Notification/notification.screen.dart';
-import 'package:thortbal/Presentations/Search/search.screen.dart';
-import 'package:thortbal/Presentations/Authentication/login.screen.dart';
+import 'package:thortbal/Core/resource/tb_colors.dart';
+import 'package:thortbal/presentations/Home/main.screen.dart';
+import 'package:thortbal/presentations/Introduction/introduction_screen.dart';
+import 'package:thortbal/presentations/Notification/notification.screen.dart';
+import 'package:thortbal/presentations/Search/search.screen.dart';
+import 'package:thortbal/presentations/Authentication/login.screen.dart';
 import 'package:thortbal/app/app_main_binding.dart';
 
 void main() {
@@ -25,7 +25,7 @@ class TortBallApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: "Inter",
-        colorScheme: ColorScheme.fromSeed(seedColor: TBColor.primary),
+        colorScheme: ColorScheme.fromSeed(seedColor: TBColors.primary),
         useMaterial3: true,
       ),
       initialBinding: AppMainBinding(),

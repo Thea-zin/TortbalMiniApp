@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:thortbal/Constants/tb_color.dart';
+import 'package:thortbal/Core/resource/tb_colors.dart';
 import 'package:thortbal/Core/resource/tb_textsize.dart';
 import 'package:thortbal/Presentations/Widgets/tb_text.widget.dart';
 
@@ -11,15 +11,15 @@ class TBNotificationScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: TBColor.background,
-        surfaceTintColor: TBColor.background,
+        backgroundColor: TBColors.background,
+        surfaceTintColor: TBColors.background,
         leadingWidth: 65,
         toolbarHeight: 80,
         title: TBText(
           "Notification",
           textSize: TBTextSize.xlarge,
           fontWeight: FontWeight.bold,
-          textColor: TBColor.primary,
+          textColor: TBColors.primary,
         ),
       ),
       body: Column(
@@ -33,7 +33,7 @@ class TBNotificationScreen extends StatelessWidget {
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 24,
-                  color: TBColor.primary,
+                  color: TBColors.primary,
                 ),
               ),
             ],
