@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "787173047536",
+    "project_id": "tortbal-43b68",
+    "storage_bucket": "tortbal-43b68.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:787173047536:android:c93a36b8b9ead55efa1635",
+        "android_client_info": {
+          "package_name": "com.example.thortbal"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBNmWA50KRQsvQoCnT6TqwVhXzWe-EFQdU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
