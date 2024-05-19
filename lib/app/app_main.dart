@@ -15,7 +15,9 @@ void main() {
 }
 
 class TortBallApp extends StatelessWidget {
-  const TortBallApp({super.key});
+  const TortBallApp({
+    super.key,
+  });
 
   // This widget is the root of your application.
   @override

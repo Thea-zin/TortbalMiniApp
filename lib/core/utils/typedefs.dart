@@ -1,10 +1,8 @@
-import 'package:thortbal/Core/error/failure.dart';
-
 typedef ResultFuture<T> = Future<DataState<T>>;
 
 abstract class DataState<T> {
   final T? data;
-  final Failure? error;
+  final String? error;
 
   DataState({this.data, this.error});
 }
@@ -14,5 +12,5 @@ class DataSuccess<T> extends DataState<T> {
 }
 
 class DataFailed<T> extends DataState<T> {
-  DataFailed(Failure error) : super(error: error);
+  DataFailed(String error) : super(error: error);
 }
