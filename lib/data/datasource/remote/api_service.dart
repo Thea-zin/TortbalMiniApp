@@ -15,41 +15,21 @@ class ApiService {
   }
 
   ///Login with email and password
-  Future<User?> signInwithEmailAndPassword(
+   ResultFuture<User> signInwithEmailAndPassword(
       String email, String password) async {
     try {
-      UserCredential userCredential =
-          await _firebaseAuth.signInWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
-      return userCredential.user;
+      UserCredential userCredential = await _firebaseAuth
+          .signInWithEmailAndPassword(email: email, password: password);
+
+      return DataSuccess(userCredential.user!);
     } on FirebaseAuthException catch (error) {
-      debugPrint("${error.message}");
-      return null;
+      var errorMessage = "${error.message}";
+      return DataFailed(errorMessage);
     }
   }
 
   /// Register User with email and password
-  Future<User?> createUserwithEmailAndPassword(
-    String email,
-    String password,
-  ) async {
-    try {
-      UserCredential userCredential =
-          await _firebaseAuth.createUserWithEmailAndPassword(
-        email: email,
-        password: password,
-      );
-      return userCredential.user;
-    } on FirebaseAuthException catch (error) {
-      debugPrint("${error.message}");
-      return null;
-    }
-  }
-
-  /// Example createUserwithEmailAndPassword
-  ResultFuture<User> createUserWithEmailAndPasswordExample(
+  ResultFuture<User> createUserWithEmailAndPassword(
       String email, String password) async {
     try {
       UserCredential userCredential = await _firebaseAuth

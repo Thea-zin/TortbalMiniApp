@@ -1,4 +1,6 @@
+import 'package:thortbal/core/utils/typedefs.dart';
 import 'package:thortbal/data/datasource/remote/api_service.dart';
+import 'package:thortbal/domain/models/user.dart';
 import 'package:thortbal/domain/repositories/api_repositories.dart';
 
 class ApiRepositoriesImpl extends ApiRepositories {
@@ -13,4 +15,11 @@ class ApiRepositoriesImpl extends ApiRepositories {
   Future<void> signInWithGmail(String username, String password) {
     return _apiService.signInWithGmail(username, password);
   }
+
+  @override
+  ResultFuture<User> signInWithEmailAndPassword(String email, String password) async {
+    // TODO: implement signInWithEmailAndPassword
+    return await _apiService.signInwithEmailAndPassword(email, password);
+  }
+  
 }
