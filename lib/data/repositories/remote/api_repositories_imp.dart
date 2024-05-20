@@ -1,6 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:thortbal/core/utils/typedefs.dart';
 import 'package:thortbal/data/datasource/remote/api_service.dart';
-import 'package:thortbal/domain/models/user.dart';
 import 'package:thortbal/domain/repositories/api_repositories.dart';
 
 class ApiRepositoriesImpl extends ApiRepositories {
@@ -17,9 +17,7 @@ class ApiRepositoriesImpl extends ApiRepositories {
   }
 
   @override
-  ResultFuture<User> signInWithEmailAndPassword(String email, String password) async {
-    // TODO: implement signInWithEmailAndPassword
-    return await _apiService.signInwithEmailAndPassword(email, password);
+  ResultFuture<User> signInWithEmailAndPassword(String email, String password) {
+    return _apiService.signInwithEmailAndPassword(email, password);
   }
-  
 }

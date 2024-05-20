@@ -1,6 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/material.dart';
-import 'package:thortbal/core/error/exceptions.dart';
 import 'package:thortbal/core/utils/typedefs.dart';
 
 class ApiService {
@@ -14,8 +12,8 @@ class ApiService {
     throw UnimplementedError();
   }
 
-  ///Login with email and password
-   ResultFuture<User> signInwithEmailAndPassword(
+  /// Login with email and password
+  ResultFuture<User> signInwithEmailAndPassword(
       String email, String password) async {
     try {
       UserCredential userCredential = await _firebaseAuth

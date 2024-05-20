@@ -1,5 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:thortbal/core/utils/typedefs.dart';
-import 'package:thortbal/domain/models/user.dart';
 
 abstract class ApiRepositories {
   Future<void> login(String username, String password);

@@ -1,9 +1,11 @@
-class User {
+class TBUser {
+  String uid;
   String name;
   String password;
   String email;
 
-  User({
+  TBUser({
+    required this.uid,
     required this.name,
     required this.email,
     required this.password,
