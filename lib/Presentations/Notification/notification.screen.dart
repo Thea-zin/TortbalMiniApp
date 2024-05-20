@@ -29,7 +29,7 @@ class TBNotificationScreen extends StatelessWidget {
             children: [
               const Text("Today"),
               Text(
-                "MArk As All Read",
+                "Mark as all read",
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 24,
@@ -37,7 +37,7 @@ class TBNotificationScreen extends StatelessWidget {
                 ),
               ),
             ],
-          )
+          ),
         ],
       ),
     );
