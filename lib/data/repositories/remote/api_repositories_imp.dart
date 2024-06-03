@@ -20,4 +20,22 @@ class ApiRepositoriesImpl extends ApiRepositories {
   ResultFuture<User> signInWithEmailAndPassword(String email, String password) {
     return _apiService.signInwithEmailAndPassword(email, password);
   }
+  
+  @override
+  ResultFuture<User> createUserwithEmailAndPassword(String email, String password) {
+    // TODO: implement createUserwithEmailAndPassword
+    return _apiService.createUserWithEmailAndPassword(email, password);
+  }
+  
+  @override
+  Future<void> signOut() {
+    // TODO: implement signOut
+    throw UnimplementedError();
+  }
+  
+  @override
+  ResultFuture<User?> signInWithPhoneNumber(String verificationId, String smsCode) {
+    // TODO: implement signInWithPhoneNumber
+    throw UnimplementedError();
+  }
 }

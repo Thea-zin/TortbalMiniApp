@@ -3,6 +3,7 @@ import 'package:thortbal/data/datasource/local/local_service.dart';
 import 'package:thortbal/data/datasource/remote/api_service.dart';
 import 'package:thortbal/data/repositories/local/local_respositories_impl.dart';
 import 'package:thortbal/data/repositories/remote/api_repositories_imp.dart';
+import 'package:thortbal/domain/repositories/api_repositories.dart';
 
 class AppMainBinding implements Bindings {
   @override

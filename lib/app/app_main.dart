@@ -1,14 +1,20 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:thortbal/Core/resource/tb_colors.dart';
+import 'package:thortbal/Presentations/Authentication/login/login.screen.dart';
+import 'package:thortbal/core/services/tb_routes.dart';
 import 'package:thortbal/presentations/Home/main.screen.dart';
 import 'package:thortbal/presentations/Introduction/introduction_screen.dart';
 import 'package:thortbal/presentations/Notification/notification.screen.dart';
 import 'package:thortbal/presentations/Search/search.screen.dart';
-import 'package:thortbal/presentations/Authentication/login.screen.dart';
+
 import 'package:thortbal/app/app_main_binding.dart';
 
-void main() {
+void main() async{
+WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  
   runApp(
     const TortBallApp(),
   );
@@ -32,6 +38,7 @@ class TortBallApp extends StatelessWidget {
       ),
       initialBinding: AppMainBinding(),
       home: const TBIntroductionScreen(),
+      getPages: AppRoutes.pages,
       routes: {
         "/main": (ctx) => const TBMainScreen(),
         "/search": (ctx) => const TBSearchScreen(),

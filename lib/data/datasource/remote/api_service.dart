@@ -44,7 +44,22 @@ class ApiService {
   Future<void> signOut() async {
     await _firebaseAuth.signOut();
   }
+/// Authentication with phone number 
 
+ResultFuture<User?> signInWithPhoneNumber(String verificationId, String smsCode) async {
+    try {
+      PhoneAuthCredential credential = PhoneAuthProvider.credential(
+        verificationId: verificationId,
+        smsCode: smsCode,
+      );
+      UserCredential userCredential = await _firebaseAuth.signInWithCredential(credential);
+      return DataSuccess(userCredential.user!);
+    } on FirebaseAuthException catch (error) {
+      var errorMessage = "${error.message}";
+      return DataFailed(errorMessage);
+    }
+  }
+}
   /*
 
   Example for implementation
@@ -62,4 +77,4 @@ class ApiService {
     }
   }
   */
-}
+
