@@ -1,8 +1,5 @@
 import 'package:get/get.dart';
-import 'package:thortbal/core/services/tb_routes.dart';
-import 'package:thortbal/core/utils/typedefs.dart';
 import 'package:thortbal/data/repositories/remote/api_repositories_imp.dart';
-import 'package:thortbal/domain/repositories/api_repositories.dart';
 
 class TBLoginController extends GetxController {
   final ApiRepositoriesImpl repository;
@@ -17,13 +14,11 @@ class TBLoginController extends GetxController {
   /// getx declare
   set isLoading(bool value) => _isLoading.value = value;
 
-
   void login() async {
     isLoading = true;
-
     update();
 
-    await Future.delayed(const Duration(seconds: 1));
+    await Future.delayed(const Duration(seconds: 2));
 
     isLoading = false;
     update();

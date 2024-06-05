@@ -11,10 +11,10 @@ import 'package:thortbal/presentations/Search/search.screen.dart';
 
 import 'package:thortbal/app/app_main_binding.dart';
 
-void main() async{
-WidgetsFlutterBinding.ensureInitialized();
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  
+
   runApp(
     const TortBallApp(),
   );
