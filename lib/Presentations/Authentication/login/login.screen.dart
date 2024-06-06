@@ -85,6 +85,7 @@ class _TBLoginScreenState extends State<TBLoginScreen> {
                         child: Container(
                           padding: const EdgeInsets.all(2),
                           child: TBTextFeild(
+                           
                             keyboardType: TextInputType.emailAddress,
                             onTapOutside: (_) =>
                                 FocusManager.instance.primaryFocus?.unfocus(),
@@ -109,6 +110,11 @@ class _TBLoginScreenState extends State<TBLoginScreen> {
                               ),
                             ),
                             hinText: "tortball@gmail.com",
+                            controller: controller.emailTextEditingController,
+                            // onChanged: (value) {
+                            //   TBLoginController.email.value = value;
+                            // },
+                            
                           ),
                         ),
                       ),
@@ -123,6 +129,7 @@ class _TBLoginScreenState extends State<TBLoginScreen> {
                         child: Container(
                           padding: const EdgeInsets.all(2),
                           child: TBTextFeild(
+                            controller: controller.passwordTextEditingController,
                             obscureText: _isObscureText,
                             hinText: "password",
                             keyboardType: TextInputType.phone,
