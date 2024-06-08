@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:thortbal/Core/resource/tb_colors.dart';
 import 'package:thortbal/Core/resource/tb_icons.dart';
 import 'package:thortbal/Core/resource/tb_textSize.dart';
+import 'package:thortbal/Presentations/Authentication/login/login.screen.dart';
 import 'package:thortbal/presentations/Widgets/tb_button.dart';
 import 'package:thortbal/presentations/Widgets/tb_text.widget.dart';
 import 'package:thortbal/Core/utils/tb_global_funs.dart';
@@ -13,7 +14,6 @@ import 'package:thortbal/presentations/Profile/Review/review.screen.dart';
 
 import 'package:thortbal/presentations/Authentication/changePassword.screen.dart';
 
-import 'package:thortbal/presentations/Authentication/login.screen.dart';
 
 class TBProfileScreen extends StatefulWidget {
   const TBProfileScreen({Key? key}) : super(key: key);
