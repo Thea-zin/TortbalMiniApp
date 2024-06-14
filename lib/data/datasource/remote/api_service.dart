@@ -1,9 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:thortbal/core/utils/typedefs.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class ApiService {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
-
+  late String verificationId;
   Future<void> login(String username, String password) {
     throw UnimplementedError();
   }
@@ -44,15 +45,45 @@ class ApiService {
   Future<void> signOut() async {
     await _firebaseAuth.signOut();
   }
-/// Authentication with phone number 
+  ///Authentication with google 
+  Future<UserCredential> signInWithGoogle()async {
+    final GoogleSignInAccount? gUser =await GoogleSignIn().signIn(); 
+    final GoogleSignInAuthentication gAuth = await gUser!.authentication;
 
-ResultFuture<User?> signInWithPhoneNumber(String verificationId, String smsCode) async {
+    final credential = GoogleAuthProvider.credential(
+      accessToken: gAuth.accessToken,
+      idToken: gAuth.idToken,
+    );
+
+    return await _firebaseAuth.signInWithCredential(credential);
+  }
+
+  /// Authentication with phone number
+  Future<void> verifyPhoneNumber(String phoneNumber) async {
+    await _firebaseAuth.verifyPhoneNumber(
+        phoneNumber: phoneNumber,
+        verificationCompleted: (PhoneAuthCredential credential) async {
+          await _firebaseAuth.signInWithCredential(credential);
+        },
+        verificationFailed: (FirebaseAuthException e) {
+          print("Verfication failed:${e.message} ");
+        },
+        codeSent: (String verificationID, int? resendtoken) {
+          print('$verificationID');
+        },
+        codeAutoRetrievalTimeout: (String verificationID) {
+          print("Timeout");
+        });
+  }
+
+  ResultFuture<User?> signInWithPhoneNumber(String verificationID,String smsCode) async {
     try {
       PhoneAuthCredential credential = PhoneAuthProvider.credential(
         verificationId: verificationId,
         smsCode: smsCode,
       );
-      UserCredential userCredential = await _firebaseAuth.signInWithCredential(credential);
+      UserCredential userCredential =
+          await _firebaseAuth.signInWithCredential(credential);
       return DataSuccess(userCredential.user!);
     } on FirebaseAuthException catch (error) {
       var errorMessage = "${error.message}";
@@ -60,7 +91,9 @@ ResultFuture<User?> signInWithPhoneNumber(String verificationId, String smsCode)
     }
   }
 }
-  /*
+
+
+/*
 
   Example for implementation
 
@@ -77,4 +110,3 @@ ResultFuture<User?> signInWithPhoneNumber(String verificationId, String smsCode)
     }
   }
   */
-

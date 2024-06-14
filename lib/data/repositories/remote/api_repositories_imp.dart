@@ -33,9 +33,17 @@ class ApiRepositoriesImpl extends ApiRepositories {
     throw UnimplementedError();
   }
   
-  @override
-  ResultFuture<User?> signInWithPhoneNumber(String verificationId, String smsCode) {
+   @override
+     ResultFuture<User?> signInWithPhoneNumber( String verificationId ,String smscode )  {
     // TODO: implement signInWithPhoneNumber
-    throw UnimplementedError();
+    return _apiService.signInWithPhoneNumber(verificationId,smscode);
+  }
+
+  Future<void> verifyPhoneNumber(String phoneNumber){
+    return _apiService.verifyPhoneNumber(phoneNumber);
+  }
+
+ Future<UserCredential> signInWithGoogle() async {
+    return _apiService.signInWithGoogle();
   }
 }

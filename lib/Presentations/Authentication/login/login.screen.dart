@@ -301,6 +301,7 @@ class _TBLoginScreenState extends State<TBLoginScreen> {
                               ),
                             ),
                             hinText: "086 000 000",
+                            controller: controller.phoneNumberEditingController,
                           ),
                         ),
                       ),
@@ -355,7 +356,9 @@ class _TBLoginScreenState extends State<TBLoginScreen> {
                           _signUpWithButton(
                             imagePath: TBIcons.google,
                             title: "Continue with Google",
-                            onTap: () {},
+                            onTap: () => {
+                              controller.siginWithGmail()
+                            },
                           ),
                           Container(
                             padding: const EdgeInsets.fromLTRB(0, 100, 0, 0),
@@ -383,8 +386,9 @@ class _TBLoginScreenState extends State<TBLoginScreen> {
                               width: 358,
                               height: 75,
                               child: TBButton(
-                                onTap: () => Navigator.pushReplacementNamed(
-                                    context, "/main"),
+                                onTap: () => {
+                                  controller.phoneNumberLogin()
+                                },
                                 backgroundColor: TBColors.primary,
                                 child: const Row(
                                   mainAxisAlignment: MainAxisAlignment.center,
