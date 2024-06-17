@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart' hide ModalBottomSheetRoute;
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:thortbal/Presentations/Authentication/Signup/signup.controller.dart';
 import 'package:thortbal/Presentations/Authentication/login/login.screen.dart';
 import 'package:thortbal/Presentations/Widgets/tb_button.dart';
 import 'package:thortbal/Core/resource/tb_colors.dart';
@@ -16,182 +18,191 @@ class TBSignupNumberphone extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      appBar: AppBar(
-        automaticallyImplyLeading: false,
-        backgroundColor: TBColors.background,
-        surfaceTintColor: TBColors.background,
-        leadingWidth: 65,
-        toolbarHeight: 80,
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 15, top: 4.0, bottom: 6),
-          child: TBBackButton(
-            onTap: () => Navigator.pop(context),
+    return GetBuilder<TBSignupController>(
+      init:TBSignupController(repository: Get.find()) ,
+      builder: (controller) {
+      return Scaffold(
+        resizeToAvoidBottomInset: false,
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          backgroundColor: TBColors.background,
+          surfaceTintColor: TBColors.background,
+          leadingWidth: 65,
+          toolbarHeight: 80,
+          leading: Padding(
+            padding: const EdgeInsets.only(left: 15, top: 4.0, bottom: 6),
+            child: TBBackButton(
+              onTap: () => Navigator.pop(context),
+            ),
+          ),
+          title: TBText(
+            "Sign Up",
+            textSize: TBTextSize.xlarge,
+            fontWeight: FontWeight.bold,
+            textColor: TBColors.primary,
           ),
         ),
-        title: TBText(
-          "Sign Up",
-          textSize: TBTextSize.xlarge,
-          fontWeight: FontWeight.bold,
-          textColor: TBColors.primary,
-        ),
-      ),
-      body: Column(
-        children: [
-          Container(
-            margin: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: TBColors.inputBackground,
-              borderRadius: const BorderRadius.all(
-                Radius.circular(12.0),
-              ),
-            ),
-            child: Container(
-              padding: const EdgeInsets.all(2),
-              child: TBTextFeild(
-                keyboardType: TextInputType.phone,
-                onTapOutside: (_) =>
-                    FocusManager.instance.primaryFocus?.unfocus(),
-                maxWidthPrefix: 100,
-                prefix: Center(
-                  child: Container(
-                    margin: const EdgeInsets.only(left: 8, right: 12),
-                    padding: const EdgeInsets.only(left: 4, right: 4),
-                    width: double.infinity,
-                    height: 27,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        SvgPicture.asset(
-                          TBIcons.cambodia,
-                          width: 18,
-                          height: 18,
-                        ),
-                        const Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: 2,
-                            vertical: 4,
-                          ),
-                          child: VerticalDivider(
-                            width: 1,
-                            color: Colors.black87,
-                          ),
-                        ),
-                        TBText(
-                          "+855",
-                          textSize: TBTextSize.large - 2,
-                          fontWeight: FontWeight.w600,
-                          textColor: Colors.black87,
-                        )
-                      ],
-                    ),
-                  ),
+        body: Column(
+          children: [
+            Container(
+              margin: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: TBColors.inputBackground,
+                borderRadius: const BorderRadius.all(
+                  Radius.circular(12.0),
                 ),
-                hinText: "086 000 000",
               ),
-              /* Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SizedBox(
-                    width: 300.0,
-                    height: 68,
-                    // Adjust the width according to your requirement
-                    child: IntlPhoneField(
-                      decoration: InputDecoration(
-                        border: InputBorder.none,
-                        hintText: "12 345 678",
-                        suffix: SizedBox(width: 50),
+              child: Container(
+                padding: const EdgeInsets.all(2),
+                child: TBTextFeild(
+                  keyboardType: TextInputType.phone,
+                  onTapOutside: (_) =>
+                      FocusManager.instance.primaryFocus?.unfocus(),
+                  maxWidthPrefix: 100,
+                  prefix: Center(
+                    child: Container(
+                      margin: const EdgeInsets.only(left: 8, right: 12),
+                      padding: const EdgeInsets.only(left: 4, right: 4),
+                      width: double.infinity,
+                      height: 27,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(4),
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          SvgPicture.asset(
+                            TBIcons.cambodia,
+                            width: 18,
+                            height: 18,
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.symmetric(
+                              horizontal: 2,
+                              vertical: 4,
+                            ),
+                            child: VerticalDivider(
+                              width: 1,
+                              color: Colors.black87,
+                            ),
+                          ),
+                          TBText(
+                            "+855",
+                            textSize: TBTextSize.large - 2,
+                            fontWeight: FontWeight.w600,
+                            textColor: Colors.black87,
+                          )
+                        ],
                       ),
                     ),
-                    
                   ),
-                ],
+                  hinText: "086 000 000",
+                  controller: controller.phoneNumberEditingController,
+                ),
+                /* Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    SizedBox(
+                      width: 300.0,
+                      height: 68,
+                      // Adjust the width according to your requirement
+                      child: IntlPhoneField(
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hintText: "12 345 678",
+                          suffix: SizedBox(width: 50),
+                        ),
+                      ),
+                      
+                    ),
+                  ],
+                ),
+                */
               ),
-              */
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16),
-            child: TBText(
-              "Please note that by signing up your user account, you are accepting our Terms of Use and Privacy Policy.",
-              maxLines: 2,
-              textSize: TBTextSize.medium,
-              textAlign: TextAlign.left,
-              fontWeight: FontWeight.w500,
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: TBText(
+                "Please note that by signing up your user account, you are accepting our Terms of Use and Privacy Policy.",
+                maxLines: 2,
+                textSize: TBTextSize.medium,
+                textAlign: TextAlign.left,
+                fontWeight: FontWeight.w500,
+              ),
             ),
-          ),
-          Container(
-            margin: const EdgeInsets.all(16),
-            child: const Divider(),
-          ),
-          _signUpWithButton(
-            imagePath: TBIcons.facebook,
-            title: "Continue with Facebook",
-            onTap: () {},
-          ),
-          const SizedBox(height: 20),
-          _signUpWithButton(
-            imagePath: TBIcons.google,
-            title: "Continue with Google",
-            onTap: () {},
-          ),
-          const Spacer(),
-          Container(
-            padding: const EdgeInsets.fromLTRB(0, 100, 0, 0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const TBText(
-                  "Already Having Account? ",
-                  textSize: 14,
-                  fontWeight: FontWeight.w500,
-                ),
-                InkWell(
-                  onTap: () => showTBBottomSheet(
-                    context: context,
-                    child: const TBLoginScreen(),
-                  ),
-                  child: TBText(
-                    "Login",
-                    textSize: 14,
-                    textColor: TBColors.primary,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ],
+            Container(
+              margin: const EdgeInsets.all(16),
+              child: const Divider(),
             ),
-          ),
-          Padding(
-            padding: EdgeInsets.only(
-              left: 16,
-              right: 16,
-              bottom: MediaQuery.of(context).padding.bottom + 10,
-              top: 16,
+            _signUpWithButton(
+              imagePath: TBIcons.facebook,
+              title: "Continue with Facebook",
+              onTap: () {},
             ),
-            child: TBButton(
-              onTap: () => Navigator.popAndPushNamed(context, "/main"),
-              backgroundColor: TBColors.primary,
-              child: const Row(
+            const SizedBox(height: 20),
+            _signUpWithButton(
+              imagePath: TBIcons.google,
+              title: "Continue with Google",
+              onTap: () {},
+            ),
+            const Spacer(),
+            Container(
+              padding: const EdgeInsets.fromLTRB(0, 100, 0, 0),
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  TBText(
-                    "Sign Up",
-                    fontWeight: FontWeight.w600,
-                    textSize: 16,
-                    textColor: Colors.white,
-                  )
+                  const TBText(
+                    "Already Having Account? ",
+                    textSize: 14,
+                    fontWeight: FontWeight.w500,
+                  ),
+                  InkWell(
+                    onTap: () => showTBBottomSheet(
+                      context: context,
+                      child: const TBLoginScreen(),
+                    ),
+                    child: TBText(
+                      "Login",
+                      textSize: 14,
+                      textColor: TBColors.primary,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ],
               ),
             ),
-          ),
-        ],
-      ),
+            Padding(
+              padding: EdgeInsets.only(
+                left: 16,
+                right: 16,
+                bottom: MediaQuery.of(context).padding.bottom + 10,
+                top: 16,
+              ),
+              child: TBButton(
+                onTap: () {
+                  controller.phoneNumberSignup();
+                },
+                backgroundColor: TBColors.primary,
+                child: const Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    TBText(
+                      "Sign Up",
+                      fontWeight: FontWeight.w600,
+                      textSize: 16,
+                      textColor: Colors.white,
+                    )
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      );
+    }
     );
+
   }
 
   Widget _signUpWithButton({

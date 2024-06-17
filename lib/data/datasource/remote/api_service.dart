@@ -45,22 +45,34 @@ class ApiService {
   Future<void> signOut() async {
     await _firebaseAuth.signOut();
   }
+
+
   ///Authentication with google 
-  Future<UserCredential> signInWithGoogle()async {
-    final GoogleSignInAccount? gUser =await GoogleSignIn().signIn(); 
-    final GoogleSignInAuthentication gAuth = await gUser!.authentication;
+  ResultFuture<UserCredential> signInWithGoogle()async {
+    try{
+      final GoogleSignInAccount? gUser =await GoogleSignIn().signIn(); 
+      final GoogleSignInAuthentication gAuth = await gUser!.authentication;
 
-    final credential = GoogleAuthProvider.credential(
-      accessToken: gAuth.accessToken,
-      idToken: gAuth.idToken,
-    );
+      final credential = GoogleAuthProvider.credential(
+        accessToken: gAuth.accessToken,
+        idToken: gAuth.idToken,
+      );
+      final user=await _firebaseAuth.signInWithCredential(credential);
+      return  DataSuccess(user);
 
-    return await _firebaseAuth.signInWithCredential(credential);
+    }
+    catch (e){
+      var errorMessage = "${e.toString()}";
+      return DataFailed(errorMessage);
+    
   }
+  }
+
 
   /// Authentication with phone number
   Future<void> verifyPhoneNumber(String phoneNumber) async {
-    await _firebaseAuth.verifyPhoneNumber(
+    try{
+        await _firebaseAuth.verifyPhoneNumber(
         phoneNumber: phoneNumber,
         verificationCompleted: (PhoneAuthCredential credential) async {
           await _firebaseAuth.signInWithCredential(credential);
@@ -69,14 +81,23 @@ class ApiService {
           print("Verfication failed:${e.message} ");
         },
         codeSent: (String verificationID, int? resendtoken) {
-          print('$verificationID');
+          print('user token $verificationID');
+          
         },
         codeAutoRetrievalTimeout: (String verificationID) {
           print("Timeout");
         });
+        
+       
+      
+    }
+    catch(e){
+        print(e.toString());
+    }
+  
   }
 
-  ResultFuture<User?> signInWithPhoneNumber(String verificationID,String smsCode) async {
+  ResultFuture<User?> signInWithPhoneNumber(String verificationID, String smsCode) async {
     try {
       PhoneAuthCredential credential = PhoneAuthProvider.credential(
         verificationId: verificationId,
@@ -90,6 +111,16 @@ class ApiService {
       return DataFailed(errorMessage);
     }
   }
+  void verifyCode(String smsCode) async {
+  String verificationId = this.verificationId;  // Retrieve the stored verificationId
+  var result = await signInWithPhoneNumber(verificationId, smsCode);
+  if (result is DataSuccess) {
+    print("User signed in successfully: ${result.data}");
+  } else if (result is DataFailed) {
+    print("Failed to sign in: ${result.toString}");
+  }
+}
+
 }
 
 

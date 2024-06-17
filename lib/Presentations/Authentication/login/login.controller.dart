@@ -61,11 +61,13 @@ class TBLoginController extends GetxController {
     update();
   }
 
+
   void phoneNumberLogin() async {
   isLoading = true; // Set isLoading to true before starting the async operation
   update(); 
   
-  String phoneNumber = phoneNumberEditingController.text;
+  String phoneNumber = phoneNumberEditingController.text.replaceAll("0", "+855");
+
   print(phoneNumber);
   
   if(phoneNumber !=''){
@@ -91,17 +93,9 @@ class TBLoginController extends GetxController {
   String smsCode="code";
     var otpCode= otpCode1TextEditingController.text +otpCode2TextEditingController.text+otpCode3TextEditingController.text+otpCode4TextEditingController.text+otpCode5TextEditingController.text+otpCode6TextEditingController.text;
    
+    print(otpCode);
 
-    var data;
-    if(data is DataSuccess)
-    {
-      Get.toNamed(AppRoutes.main);
-      print("Success");
-    }
-    else{
-      print("erorr");
 
-    }
 
   isLoading = false;
   update(); 
@@ -109,19 +103,26 @@ class TBLoginController extends GetxController {
 
 
 ///COntroller gmail
- void siginWithGmail(){
+ void siginWithGmail() async{
   isLoading = true;
   update();
-  var userCredential= repository.signInWithGoogle();
-  isLoading = false;
-  update();
-    if (userCredential != null && userCredential != '') {
+  var response= await repository.signInWithGoogle();
+  
+
+   if(response is DataSuccess){
+      var user=response.data;
       print("success gmail");
-      print(userCredential);
+      print(user);
       Get.toNamed(AppRoutes.main);
+      isLoading = false;
+       update();
     } else {
+
       print("problem");
+
     }
+
+
  }
 
 

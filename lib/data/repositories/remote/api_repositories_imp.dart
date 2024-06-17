@@ -34,16 +34,16 @@ class ApiRepositoriesImpl extends ApiRepositories {
   }
   
    @override
-     ResultFuture<User?> signInWithPhoneNumber( String verificationId ,String smscode )  {
+     ResultFuture<User?> signInWithPhoneNumber(String verificationID ,String smsCode, )  async {
     // TODO: implement signInWithPhoneNumber
-    return _apiService.signInWithPhoneNumber(verificationId,smscode);
+    return _apiService.signInWithPhoneNumber( smsCode,verificationID);
   }
 
   Future<void> verifyPhoneNumber(String phoneNumber){
     return _apiService.verifyPhoneNumber(phoneNumber);
   }
 
- Future<UserCredential> signInWithGoogle() async {
+ ResultFuture<UserCredential> signInWithGoogle() async {
     return _apiService.signInWithGoogle();
   }
 }

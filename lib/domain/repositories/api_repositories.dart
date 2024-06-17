@@ -7,7 +7,8 @@ abstract class ApiRepositories {
   ResultFuture<User> signInWithEmailAndPassword(String email, String password);
   ResultFuture<User> createUserwithEmailAndPassword(String email, String password);
   Future<void> signOut();
-  ResultFuture<User?> signInWithPhoneNumber(String verificationId, String smsCode);
+  ResultFuture<User?> signInWithPhoneNumber( String verificationID,String smsCode);
+  ResultFuture<UserCredential> signInWithGoogle();
   // Future<void> signInWithFacebook(String username, String password);
   // Future<void> matching(userID);
 }
