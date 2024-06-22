@@ -87,7 +87,19 @@ class TBLoginController extends GetxController {
         otpCode5TextEditingController.text +
         otpCode6TextEditingController.text;
 
-    print(otpCode);
+   var user= await repository.signInWithPhoneNumber(otpCode);
+    try{ 
+      if(user !=null){
+        print("success :$user ");
+        Get.toNamed(AppRoutes.main);
+      }
+      else{
+        print("Signup faile code if not correct");
+      }
+    }
+    catch(e){
+        print("Erorr :$e");
+    }
 
     isLoading = false;
     update();

@@ -4,7 +4,7 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 class ApiService {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
-  late String verificationId;
+ String? _verificationId;
   Future<void> login(String username, String password) {
     throw UnimplementedError();
   }
@@ -82,12 +82,13 @@ class ApiService {
         },
         codeSent: (String verificationID, int? resendtoken) {
           print('user token $verificationID');
+           _verificationId = verificationID;
           
         },
         codeAutoRetrievalTimeout: (String verificationID) {
           print("Timeout");
         });
-        
+      
        
       
     }
@@ -97,29 +98,32 @@ class ApiService {
   
   }
 
-  ResultFuture<User?> signInWithPhoneNumber(String verificationID, String smsCode) async {
-    try {
-      PhoneAuthCredential credential = PhoneAuthProvider.credential(
-        verificationId: verificationId,
-        smsCode: smsCode,
-      );
-      UserCredential userCredential =
-          await _firebaseAuth.signInWithCredential(credential);
-      return DataSuccess(userCredential.user!);
-    } on FirebaseAuthException catch (error) {
-      var errorMessage = "${error.message}";
-      return DataFailed(errorMessage);
+  Future <User?>signInWithPhoneNumber(String otpCode) async{
+    if(_verificationId==null)
+    {
+      throw StateError("_VerificationId is null");
+
     }
+
+    try{
+      PhoneAuthCredential credential= PhoneAuthProvider.credential(
+        verificationId: _verificationId!,
+        smsCode: otpCode,
+      );
+      UserCredential userCredential= await _firebaseAuth.signInWithCredential(credential);
+
+      return userCredential.user;
+      
+
+    }
+    on FirebaseException catch(e){
+      print("error : $e");
+    }
+
+
+    return null;
   }
-  void verifyCode(String smsCode) async {
-  String verificationId = this.verificationId;  // Retrieve the stored verificationId
-  var result = await signInWithPhoneNumber(verificationId, smsCode);
-  if (result is DataSuccess) {
-    print("User signed in successfully: ${result.data}");
-  } else if (result is DataFailed) {
-    print("Failed to sign in: ${result.toString}");
-  }
-}
+
 
 }
 

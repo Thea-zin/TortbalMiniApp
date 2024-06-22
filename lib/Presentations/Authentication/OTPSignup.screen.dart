@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
-import 'package:thortbal/Presentations/Authentication/login/login.controller.dart';
+import 'package:thortbal/Presentations/Authentication/Signup/signup.controller.dart';
 import 'package:thortbal/Presentations/Widgets/tb_button.dart';
 import 'package:thortbal/Core/resource/tb_colors.dart';
 import 'package:thortbal/Core/resource/tb_textSize.dart';
@@ -15,8 +15,8 @@ class TBVerifyOTPSignup extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<TBLoginController>(
-        init: TBLoginController(repository: Get.find()),
+    return GetBuilder<TBSignupController>(
+        init: TBSignupController(repository: Get.find()),
         builder: (controller) {
           return DefaultTabController(
             length: 2,
@@ -183,7 +183,7 @@ class TBVerifyOTPSignup extends StatelessWidget {
                   ///Button verify
                   TBButton(
                     onTap: () {
-                      controller.verifyOTP();
+                      controller.OTPsignUp();
                     },
                     backgroundColor: TBColors.primary,
                     child: const Row(
