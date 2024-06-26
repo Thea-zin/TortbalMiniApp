@@ -9,6 +9,11 @@ abstract class ApiRepositories {
   Future<void> signOut();
   Future<User?> signInWithPhoneNumber(String otpCode);
   ResultFuture<UserCredential> signInWithGoogle();
+
+
+  ////SignUp
+  ResultFuture<User> signupwithEmailAndPassword(String email, String password);
+   ResultFuture<UserCredential> signUpWithGoogle();
   // Future<void> signInWithFacebook(String username, String password);
   // Future<void> matching(userID);
 }

@@ -7,6 +7,8 @@ import 'package:thortbal/Core/resource/tb_colors.dart';
 import 'package:thortbal/Core/resource/tb_images.dart';
 
 import 'package:thortbal/Core/resource/tb_textsize.dart';
+import 'package:thortbal/Presentations/Solo/create_team.screen.dart';
+import 'package:thortbal/Presentations/Team/solo_screen.dart';
 import 'package:thortbal/presentations/Widgets/tb_button.dart';
 import 'package:thortbal/presentations/Widgets/tb_text.widget.dart';
 import 'package:thortbal/presentations/Solo/solo_option.screen.dart';
@@ -57,7 +59,7 @@ class TBFindMatchScreen extends StatelessWidget {
                 imageAsset: TBImages.soloPlayer,
                 onTap: () => _showBottomSheet(
                   context: context,
-                  child: const SoloOption(),
+                  child: const Solo(),
                 ),
               ),
               const SizedBox(height: 16),
@@ -65,7 +67,7 @@ class TBFindMatchScreen extends StatelessWidget {
                 imageAsset: TBImages.teamPlayers,
                 onTap: () => _showBottomSheet(
                   context: context,
-                  child: const Team(),
+                  child: const TBSolo_Screen(),
                 ),
               ),
             ],

@@ -6,6 +6,7 @@ import 'package:thortbal/Presentations/Authentication/login/login.binding.dart';
 import 'package:thortbal/Presentations/Authentication/login/login.screen.dart';
 import 'package:thortbal/Presentations/Authentication/verifyOTP.screen.dart';
 import 'package:thortbal/Presentations/Home/main.screen.dart';
+import 'package:thortbal/Presentations/Team/team.dart';
 
 class AppRoutes {
   static const String main = "/main";
@@ -14,6 +15,7 @@ class AppRoutes {
   static const String login = "/login";
   static const String otp = "/otp";
   static const String otpSignup='/otpSignup';
+  static const String team='/team';
 
 
   static List<GetPage> pages = [
@@ -34,6 +36,11 @@ class AppRoutes {
      GetPage(
       name: otpSignup,
       page: () => const TBVerifyOTPSignup (),
+      binding: TBSignupBinding(),
+    ),
+     GetPage(
+      name: team,
+      page: () => const Team (),
       binding: TBSignupBinding(),
     ),
     

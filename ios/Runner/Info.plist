@@ -29,9 +29,21 @@
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
+				<string>fb957293969467543</string>
 				<string>com.googleusercontent.apps.787173047536-97nje9f5taqjdjii6bbhq3a36upuvpal</string>
 			</array>
 		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>957293969467543</string>
+	<key>FacebookDisplayName</key>
+	<string>Tortbal</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+	<string>fbapi</string>
+	<string>fb-messenger-api</string>
+	<string>fbauth2</string>
+	<string>fbshareextension</string>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>

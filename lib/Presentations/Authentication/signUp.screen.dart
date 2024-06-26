@@ -138,13 +138,17 @@ class TBSignupNumberphone extends StatelessWidget {
             _signUpWithButton(
               imagePath: TBIcons.facebook,
               title: "Continue with Facebook",
-              onTap: () {},
+              onTap: () {
+                controller.signInWithFacebook();
+              },
             ),
             const SizedBox(height: 20),
             _signUpWithButton(
               imagePath: TBIcons.google,
               title: "Continue with Google",
-              onTap: () {},
+              onTap: () {
+                controller.signupWithgoogle();
+              },
             ),
             const Spacer(),
             Container(

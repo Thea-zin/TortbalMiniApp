@@ -20,27 +20,45 @@ class ApiRepositoriesImpl extends ApiRepositories {
   ResultFuture<User> signInWithEmailAndPassword(String email, String password) {
     return _apiService.signInwithEmailAndPassword(email, password);
   }
-  
+
   @override
-  ResultFuture<User> createUserwithEmailAndPassword(String email, String password) {
+  ResultFuture<User> createUserwithEmailAndPassword(
+      String email, String password) {
     // TODO: implement createUserwithEmailAndPassword
     return _apiService.createUserWithEmailAndPassword(email, password);
   }
-  
+
   @override
   Future<void> signOut() {
     // TODO: implement signOut
     throw UnimplementedError();
   }
 
-  Future<void> verifyPhoneNumber(String phoneNumber){
+  Future<void> verifyPhoneNumber(String phoneNumber) {
     return _apiService.verifyPhoneNumber(phoneNumber);
   }
+
   ///verify OTP
-   Future<User?> signInWithPhoneNumber(String otpCode){
+  Future<User?> signInWithPhoneNumber(String otpCode) {
     return _apiService.signInWithPhoneNumber(otpCode);
-   }
- ResultFuture<UserCredential> signInWithGoogle() async {
+  }
+
+  ResultFuture<UserCredential> signInWithGoogle() async {
     return _apiService.signInWithGoogle();
+  }
+
+  ///Sigup
+  ResultFuture<User> signupwithEmailAndPassword(String email, String password) {
+    return _apiService.signupwithEmailAndPassword(email, password);
+  }
+
+  ///With Gmail
+  ResultFuture<UserCredential> signUpWithGoogle() {
+    return _apiService.signUpWithGoogle();
+  }
+
+  /// facebook
+  Future<UserCredential?> signInWithFacebook() {
+    return _apiService.signInWithFacebook();
   }
 }

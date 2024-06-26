@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:thortbal/core/services/tb_routes.dart';
+import 'package:thortbal/core/utils/typedefs.dart';
 import 'package:thortbal/data/repositories/remote/api_repositories_imp.dart';
 
 class TBSignupController extends GetxController {
@@ -34,13 +35,14 @@ class TBSignupController extends GetxController {
         phoneNumber = phoneNumber.replaceFirst("0", "+855");
       }
 
-      repository.verifyPhoneNumber( phoneNumber);
+      repository.verifyPhoneNumber(phoneNumber);
       Get.toNamed(AppRoutes.otpSignup);
     } else {
       print("Not enough phon number");
     }
   }
-  void OTPsignUp() async{
+
+  void OTPsignUp() async {
     var otpCode = otpCode1TextEditingController.text +
         otpCode2TextEditingController.text +
         otpCode3TextEditingController.text +
@@ -49,18 +51,49 @@ class TBSignupController extends GetxController {
         otpCode6TextEditingController.text;
 
     print(otpCode);
-    var user= await repository.signInWithPhoneNumber(otpCode);
-    try{ 
-      if(user !=null){
+    var user = await repository.signInWithPhoneNumber(otpCode);
+    try {
+      if (user != null) {
         print("success :$user ");
         Get.toNamed(AppRoutes.main);
-      }
-      else{
+      } else {
         print("Signup faile code if not correct");
       }
+    } catch (e) {
+      print("Erorr :$e");
     }
-    catch(e){
-        print("Erorr :$e");
+  }
+
+  ///COntroller gmail
+  void signupWithgoogle() async {
+    isLoading = true;
+    update();
+    var response = await repository.signUpWithGoogle();
+
+    if (response is DataSuccess) {
+      var user = response.data;
+      print("success gmail");
+      print(user);
+      Get.toNamed(AppRoutes.main);
+      isLoading = false;
+      update();
+    } else {
+      print("problem");
+    }
+  }
+
+  void signInWithFacebook() async {
+    isLoading = true;
+    update();
+    var response = await repository.signInWithFacebook();
+    if (response is DataSuccess) {
+
+      print("success facebook");
+      Get.toNamed(AppRoutes.main);
+      update();
+      
+    } else {
+      print('problem');
     }
   }
 }
