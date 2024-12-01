@@ -165,32 +165,22 @@ class ApiService {
   }
 
 Future<UserCredential?> signInWithFacebook() async {
-    try {
-      print("Login using Facebook");
-      final user;
-      final LoginResult result = await FacebookAuth.instance.login(
-        permissions: ['email'],
-       // loginBehavior: LoginBehavior.dialogOnly, // show an authentication dialog instead of redirecting to Facebook app
-      );
 
-      if (result.status == LoginStatus.success) {
-        // Create a credential from the access token
-        final OAuthCredential credential =
-            FacebookAuthProvider.credential(result.accessToken!.tokenString);
-        // Once signed in, return the UserCredential
-          print("success");
-           user=await FirebaseAuth.instance.signInWithCredential(credential);
-         }
-      else{
-        print("wrong again");
-      }
-      
-   
-    } catch (e) {
-     var errorMessage = "${e.toString()}";
-     print('facebook error login');
+          final LoginResult result = await FacebookAuth.instance.login(); // by default we request the email and the public profile
+    // or FacebookAuth.i.login()
+    final userData = await FacebookAuth.instance.getUserData();
+    
+    if (result.status == LoginStatus.success) {
+        // you are logged
+        final AccessToken accessToken = result.accessToken!;
+        
+
+    } else {
+        print(result.status);
+        print(result.message);
     }
-  }
+  
+ }
 }
 /*Example for implementation
 
